@@ -1,0 +1,3 @@
+﻿  Main.cpp
+  Main.obj : module MSIL détecté ; liens incrémentiels désactivés pour MSIL ; édition de liens complète en cours
+LINK : fatal error LNK1561: le point d'entrée doit être défini
