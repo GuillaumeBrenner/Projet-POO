@@ -10,10 +10,10 @@ ServiceClient::ServiceClient()
     this->dataSet = gcnew Data::DataSet();
 }
 
-DataSet^ ServiceClient::listeClients(String^ Client)
+DataSet^ ServiceClient::listeClients(String^ dataTableName)
 {
     this->dataSet->Clear();
-    this->dataSet = this->cad->getRows(this->client->SELECT(), Client);
+    this->dataSet = this->cad->getRows(this->client->SELECT(), dataTableName);
     return this->dataSet;
 
     //System::String^ sql;
