@@ -1,5 +1,0 @@
-C:\Users\hounk\source\repos\Projet-POO\POO\x64\Debug\POO.Main.resources
-C:\Users\hounk\source\repos\Projet-POO\POO\x64\Debug\POO.vcxproj.GenerateResource.cache
-C:\Users\hounk\source\repos\Projet-POO\POO\x64\Debug\POO.exe
-C:\Users\hounk\source\repos\Projet-POO\POO\x64\Debug\POO.vcxproj.AssemblyReference.cache
-C:\Users\hounk\source\repos\Projet-POO\POO\x64\Debug\POO.Login.resources
