@@ -2,34 +2,34 @@
 
 using namespace Composants;
 
-Cad::Cad(void)
+Composants::Cad::Cad(void)
 {
 
 	this->connectionInformation = "Data Source=HK;Initial Catalog=poo;User ID=HK;Password=azerty";
 
     this->sqlRequest = "RIEN";
 
-    this->sqlConnection = gcnew System::Data::SqlClient::SqlConnection(this->connectionInformation);
-    this->sqlCommand = gcnew System::Data::SqlClient::SqlCommand(this->sqlRequest, this->sqlConnection);
-    this->sqlAdapter = gcnew System::Data::SqlClient::SqlDataAdapter();
-    this->dataSet = gcnew System::Data::DataSet();
+    this->sqlConnection = gcnew SqlConnection(this->connectionInformation);
+    this->sqlCommand = gcnew SqlCommand(this->sqlRequest, this->sqlConnection);
+    this->sqlAdapter = gcnew SqlDataAdapter();
+    this->dataSet = gcnew DataSet();
 
 
     this->sqlCommand->CommandType = System::Data::CommandType::Text;
 }
 
-int Cad::actionRowsId(String^ request)
+System::Data::DataSet^ Cad::getRows(String^ sqlRequest, String^ dataTableName)
 {
-    int id;
-    this->setSQL(request);
+    this->dataSet->Clear();
+    this->sqlRequest = sqlRequest;
+    this->sqlAdapter->SelectCommand = this->sqlCommand;
     this->sqlCommand->CommandText = this->sqlRequest;
-    this->sqlConnection->Open();
-    id = Convert::ToInt32(this->sqlCommand->ExecuteScalar());
-    this->sqlConnection->Close();
-    return id;
+    this->sqlAdapter->Fill(this->dataSet, dataTableName);
+
+    return this->dataSet;
 }
 
-void Cad::actionRows(String^ request)
+void Composants::Cad::actionRows(String^ sqlRequest)
 {
     this->sqlRequest = sqlRequest;
     this->sqlCommand->CommandText = this->sqlRequest;
@@ -39,26 +39,27 @@ void Cad::actionRows(String^ request)
     this->sqlConnection->Close();
 }
 
-System::Data::DataSet^ Cad::getRows(System::String^ sqlRequest, System::String^ dataTableName)
+int Cad::actionRowsId(String^ sqlRequest)
 {
-    //this->setSQL(request);
-    this->dataSet->Clear();
+    int id;
     this->sqlRequest = sqlRequest;
-    this->sqlAdapter->SelectCommand = this->sqlCommand;
     this->sqlCommand->CommandText = this->sqlRequest;
-    this->sqlAdapter->Fill(this->dataSet, dataTableName);
-    return this->dataSet;
+    this->sqlConnection->Open();
+    id = Convert::ToInt32(this->sqlCommand->ExecuteScalar());
+    this->sqlConnection->Close();
+
+    return id;
 }
 
-void Cad::setSQL(String^ request)
+void Cad::setSQL(String^ sqlRequest)
 {
-    if (String::IsNullOrEmpty(request) || request == "RIEN")
+    if (String::IsNullOrEmpty(sqlRequest) || sqlRequest == "RIEN")
     {
         this->sqlRequest = "RIEN";
     }
     else
     {
-        this->sqlRequest = request;
+        this->sqlRequest = sqlRequest;
     }
 }
 

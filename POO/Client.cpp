@@ -8,31 +8,28 @@ Mappage::Client::Client()
     this->prenom = "RIEN";
 }
 
-System::String^ Mappage::Client::SELECT(void)
+String^ Mappage::Client::SELECT()
 {
     return "SELECT [numClient], [nomC], [prenomC] FROM [poo].[dbo].[Client]";
 }
 
-/*  String^ Client::INSERT()
+String^ Mappage::Client::INSERT()
 {
-    return "INSERT INTO TB_PERSONNE " +
-        "(nom, prenom) " +
-        "VALUES('" + this->getNom() + "', '" + this->getPrenom() + "');SELECT @@IDENTITY;";
+    return "INSERT INTO Client(nomC, prenomC) VALUES('" + this->nom + "','" + this->prenom + "');";
 }
 
-String^ Client::UPDATE()
+String^ Mappage::Client::UPDATE()
 {
-    return "UPDATE TB_PERSONNE " +
+    return "UPDATE Client " +
         "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "' " +
         "WHERE(id_personne = " + this->getId() + ");";
 }
 
-String^ Client::DELETE()
+String^ Mappage::Client::DELETE()
 {
-    return "DELETE FROM TB_PERSONNE " +
+    return "DELETE FROM Client " +
         "WHERE(id_personne = " + this->getId() + ");";
 }
-*/
 
 void Mappage::Client::setId(int id)
 {

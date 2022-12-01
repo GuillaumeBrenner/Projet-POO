@@ -1,4 +1,5 @@
 #pragma once
+#include "Header.h"
 
 
 namespace Mappage
@@ -11,16 +12,16 @@ namespace Mappage
         Client();
 
         // retourne le commande pour selectionner une personne dans la bdd
-        System::String^ SELECT(void);
+        String^ SELECT();
 
         // retourne le commande pour ajouter une personne dans la bdd
-        //String^ INSERT();
+        String^ INSERT();
 
         // retourne le commande pour mettre à jour une personne dans la bdd
-        //String^ UPDATE();
+        String^ UPDATE();
 
         // retourne le commande pour suppprimer une personne dans la bdd
-        //String^ DELETE();
+        String^ DELETE();
 
         // Accesseurs et setters classique de donnees
         void setId(int id);
@@ -33,10 +34,10 @@ namespace Mappage
 
 
     private:
-        System::String^ sqlrequest;
+        String^ sqlrequest;
         int idClient;
-        System::String^ nom;
-        System::String^ prenom;
+        String^ nom;
+        String^ prenom;
 
     };
 }

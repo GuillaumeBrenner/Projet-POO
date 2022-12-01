@@ -7,7 +7,7 @@ Services::ServiceClient::ServiceClient(void)
     this->client = gcnew Mappage::Client();
 }
 
-System::Data::DataSet^ Services::ServiceClient::listeClients(System::String^ dataTableName)
+DataSet^ Services::ServiceClient::listeClients(System::String^ dataTableName)
 {
     System::String^ sql;
 

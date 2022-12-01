@@ -135,6 +135,7 @@
     <ClInclude Include="Cad.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Commande.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
