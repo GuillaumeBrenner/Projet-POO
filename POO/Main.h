@@ -238,15 +238,10 @@ private: System::Windows::Forms::Label^ label26;
 	   // Le service qui gere les donnees des personnes
 	private: Services::ServiceClient^ gestionClients;
 		   // Un cache memoire sur la table des personnes
-	private: Data::DataSet^ dsClient;
+	private: System::Data::DataSet^ dataset;
 		   // Un cache memoire sur la table des adresses
-	private: Data::DataSet^ dsAdresse;
 		   // L'index courant de la personne affichee
-	private: int index;
-		   // Le mode 
-	private: EditionMode mode;
-	private: int rowsCount;
-	private: int id;
+
 
 
 
@@ -1325,6 +1320,7 @@ private: System::Windows::Forms::Label^ label26;
 		}
 #pragma endregion
 	private: System::Void Main_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->gestionClients = gcnew Services::ServiceClient();
 	}
 private: System::Void newButton_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1350,8 +1346,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	this->statsForm->Visible = false;
 
 	this->dataGridView1->Refresh();
-	this->dsClient = this->gestionClients->listeClients("Rsl");
-	this->dataGridView1->DataSource = this->dsClient;
+	this->dataset = this->gestionClients->listeClients("Rsl");
+	this->dataGridView1->DataSource = this->dataset;
 	this->dataGridView1->DataMember = "Rsl";
 }
 private: System::Void button_s_seuil_Click(System::Object^ sender, System::EventArgs^ e) {

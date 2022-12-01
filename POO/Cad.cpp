@@ -2,15 +2,20 @@
 
 using namespace Composants;
 
-Cad::Cad()
+Cad::Cad(void)
 {
-	this->sqlRequest = "RIEN";
 
 	this->connectionInformation = "Data Source=HK;Initial Catalog=poo;User ID=HK;Password=azerty";
 
-    this->sqlConnection = gcnew SqlConnection(this->connectionInformation);
-    this->sqlCommand = gcnew SqlCommand(this->sqlRequest, this->sqlConnection);
-    this->sqlCommand->CommandType = CommandType::Text;
+    this->sqlRequest = "RIEN";
+
+    this->sqlConnection = gcnew System::Data::SqlClient::SqlConnection(this->connectionInformation);
+    this->sqlCommand = gcnew System::Data::SqlClient::SqlCommand(this->sqlRequest, this->sqlConnection);
+    this->sqlAdapter = gcnew System::Data::SqlClient::SqlDataAdapter();
+    this->dataSet = gcnew System::Data::DataSet();
+
+
+    this->sqlCommand->CommandType = System::Data::CommandType::Text;
 }
 
 int Cad::actionRowsId(String^ request)
@@ -26,19 +31,21 @@ int Cad::actionRowsId(String^ request)
 
 void Cad::actionRows(String^ request)
 {
-    this->setSQL(request);
+    this->sqlRequest = sqlRequest;
     this->sqlCommand->CommandText = this->sqlRequest;
+    this->sqlAdapter->SelectCommand = this->sqlCommand;
     this->sqlConnection->Open();
     this->sqlCommand->ExecuteNonQuery();
     this->sqlConnection->Close();
 }
 
-DataSet^ Cad::getRows(String^ request, String^ dataTableName)
+System::Data::DataSet^ Cad::getRows(System::String^ sqlRequest, System::String^ dataTableName)
 {
-    this->setSQL(request);
-    this->sqlAdapter = gcnew SqlDataAdapter(this->sqlCommand);
+    //this->setSQL(request);
+    this->dataSet->Clear();
+    this->sqlRequest = sqlRequest;
+    this->sqlAdapter->SelectCommand = this->sqlCommand;
     this->sqlCommand->CommandText = this->sqlRequest;
-    this->dataSet = gcnew DataSet();
     this->sqlAdapter->Fill(this->dataSet, dataTableName);
     return this->dataSet;
 }

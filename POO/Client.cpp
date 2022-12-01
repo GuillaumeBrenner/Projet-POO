@@ -1,18 +1,16 @@
 #include "Client.h"
 
-using namespace Composants;
 
-Client::Client()
+Mappage::Client::Client()
 {
     this->idClient = -1;
     this->nom = "RIEN";
     this->prenom = "RIEN";
 }
 
-String^ Client::SELECT()
+System::String^ Mappage::Client::SELECT(void)
 {
-    return "SELECT nomC, prenomC " +
-        "FROM Client;";
+    return "SELECT [numClient], [nomC], [prenomC] FROM [poo].[dbo].[Client]";
 }
 
 /*  String^ Client::INSERT()
@@ -36,7 +34,7 @@ String^ Client::DELETE()
 }
 */
 
-void Client::setId(int id)
+void Mappage::Client::setId(int id)
 {
     if (id > 0)
     {
@@ -44,33 +42,33 @@ void Client::setId(int id)
     }
 }
 
-void Client::setPrenom(String^ prenom)
+void Mappage::Client::setNom(System::String^ nom)
 {
-    if (!String::IsNullOrEmpty(prenom))
-    {
-        this->prenom = prenom;
-    }
-}
-
-void Client::setNom(String^ nom)
-{
-    if (!String::IsNullOrEmpty(nom))
+    if (!System::String::IsNullOrEmpty(nom))
     {
         this->nom = nom;
     }
 }
 
-int Client::getId()
+void Mappage::Client::setPrenom(System::String^ prenom)
+{
+    if (!System::String::IsNullOrEmpty(prenom))
+    {
+        this->prenom = prenom;
+    }
+}
+
+int Mappage::Client::getId()
 {
     return this->idClient;
 }
 
-String^ Client::getNom()
+System::String^ Mappage::Client::getNom()
 {
     return this->nom;
 }
 
-String^ Client::getPrenom()
+System::String^ Mappage::Client::getPrenom()
 {
     return this->prenom;
 }

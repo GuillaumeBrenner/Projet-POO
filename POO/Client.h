@@ -1,10 +1,7 @@
 #pragma once
 
-using namespace System;
 
-// On crée un namespace specifique pour les composants, ça permet de regrouper les classes
-// C'est purement cosmétique mais permet d'avoir un code plus elegant
-namespace Composants
+namespace Mappage
 {
     // Cette classe permet de transiter les informations contenues dans la bdd dans une classe de donnée
     ref class Client
@@ -14,7 +11,7 @@ namespace Composants
         Client();
 
         // retourne le commande pour selectionner une personne dans la bdd
-        String^ SELECT();
+        System::String^ SELECT(void);
 
         // retourne le commande pour ajouter une personne dans la bdd
         //String^ INSERT();
@@ -27,18 +24,19 @@ namespace Composants
 
         // Accesseurs et setters classique de donnees
         void setId(int id);
-        void setNom(String^ nom);
-        void setPrenom(String^ prenom);
+        void setNom(System::String^ nom);
+        void setPrenom(System::String^ prenom);
 
         int getId();
-        String^ getNom();
-        String^ getPrenom();
+        System::String^ getNom(void);
+        System::String^ getPrenom(void);
 
 
     private:
+        System::String^ sqlrequest;
         int idClient;
-        String^ nom;
-        String^ prenom;
+        System::String^ nom;
+        System::String^ prenom;
 
     };
 }

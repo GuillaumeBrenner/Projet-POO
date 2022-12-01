@@ -12,10 +12,10 @@ namespace Composants
 	ref class Cad
 	{
 	public :
-		Cad();
-		int actionRowsId(String^ request);
-		void actionRows(String^ request);
-		DataSet^ getRows(String^ request, String^ dataTableName);
+		Cad(void);
+		int actionRowsId(String^);
+		void actionRows(System::String^);
+		System::Data::DataSet^ getRows(System::String^, System::String^);
 		~Cad();
 
 	private :
