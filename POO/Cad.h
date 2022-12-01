@@ -16,8 +16,9 @@ namespace Composants
 		int actionRowsId(String^ request);
 		void actionRows(String^ request);
 		DataSet^ getRows(String^ request, String^ dataTableName);
+		~Cad();
 
-	protected :
+	private :
 		String^ connectionInformation;
 		String^ sqlRequest;
 		SqlConnection^ sqlConnection;

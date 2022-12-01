@@ -54,3 +54,12 @@ void Cad::setSQL(String^ request)
         this->sqlRequest = request;
     }
 }
+
+Cad::~Cad(void)
+{
+    delete this->connectionInformation;
+    delete this->sqlRequest;
+    delete this->sqlConnection;
+    delete this->sqlAdapter;
+    delete this->dataSet;
+}

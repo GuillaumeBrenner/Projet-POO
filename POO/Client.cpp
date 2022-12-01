@@ -11,7 +11,7 @@ Client::Client()
 
 String^ Client::SELECT()
 {
-    return "SELECT numClient, nomC, prenomC " +
+    return "SELECT nomC, prenomC " +
         "FROM Client;";
 }
 
