@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ServiceClient.h"
+
 namespace POO {
 
 	using namespace System;
@@ -14,6 +16,15 @@ namespace POO {
 	/// </summary>
 	public ref class Main : public System::Windows::Forms::Form
 	{
+
+		enum class EditionMode {
+			NO_MODE,
+
+			CREATE,
+			UPDATE,
+			DELETE
+		};
+
 	public:
 		Main(void)
 		{
@@ -224,7 +235,18 @@ private: System::Windows::Forms::Label^ label26;
 
 
 
-
+	   // Le service qui gere les donnees des personnes
+	private: Services::ServiceClient^ gestionClients;
+		   // Un cache memoire sur la table des personnes
+	private: Data::DataSet^ dsClient;
+		   // Un cache memoire sur la table des adresses
+	private: Data::DataSet^ dsAdresse;
+		   // L'index courant de la personne affichee
+	private: int index;
+		   // Le mode 
+	private: EditionMode mode;
+	private: int rowsCount;
+	private: int id;
 
 
 
@@ -1053,6 +1075,7 @@ private: System::Windows::Forms::Label^ label26;
 			this->saveButton->TabIndex = 33;
 			this->saveButton->Text = L"Enregistrer";
 			this->saveButton->UseVisualStyleBackColor = true;
+			this->saveButton->Click += gcnew System::EventHandler(this, &Main::saveButton_Click);
 			// 
 			// deleteButton
 			// 
@@ -1128,11 +1151,11 @@ private: System::Windows::Forms::Label^ label26;
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(452, 21);
+			this->dataGridView1->Location = System::Drawing::Point(445, 21);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(810, 547);
+			this->dataGridView1->Size = System::Drawing::Size(817, 547);
 			this->dataGridView1->TabIndex = 39;
 			// 
 			// clientForm
@@ -1325,6 +1348,11 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	this->produitForm->Visible = false;
 	this->personnelForm->Visible = false;
 	this->statsForm->Visible = false;
+
+	this->dataGridView1->Refresh();
+	this->dsClient = this->gestionClients->listeClients("Rsl");
+	this->dataGridView1->DataSource = this->dsClient;
+	this->dataGridView1->DataMember = "Rsl";
 }
 private: System::Void button_s_seuil_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1363,6 +1391,8 @@ private: System::Void btnCommande_Click(System::Object^ sender, System::EventArg
 private: System::Void btnSouseuil_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void saveButton_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

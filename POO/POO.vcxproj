@@ -122,14 +122,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cad.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Personnel.cpp" />
     <ClCompile Include="Produit.cpp" />
+    <ClCompile Include="ServiceClient.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cad.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Commande.h" />
     <ClInclude Include="Login.h">
@@ -140,6 +143,7 @@
     </ClInclude>
     <ClInclude Include="Personnel.h" />
     <ClInclude Include="Produit.h" />
+    <ClInclude Include="ServiceClient.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">
