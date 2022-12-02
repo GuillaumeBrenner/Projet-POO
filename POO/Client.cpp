@@ -10,7 +10,7 @@ Mappage::Client::Client()
 
 String^ Mappage::Client::SELECT()
 {
-    return "SELECT [numClient], [nomC], [prenomC] FROM [poo].[dbo].[Client]";
+    return "SELECT [numClient] AS ID, [nomC] AS NOM , [prenomC] AS PRENOM, [dateNaissance] AS 'DATE DE NAISSANCE', [datePreAchat] AS 'DATE PREMIER ACHAT' FROM[poo].[dbo].[Client]";
 }
 
 String^ Mappage::Client::INSERT()
@@ -31,6 +31,8 @@ String^ Mappage::Client::DELETE()
         "WHERE(id_personne = " + this->getId() + ");";
 }
 
+// SETTERS
+
 void Mappage::Client::setId(int id)
 {
     if (id > 0)
@@ -39,7 +41,7 @@ void Mappage::Client::setId(int id)
     }
 }
 
-void Mappage::Client::setNom(System::String^ nom)
+void Mappage::Client::setNom(String^ nom)
 {
     if (!System::String::IsNullOrEmpty(nom))
     {
@@ -47,7 +49,7 @@ void Mappage::Client::setNom(System::String^ nom)
     }
 }
 
-void Mappage::Client::setPrenom(System::String^ prenom)
+void Mappage::Client::setPrenom(String^ prenom)
 {
     if (!System::String::IsNullOrEmpty(prenom))
     {
@@ -55,17 +57,19 @@ void Mappage::Client::setPrenom(System::String^ prenom)
     }
 }
 
+// GETTERS
+
 int Mappage::Client::getId()
 {
     return this->idClient;
 }
 
-System::String^ Mappage::Client::getNom()
+String^ Mappage::Client::getNom()
 {
     return this->nom;
 }
 
-System::String^ Mappage::Client::getPrenom()
+String^ Mappage::Client::getPrenom()
 {
     return this->prenom;
 }

@@ -1,13 +1,13 @@
 #include "ServiceClient.h"
 
 
-Services::ServiceClient::ServiceClient(void)
+Services::ServiceClient::ServiceClient()
 {
     this->cad = gcnew Composants::Cad();
     this->client = gcnew Mappage::Client();
 }
 
-DataSet^ Services::ServiceClient::listeClients(System::String^ dataTableName)
+DataSet^ Services::ServiceClient::listeClients(String^ dataTableName)
 {
     System::String^ sql;
 

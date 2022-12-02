@@ -23,9 +23,7 @@ namespace Services
 
     private:
         Composants::Cad^ cad;
-
         Mappage::Client^ client;
-
 
         DataSet^ dataSet;
     };

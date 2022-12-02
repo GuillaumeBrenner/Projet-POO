@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ServiceClient.h"
+#include "ServiceProduit.h"
 
 namespace POO {
 
@@ -240,7 +241,9 @@ private: System::Windows::Forms::Label^ label26;
 		   // Un cache memoire sur la table des personnes
 	private: System::Data::DataSet^ dataset;
 		   // Un cache memoire sur la table des adresses
-		   // L'index courant de la personne affichee
+		   // L'index courant de la personne affichee*
+
+	private: Services::ServiceProduit^ gestionProduits;
 
 
 
@@ -456,7 +459,7 @@ private: System::Windows::Forms::Label^ label26;
 			this->panel2->Controls->Add(this->clientForm);
 			this->panel2->Location = System::Drawing::Point(218, 12);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(1288, 578);
+			this->panel2->Size = System::Drawing::Size(1471, 578);
 			this->panel2->TabIndex = 6;
 			// 
 			// statsForm
@@ -1150,7 +1153,7 @@ private: System::Windows::Forms::Label^ label26;
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(817, 547);
+			this->dataGridView1->Size = System::Drawing::Size(1006, 547);
 			this->dataGridView1->TabIndex = 39;
 			// 
 			// clientForm
@@ -1297,7 +1300,7 @@ private: System::Windows::Forms::Label^ label26;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1482, 619);
+			this->ClientSize = System::Drawing::Size(1701, 619);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Name = L"Main";
@@ -1321,6 +1324,7 @@ private: System::Windows::Forms::Label^ label26;
 #pragma endregion
 	private: System::Void Main_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->gestionClients = gcnew Services::ServiceClient();
+		this->gestionProduits = gcnew Services::ServiceProduit();
 	}
 private: System::Void newButton_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1344,6 +1348,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	this->produitForm->Visible = false;
 	this->personnelForm->Visible = false;
 	this->statsForm->Visible = false;
+	this->commandeForm->Visible = false;
 
 	this->dataGridView1->Refresh();
 	this->dataset = this->gestionClients->listeClients("Rsl");
@@ -1367,6 +1372,11 @@ private: System::Void btnProduit_Click(System::Object^ sender, System::EventArgs
 	this->commandeForm->Visible = false;
 	this->personnelForm->Visible = false;
 	this->statsForm->Visible = false;
+
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionProduits->listeProduits("Rsl");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "Rsl";
 }
 private: System::Void btnStats_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->statsForm->Visible = true;

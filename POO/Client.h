@@ -25,16 +25,17 @@ namespace Mappage
 
         // Accesseurs et setters classique de donnees
         void setId(int id);
-        void setNom(System::String^ nom);
-        void setPrenom(System::String^ prenom);
+        void setNom(String^ nom);
+        void setPrenom(String^ prenom);
 
         int getId();
-        System::String^ getNom(void);
-        System::String^ getPrenom(void);
+        String^ getNom();
+        String^ getPrenom();
 
 
     private:
         String^ sqlrequest;
+
         int idClient;
         String^ nom;
         String^ prenom;
