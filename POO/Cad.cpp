@@ -5,7 +5,7 @@ using namespace Composants;
 Composants::Cad::Cad(void)
 {
 
-	this->connectionInformation = "Data Source=HK;Initial Catalog=poo;User ID=HK;Password=azerty";
+	this->connectionInformation = "Data Source=DESKTOP-FNLSNBN\\MSSQLYOUSSEF;Initial Catalog=poo;User ID=youssef;Password=youssef";
 
     this->sqlRequest = "RIEN";
 
