@@ -15,7 +15,7 @@ namespace Services
 
         //DataSet^ adressesClient(int idPersonne, String^ dataTableName);
 
-        //int ajouter(String^ nom, String^ prenom, array<String^>^ adresses);
+        void addClient(String^ nom, String^ prenom);
 
         //void modifier(int idPersonne, String^ nom, String^ prenom, array<String^>^ adresses);
 
