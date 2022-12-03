@@ -17,13 +17,13 @@ String^ Mappage::Client::SELECT()
 
 String^ Mappage::Client::INSERT()
 {
-    return "INSERT INTO Client(nomC, prenomC) VALUES('" + this->nom + "','" + this->prenom + "');";
+    return "INSERT INTO Client(nomC, prenomC, dateNaissance, datePreAchat) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateNaissance + "', '" + this->dateNaissance + "');";
 }
 
 String^ Mappage::Client::UPDATE()
 {
     return "UPDATE Client " +
-        "SET nomC = '" + this->getNom() + "', prenomC = '" + this->getPrenom() + "' " +
+        "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "' " +
         "WHERE(id_personne = " + this->getId() + ");";
 }
 
