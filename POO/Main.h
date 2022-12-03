@@ -192,19 +192,23 @@ private: System::Windows::Forms::TextBox^ seuil;
 
 
 private: System::Windows::Forms::Panel^ personnelForm;
-private: System::Windows::Forms::TextBox^ dateEmbauche;
-private: System::Windows::Forms::TextBox^ adressePersonnel;
+
+private: System::Windows::Forms::TextBox^ superieurP;
+private: System::Windows::Forms::TextBox^ adresseP_textbox;
 
 
-private: System::Windows::Forms::TextBox^ superieur;
+
+
 
 private: System::Windows::Forms::Label^ label7;
 private: System::Windows::Forms::Label^ label9;
 private: System::Windows::Forms::Label^ label10;
-private: System::Windows::Forms::TextBox^ prenomPersonnel;
+private: System::Windows::Forms::TextBox^ prenomP_textbox;
+
 
 private: System::Windows::Forms::Label^ label11;
-private: System::Windows::Forms::TextBox^ nomPersonnel;
+private: System::Windows::Forms::TextBox^ nomP_textbox;
+
 
 private: System::Windows::Forms::Label^ label12;
 private: System::Windows::Forms::Panel^ clientForm;
@@ -268,8 +272,11 @@ private: System::Windows::Forms::Label^ label26;
 	   // Le service qui gere les donnees des personnes
 	private: Services::ServiceClient^ gestionClients;
 	private: Services::ServiceProduit^ gestionProduits;
+	private: Services::ServicePersonnel^ gestionPersonnels;
+
 		   // Un cache memoire sur la table des personnes
 	private: System::Data::DataSet^ dataset;
+
 private: System::Windows::Forms::Button^ button1;
 private: System::Windows::Forms::Button^ deleteCommande_btn;
 
@@ -311,6 +318,7 @@ private: System::Windows::Forms::TextBox^ textBox1;
 private: System::Windows::Forms::DateTimePicker^ datePreAchat_box;
 
 private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
+private: System::Windows::Forms::DateTimePicker^ dateEmbauche;
 
 
 
@@ -420,15 +428,14 @@ private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
 			this->deletePersonnel_btn = (gcnew System::Windows::Forms::Button());
 			this->updatePersonnel_btn = (gcnew System::Windows::Forms::Button());
 			this->addPersonnel_btn = (gcnew System::Windows::Forms::Button());
-			this->dateEmbauche = (gcnew System::Windows::Forms::TextBox());
-			this->adressePersonnel = (gcnew System::Windows::Forms::TextBox());
-			this->superieur = (gcnew System::Windows::Forms::TextBox());
+			this->superieurP = (gcnew System::Windows::Forms::TextBox());
+			this->adresseP_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->prenomPersonnel = (gcnew System::Windows::Forms::TextBox());
+			this->prenomP_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->nomPersonnel = (gcnew System::Windows::Forms::TextBox());
+			this->nomP_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->produitForm = (gcnew System::Windows::Forms::Panel());
 			this->label27 = (gcnew System::Windows::Forms::Label());
@@ -450,6 +457,7 @@ private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
 			this->designation = (gcnew System::Windows::Forms::TextBox());
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->dateEmbauche = (gcnew System::Windows::Forms::DateTimePicker());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->clientForm->SuspendLayout();
@@ -605,13 +613,14 @@ private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
 			// 
 			// deleteClient_btn
 			// 
+			this->deleteClient_btn->BackColor = System::Drawing::Color::Red;
 			this->deleteClient_btn->Location = System::Drawing::Point(14, 496);
 			this->deleteClient_btn->Margin = System::Windows::Forms::Padding(4);
 			this->deleteClient_btn->Name = L"deleteClient_btn";
 			this->deleteClient_btn->Size = System::Drawing::Size(182, 28);
 			this->deleteClient_btn->TabIndex = 44;
 			this->deleteClient_btn->Text = L"Supprimer";
-			this->deleteClient_btn->UseVisualStyleBackColor = true;
+			this->deleteClient_btn->UseVisualStyleBackColor = false;
 			// 
 			// updateClient_btn
 			// 
@@ -625,13 +634,14 @@ private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
 			// 
 			// addClient_btn
 			// 
+			this->addClient_btn->BackColor = System::Drawing::Color::LimeGreen;
 			this->addClient_btn->Location = System::Drawing::Point(14, 424);
 			this->addClient_btn->Margin = System::Windows::Forms::Padding(4);
 			this->addClient_btn->Name = L"addClient_btn";
 			this->addClient_btn->Size = System::Drawing::Size(182, 28);
 			this->addClient_btn->TabIndex = 42;
 			this->addClient_btn->Text = L"Ajouter";
-			this->addClient_btn->UseVisualStyleBackColor = true;
+			this->addClient_btn->UseVisualStyleBackColor = false;
 			this->addClient_btn->Click += gcnew System::EventHandler(this, &Main::addClient_btn_Click);
 			// 
 			// adresse_fact
@@ -1170,21 +1180,21 @@ private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
 			// personnelForm
 			// 
 			this->personnelForm->BackColor = System::Drawing::SystemColors::GrayText;
+			this->personnelForm->Controls->Add(this->dateEmbauche);
 			this->personnelForm->Controls->Add(this->button9);
 			this->personnelForm->Controls->Add(this->deletePersonnel_btn);
 			this->personnelForm->Controls->Add(this->updatePersonnel_btn);
 			this->personnelForm->Controls->Add(this->addPersonnel_btn);
-			this->personnelForm->Controls->Add(this->dateEmbauche);
-			this->personnelForm->Controls->Add(this->adressePersonnel);
-			this->personnelForm->Controls->Add(this->superieur);
+			this->personnelForm->Controls->Add(this->superieurP);
+			this->personnelForm->Controls->Add(this->adresseP_textbox);
 			this->personnelForm->Controls->Add(this->label7);
 			this->personnelForm->Controls->Add(this->label9);
 			this->personnelForm->Controls->Add(this->label10);
-			this->personnelForm->Controls->Add(this->prenomPersonnel);
+			this->personnelForm->Controls->Add(this->prenomP_textbox);
 			this->personnelForm->Controls->Add(this->label11);
-			this->personnelForm->Controls->Add(this->nomPersonnel);
+			this->personnelForm->Controls->Add(this->nomP_textbox);
 			this->personnelForm->Controls->Add(this->label12);
-			this->personnelForm->Location = System::Drawing::Point(15, 23);
+			this->personnelForm->Location = System::Drawing::Point(12, 20);
 			this->personnelForm->Name = L"personnelForm";
 			this->personnelForm->Size = System::Drawing::Size(410, 545);
 			this->personnelForm->TabIndex = 42;
@@ -1201,13 +1211,14 @@ private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
 			// 
 			// deletePersonnel_btn
 			// 
+			this->deletePersonnel_btn->BackColor = System::Drawing::Color::Red;
 			this->deletePersonnel_btn->Location = System::Drawing::Point(12, 496);
 			this->deletePersonnel_btn->Margin = System::Windows::Forms::Padding(4);
 			this->deletePersonnel_btn->Name = L"deletePersonnel_btn";
 			this->deletePersonnel_btn->Size = System::Drawing::Size(182, 28);
 			this->deletePersonnel_btn->TabIndex = 44;
 			this->deletePersonnel_btn->Text = L"Supprimer";
-			this->deletePersonnel_btn->UseVisualStyleBackColor = true;
+			this->deletePersonnel_btn->UseVisualStyleBackColor = false;
 			// 
 			// updatePersonnel_btn
 			// 
@@ -1221,82 +1232,75 @@ private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
 			// 
 			// addPersonnel_btn
 			// 
+			this->addPersonnel_btn->BackColor = System::Drawing::Color::LimeGreen;
 			this->addPersonnel_btn->Location = System::Drawing::Point(12, 424);
 			this->addPersonnel_btn->Margin = System::Windows::Forms::Padding(4);
 			this->addPersonnel_btn->Name = L"addPersonnel_btn";
 			this->addPersonnel_btn->Size = System::Drawing::Size(182, 28);
 			this->addPersonnel_btn->TabIndex = 42;
 			this->addPersonnel_btn->Text = L"Ajouter";
-			this->addPersonnel_btn->UseVisualStyleBackColor = true;
+			this->addPersonnel_btn->UseVisualStyleBackColor = false;
+			this->addPersonnel_btn->Click += gcnew System::EventHandler(this, &Main::addPersonnel_btn_Click);
 			// 
-			// dateEmbauche
+			// superieurP
 			// 
-			this->dateEmbauche->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->superieurP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dateEmbauche->Location = System::Drawing::Point(15, 186);
-			this->dateEmbauche->Name = L"dateEmbauche";
-			this->dateEmbauche->Size = System::Drawing::Size(375, 38);
-			this->dateEmbauche->TabIndex = 22;
+			this->superieurP->Location = System::Drawing::Point(15, 263);
+			this->superieurP->Name = L"superieurP";
+			this->superieurP->Size = System::Drawing::Size(375, 38);
+			this->superieurP->TabIndex = 23;
 			// 
-			// adressePersonnel
+			// adresseP_textbox
 			// 
-			this->adressePersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular,
+			this->adresseP_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->adressePersonnel->Location = System::Drawing::Point(15, 340);
-			this->adressePersonnel->Name = L"adressePersonnel";
-			this->adressePersonnel->Size = System::Drawing::Size(375, 38);
-			this->adressePersonnel->TabIndex = 23;
-			// 
-			// superieur
-			// 
-			this->superieur->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->superieur->Location = System::Drawing::Point(15, 263);
-			this->superieur->Name = L"superieur";
-			this->superieur->Size = System::Drawing::Size(375, 38);
-			this->superieur->TabIndex = 21;
+			this->adresseP_textbox->Location = System::Drawing::Point(15, 340);
+			this->adresseP_textbox->Name = L"adresseP_textbox";
+			this->adresseP_textbox->Size = System::Drawing::Size(375, 38);
+			this->adresseP_textbox->TabIndex = 21;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(10, 235);
+			this->label7->Location = System::Drawing::Point(10, 231);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(97, 25);
+			this->label7->Size = System::Drawing::Size(119, 29);
 			this->label7->TabIndex = 19;
 			this->label7->Text = L"Supérieur";
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(15, 312);
+			this->label9->Location = System::Drawing::Point(15, 308);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(85, 25);
+			this->label9->Size = System::Drawing::Size(102, 29);
 			this->label9->TabIndex = 17;
 			this->label9->Text = L"Adresse";
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(10, 158);
+			this->label10->Location = System::Drawing::Point(10, 155);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(152, 25);
+			this->label10->Size = System::Drawing::Size(184, 29);
 			this->label10->TabIndex = 16;
 			this->label10->Text = L"Date Embauche";
 			// 
-			// prenomPersonnel
+			// prenomP_textbox
 			// 
-			this->prenomPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->prenomP_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->prenomPersonnel->Location = System::Drawing::Point(15, 111);
-			this->prenomPersonnel->Name = L"prenomPersonnel";
-			this->prenomPersonnel->Size = System::Drawing::Size(375, 38);
-			this->prenomPersonnel->TabIndex = 15;
+			this->prenomP_textbox->Location = System::Drawing::Point(15, 111);
+			this->prenomP_textbox->Name = L"prenomP_textbox";
+			this->prenomP_textbox->Size = System::Drawing::Size(375, 38);
+			this->prenomP_textbox->TabIndex = 15;
 			// 
 			// label11
 			// 
@@ -1309,14 +1313,14 @@ private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
 			this->label11->TabIndex = 13;
 			this->label11->Text = L"Prénom";
 			// 
-			// nomPersonnel
+			// nomP_textbox
 			// 
-			this->nomPersonnel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->nomP_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->nomPersonnel->Location = System::Drawing::Point(15, 35);
-			this->nomPersonnel->Name = L"nomPersonnel";
-			this->nomPersonnel->Size = System::Drawing::Size(375, 38);
-			this->nomPersonnel->TabIndex = 14;
+			this->nomP_textbox->Location = System::Drawing::Point(15, 35);
+			this->nomP_textbox->Name = L"nomP_textbox";
+			this->nomP_textbox->Size = System::Drawing::Size(375, 38);
+			this->nomP_textbox->TabIndex = 14;
 			// 
 			// label12
 			// 
@@ -1546,6 +1550,21 @@ private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
 			this->dataGridView1->Size = System::Drawing::Size(1006, 547);
 			this->dataGridView1->TabIndex = 39;
 			// 
+			// dateEmbauche
+			// 
+			this->dateEmbauche->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->dateEmbauche->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateEmbauche->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->dateEmbauche->Location = System::Drawing::Point(15, 193);
+			this->dateEmbauche->MaxDate = System::DateTime(2022, 12, 3, 0, 0, 0, 0);
+			this->dateEmbauche->MinDate = System::DateTime(1990, 1, 1, 0, 0, 0, 0);
+			this->dateEmbauche->Name = L"dateEmbauche";
+			this->dateEmbauche->Size = System::Drawing::Size(375, 34);
+			this->dateEmbauche->TabIndex = 46;
+			this->dateEmbauche->Value = System::DateTime(2022, 12, 3, 0, 0, 0, 0);
+			// 
 			// Main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1572,9 +1591,11 @@ private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
 
 		}
 #pragma endregion
+		//INITIALISATION DES DONNEES AU DEMARRAGE
 	private: System::Void Main_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->gestionClients = gcnew Services::ServiceClient();
 		this->gestionProduits = gcnew Services::ServiceProduit();
+		this->gestionPersonnels = gcnew Services::ServicePersonnel();
 	}
 private: System::Void newButton_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1593,6 +1614,8 @@ private: System::Void label19_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void tableLayoutPanel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
+
+	   //MENU CLIENT
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->clientForm->Visible = true;
 	this->produitForm->Visible = false;
@@ -1609,13 +1632,22 @@ private: System::Void button_s_seuil_Click(System::Object^ sender, System::Event
 }
 private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
+	   //MENU PERSONNEL
 private: System::Void btnPersonnel_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->personnelForm->Visible = true;
 	this->commandeForm->Visible = false;
 	this->clientForm->Visible = false;
 	this->produitForm->Visible = false;
 	this->statsForm->Visible = false;
+
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionPersonnels->listePersonnels("Rsl");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "Rsl";
 }
+
+	   //MENU PRODUIT
 private: System::Void btnProduit_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->produitForm->Visible = true;
 	this->clientForm->Visible = false;
@@ -1628,6 +1660,8 @@ private: System::Void btnProduit_Click(System::Object^ sender, System::EventArgs
 	this->dataGridView1->DataSource = this->dataset;
 	this->dataGridView1->DataMember = "Rsl";
 }
+
+	   //MENU ACCEUIL
 private: System::Void btnStats_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->statsForm->Visible = true;
 	this->commandeForm->Visible = false;
@@ -1637,6 +1671,8 @@ private: System::Void btnStats_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void statsForm_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
+
+	   //MENU COMMANDE
 private: System::Void btnCommande_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->commandeForm->Visible = true;
 	this->statsForm->Visible = false;
@@ -1650,9 +1686,24 @@ private: System::Void textBox13_TextChanged(System::Object^ sender, System::Even
 }
 private: System::Void saveButton_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
+	   //BUTTON AJOUTER UN CLIENT
 private: System::Void addClient_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->gestionClients->addClient(this->nomC_textbox->Text, this->prenomC_textBox->Text, this->dateNaiss_box->MaxDate, this->datePreAchat_box->MaxDate);
+	
 	this->dataGridView1->Refresh();
+	this->dataset = this->gestionClients->listeClients("Rsl");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "Rsl";
+}
+	   //BUTTON AJOUTER UN PERSONNEL
+private: System::Void addPersonnel_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->gestionPersonnels->addPersonnel(this->nomP_textbox->Text, this->prenomP_textbox->Text, this->dateEmbauche->MaxDate, this->adresseP_textbox->Text, this->superieurP->Text);
+
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionPersonnels->listePersonnels("Rsl");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "Rsl";
 }
 };
 }
