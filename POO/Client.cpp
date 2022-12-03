@@ -6,6 +6,8 @@ Mappage::Client::Client()
     this->idClient = -1;
     this->nom = "RIEN";
     this->prenom = "RIEN";
+    this->dateNaissance = DateTime::Now;
+    this->datePreAchat = DateTime::Now;
 }
 
 String^ Mappage::Client::SELECT()
@@ -15,7 +17,7 @@ String^ Mappage::Client::SELECT()
 
 String^ Mappage::Client::INSERT()
 {
-    return "INSERT INTO Client(nomC, prenomC) VALUES('" + this->nom + "','" + this->prenom + "');";
+    return "INSERT INTO Client(nomC, prenomC, dateNaissance, datePreAchat) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateNaissance + "', '" + this->dateNaissance + "');";
 }
 
 String^ Mappage::Client::UPDATE()
@@ -27,8 +29,7 @@ String^ Mappage::Client::UPDATE()
 
 String^ Mappage::Client::DELETE()
 {
-    return "DELETE FROM Client " +
-        "WHERE(id_personne = " + this->getId() + ");";
+    return "DELETE FROM Client WHERE(numClient = " + this->getId() + ");";
 }
 
 // SETTERS
@@ -43,7 +44,7 @@ void Mappage::Client::setId(int id)
 
 void Mappage::Client::setNom(String^ nom)
 {
-    if (!System::String::IsNullOrEmpty(nom))
+    if (!String::IsNullOrEmpty(nom))
     {
         this->nom = nom;
     }
@@ -51,10 +52,20 @@ void Mappage::Client::setNom(String^ nom)
 
 void Mappage::Client::setPrenom(String^ prenom)
 {
-    if (!System::String::IsNullOrEmpty(prenom))
+    if (!String::IsNullOrEmpty(prenom))
     {
         this->prenom = prenom;
     }
+}
+
+void Mappage::Client::setDateNaissance(DateTime dateNaissance)
+{
+    this->dateNaissance = dateNaissance;
+}
+
+void Mappage::Client::setDatePreAchat(DateTime datePreAchat)
+{
+    this->datePreAchat = datePreAchat;
 }
 
 // GETTERS
@@ -72,4 +83,14 @@ String^ Mappage::Client::getNom()
 String^ Mappage::Client::getPrenom()
 {
     return this->prenom;
+}
+
+DateTime Mappage::Client::getDateNaissance()
+{
+    return this->dateNaissance;
+}
+
+DateTime Mappage::Client::getDatePreAchat()
+{
+    return this->dateNaissance;
 }
