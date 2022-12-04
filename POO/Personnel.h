@@ -22,7 +22,7 @@ namespace Mappage
         void setId(int id);
         void setNom(String^ nom);
         void setPrenom(String^ prenom);
-        void setDateEmbauche(DateTime dateNaissance);
+        void setDateEmbauche(DateTime dateEmbauche);
         void setAdresse(String^ adresse);
         void setSuperieur(String^ superieur);
 

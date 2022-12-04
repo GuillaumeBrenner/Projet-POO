@@ -28,3 +28,14 @@ void Services::ServiceClient::addClient(String^ nom, String^ prenom, DateTime da
     this->cad->actionRows(sql);
 }
 
+void Services::ServiceClient::deleteClient(int numClient)
+{
+    this->client->setId(numClient);
+    String^ sql;
+
+    this->client->getId();
+
+    sql = this->client->DELETE();
+    this->cad->actionRows(sql);
+}
+

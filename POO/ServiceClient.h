@@ -19,7 +19,7 @@ namespace Services
 
         //void modifier(int idPersonne, String^ nom, String^ prenom, array<String^>^ adresses);
 
-        //void supprimer(int idPersonne);
+        void deleteClient(int numClient);
 
     private:
         Composants::Cad^ cad;

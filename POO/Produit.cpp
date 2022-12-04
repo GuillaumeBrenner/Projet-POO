@@ -13,7 +13,12 @@ Mappage::Produit::Produit()
 
 String^ Mappage::Produit::SELECT()
 {
-    return "SELECT [idProduit] AS ID, [refProduit] AS REFERENCE, [designation] AS DESIGNATION, [prixHT] AS 'PRIX HT', [qteStock] AS QUANTITE, [seuilApp] AS SEUIL , [tauxTVA] AS 'TAUX TVA', [idCategorie] AS CATEGORIE FROM[poo].[dbo].[Produit]";
+    return "SELECT [idProduit] AS ID, [reference] AS REFERENCE, [designation] AS DESIGNATION, [prixHt] AS 'PRIX HT', [quantite] AS QUANTITE, [seuil] AS SEUIL , [tauxTva] AS 'TAUX TVA', [categorie] AS CATEGORIE FROM[poo].[dbo].[Produit]";
+}
+
+String^ Mappage::Produit::INSERT()
+{
+    return "INSERT INTO Produit(reference, designation, prixHt, quantite, seuil, tauxTva, categorie) VALUES('" + this->reference + "','" + this->designation + "', '" + this->prixHt + "', '" + this->quantite + "', '" + this->seuil + "',  '" + this->tauxTva + "',  '" + this->categorie + "');";
 }
 
 // SETTERS
@@ -26,11 +31,11 @@ void Mappage::Produit::setId(int id)
     }
 }
 
-void Mappage::Produit::setRef(String^ nom)
+void Mappage::Produit::setRef(String^ reference)
 {
     if (!String::IsNullOrEmpty(reference))
     {
-        this->reference = nom;
+        this->reference = reference;
     }
 }
 

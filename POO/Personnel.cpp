@@ -12,12 +12,12 @@ Mappage::Personnel::Personnel()
 
 String^ Mappage::Personnel::SELECT()
 {
-    return "SELECT [idPersonnel] AS ID, [nomP] AS NOM , [prenomP] AS PRENOM, [dateEmbauche] AS 'DATE EMBAUCHE', [adresse] AS 'ADRESSE', [superieur] AS 'SUPERIEUR' FROM [poo].[dbo].[Personnel]";
+    return "SELECT [idPersonnel] AS ID, [nom] AS NOM , [prenom] AS PRENOM, [dateEmbauche] AS 'DATE EMBAUCHE', [adresse] AS 'ADRESSE', [superieur] AS 'SUPERIEUR' FROM [poo].[dbo].[Personnel]";
 }
 
 String^ Mappage::Personnel::INSERT()
 {
-    return "INSERT INTO Client(nomP, prenomP, dateEmbauche, adresse, superieur) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateEmbauche + "', '" + this->adresse + "', '" + this->superieur + "');";
+    return "INSERT INTO Client(nom, prenom, dateEmbauche, adresse, superieur) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateEmbauche + "', '" + this->adresse + "', '" + this->superieur + "');";
 }
 
 String^ Mappage::Personnel::UPDATE()
@@ -29,7 +29,7 @@ String^ Mappage::Personnel::UPDATE()
 
 String^ Mappage::Personnel::DELETE()
 {
-    return "DELETE FROM Personnel WHERE(numClient = " + this->getId() + ");";
+    return "DELETE FROM Personnel WHERE(idPersonnel = " + this->getId() + ");";
 }
 
 // SETTERS
