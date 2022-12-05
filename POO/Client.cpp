@@ -12,24 +12,24 @@ Mappage::Client::Client()
 
 String^ Mappage::Client::SELECT()
 {
-    return "SELECT [numClient] AS ID, [nomC] AS NOM , [prenomC] AS PRENOM, [dateNaissance] AS 'DATE DE NAISSANCE', [datePreAchat] AS 'DATE PREMIER ACHAT' FROM[poo].[dbo].[Client]";
+    return "SELECT [numClient] AS ID, [nom] AS NOM , [prenom] AS PRENOM, [dateNaissance] AS 'DATE DE NAISSANCE', [datePreAchat] AS 'DATE PREMIER ACHAT' FROM [poo].[dbo].[Client]";
 }
 
 String^ Mappage::Client::INSERT()
 {
-    return "INSERT INTO Client(nomC, prenomC, dateNaissance, datePreAchat) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateNaissance + "', '" + this->dateNaissance + "');";
+    return "INSERT INTO Client(nom, prenom, dateNaissance, datePreAchat) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateNaissance + "', '" + this->datePreAchat + "');";
 }
 
 String^ Mappage::Client::UPDATE()
 {
-    return "UPDATE Client " +
-        "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "' " +
-        "WHERE(id_personne = " + this->getId() + ");";
+    return "UPDATE [poo].[dbo].[Client] " +
+        "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "', dateNaissance = '" + this->getDateNaissance() + "', datePreAchat = ' " + this->getDatePreAchat() +
+        "WHERE numClient = " + this->getId() + ";";
 }
 
 String^ Mappage::Client::DELETE()
 {
-    return "DELETE FROM Client WHERE(numClient = " + this->getId() + ");";
+    return "DELETE FROM [poo].[dbo].[Client] WHERE numClient = " + this->getId() + ";";
 }
 
 // SETTERS

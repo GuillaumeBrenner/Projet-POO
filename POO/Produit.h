@@ -11,16 +11,12 @@ namespace Mappage
         // Constructeur par defaut
         Produit();
 
-        // retourne le commande pour selectionner une personne dans la bdd
         String^ SELECT();
 
-        // retourne le commande pour ajouter une personne dans la bdd
-        //String^ INSERT();
+        String^ INSERT();
 
-        // retourne le commande pour mettre à jour une personne dans la bdd
         //String^ UPDATE();
 
-        // retourne le commande pour suppprimer une personne dans la bdd
         //String^ DELETE();
 
         // Accesseurs et setters classique de donnees
