@@ -13,9 +13,11 @@ namespace Services
 
         DataSet^ listeClients(String^ dataTableName);
 
+        DataSet^ clientById(int numClient, String^ dataTableName);
+
         void addClient(String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat);
 
-        void updateClient(String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat);
+        //void updateClient(String^ dataTableName);
 
         void deleteClient(int numClient);
 
