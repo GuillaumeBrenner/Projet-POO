@@ -13,13 +13,13 @@ namespace Services
 
         DataSet^ listePersonnels(String^ dataTableName);
 
-        //DataSet^ adressesClient(int idPersonne, String^ dataTableName);
+        DataSet^ PersonnelById(int idPersonnel, String^ dataTableName);
 
         void addPersonnel(String^ nom, String^ prenom, DateTime dateEmbauche, String^ adresse, String^ superieur);
 
         //void modifier(int idPersonne, String^ nom, String^ prenom, array<String^>^ adresses);
 
-        //void supprimer(int idPersonne);
+        void deletePersonnel(int idPersonne);
 
     private:
         Composants::Cad^ cad;

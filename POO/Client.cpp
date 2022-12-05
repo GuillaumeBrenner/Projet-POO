@@ -3,7 +3,7 @@
 
 Mappage::Client::Client()
 {
-    this->idClient = -1;
+    this->numClient = -1;
     this->nom = "RIEN";
     this->prenom = "RIEN";
     this->dateNaissance = DateTime::Now;
@@ -39,11 +39,11 @@ String^ Mappage::Client::DELETE()
 
 // SETTERS
 
-void Mappage::Client::setId(int id)
+void Mappage::Client::setId(int numClient)
 {
-    if (id > 0)
+    if (numClient > 0)
     {
-        this->idClient = id;
+        this->numClient = numClient;
     }
 }
 
@@ -93,7 +93,7 @@ void Mappage::Client::setAdresseLivraison(String^ adresseLivraison)
 
 int Mappage::Client::getId()
 {
-    return this->idClient;
+    return this->numClient;
 }
 
 String^ Mappage::Client::getNom()

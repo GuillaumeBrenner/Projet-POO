@@ -12,6 +12,8 @@ namespace Mappage
 
         String^ SELECT();
 
+        String^ SELECTBYID();
+
         String^ INSERT();
 
         String^ UPDATE();

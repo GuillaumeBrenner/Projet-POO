@@ -27,3 +27,28 @@ void Services::ServicePersonnel::addPersonnel(String^ nom, String^ prenom, DateT
     sql = this->personnel->INSERT();
     this->cad->actionRows(sql);
 }
+
+void Services::ServicePersonnel::deletePersonnel(int idPersonnel)
+{
+    this->personnel->setId(idPersonnel);
+    String^ sql;
+
+    this->personnel->getId();
+
+    sql = this->personnel->DELETE();
+    this->cad->actionRows(sql);
+}
+
+DataSet^ Services::ServicePersonnel::PersonnelById(int idPersonnel, String^ dataTableName)
+{
+
+    String^ sql;
+    sql = this->personnel->SELECTBYID();
+
+    //this->client->setId(numClient);
+    //this->dataSet = this->cad->getRows(sql, dataTableName);
+   // return this->dataSet;
+
+    //this->cad->actionRowsId(sql);
+    return this->cad->getRows(sql, dataTableName);
+}
