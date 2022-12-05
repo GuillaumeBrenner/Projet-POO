@@ -22,7 +22,7 @@ String^ Mappage::Client::INSERT()
 
 String^ Mappage::Client::UPDATE()
 {
-    return "UPDATE Client " +
+    return "UPDATE [poo].[dbo].[Client] " +
         "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "', dateNaissance = '" + this->getDateNaissance() + "', datePreAchat = ' " + this->getDatePreAchat() +
         "WHERE numClient = " + this->getId() + ";";
 }
