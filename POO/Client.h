@@ -26,12 +26,16 @@ namespace Mappage
         void setPrenom(String^ prenom);
         void setDateNaissance(DateTime dateNaissance);
         void setDatePreAchat(DateTime datePreAchat);
+        void setAdresseFacturation(String^ adresseFacturation);
+        void setAdresseLivraison(String^ adresseLivraison);
 
         int getId();
         String^ getNom();
         String^ getPrenom();
         DateTime getDateNaissance();
         DateTime getDatePreAchat();
+        String^ getAdresseFacturation();
+        String^ getAdresseLivraison();
 
 
     private:
@@ -42,6 +46,7 @@ namespace Mappage
         String^ prenom;
         DateTime dateNaissance;
         DateTime datePreAchat;
-
+        String^ adresseFacturation;
+        String^ adresseLivraison;
     };
 }

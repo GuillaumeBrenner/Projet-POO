@@ -326,8 +326,8 @@ private: System::Windows::Forms::DateTimePicker^ dateNaiss_box;
 private: System::Windows::Forms::DateTimePicker^ dateEmbauche;
 private: System::Windows::Forms::TextBox^ messageTxt;
 private: System::Windows::Forms::Label^ messageLabel;
-private: System::Windows::Forms::ComboBox^ adresse_fact;
-private: System::Windows::Forms::ComboBox^ adresse_livr;
+
+
 private: System::Windows::Forms::TextBox^ idClient_textbox;
 private: System::Windows::Forms::Label^ label28;
 private: System::Windows::Forms::Label^ label29;
@@ -336,13 +336,21 @@ private: System::Windows::Forms::Label^ label30;
 private: System::Windows::Forms::TextBox^ textBox2;
 private: System::Windows::Forms::Label^ label31;
 private: System::Windows::Forms::TextBox^ idProduit_textbox;
-private: System::Windows::Forms::Button^ endButton;
-private: System::Windows::Forms::Button^ nextButton;
-private: System::Windows::Forms::Button^ previousButton;
-private: System::Windows::Forms::Button^ firstButton;
+private: System::Windows::Forms::Button^ nextClient_btn;
+private: System::Windows::Forms::Button^ previousClient_btn;
 private: System::Windows::Forms::Button^ refreshData;
-
 private: System::Windows::Forms::Button^ showData;
+private: System::Windows::Forms::TextBox^ adresseLivr;
+private: System::Windows::Forms::TextBox^ adresseFact;
+
+
+
+
+
+
+
+
+
 
 
 
@@ -400,14 +408,10 @@ private: System::Windows::Forms::Button^ showData;
 			this->refreshData = (gcnew System::Windows::Forms::Button());
 			this->showData = (gcnew System::Windows::Forms::Button());
 			this->clientForm = (gcnew System::Windows::Forms::Panel());
-			this->endButton = (gcnew System::Windows::Forms::Button());
-			this->nextButton = (gcnew System::Windows::Forms::Button());
-			this->previousButton = (gcnew System::Windows::Forms::Button());
-			this->firstButton = (gcnew System::Windows::Forms::Button());
+			this->previousClient_btn = (gcnew System::Windows::Forms::Button());
+			this->nextClient_btn = (gcnew System::Windows::Forms::Button());
 			this->label28 = (gcnew System::Windows::Forms::Label());
 			this->idClient_textbox = (gcnew System::Windows::Forms::TextBox());
-			this->adresse_livr = (gcnew System::Windows::Forms::ComboBox());
-			this->adresse_fact = (gcnew System::Windows::Forms::ComboBox());
 			this->datePreAchat_box = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateNaiss_box = (gcnew System::Windows::Forms::DateTimePicker());
 			this->deleteClient_btn = (gcnew System::Windows::Forms::Button());
@@ -494,6 +498,8 @@ private: System::Windows::Forms::Button^ showData;
 			this->btnPanier = (gcnew System::Windows::Forms::Button());
 			this->btnCa = (gcnew System::Windows::Forms::Button());
 			this->btnMt = (gcnew System::Windows::Forms::Button());
+			this->adresseFact = (gcnew System::Windows::Forms::TextBox());
+			this->adresseLivr = (gcnew System::Windows::Forms::TextBox());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->clientForm->SuspendLayout();
@@ -587,39 +593,40 @@ private: System::Windows::Forms::Button^ showData;
 			// 
 			// refreshData
 			// 
-			this->refreshData->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->refreshData->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			this->refreshData->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->refreshData->Location = System::Drawing::Point(1000, 648);
+			this->refreshData->Location = System::Drawing::Point(1288, 23);
 			this->refreshData->Name = L"refreshData";
-			this->refreshData->Size = System::Drawing::Size(200, 41);
+			this->refreshData->Size = System::Drawing::Size(163, 33);
 			this->refreshData->TabIndex = 50;
 			this->refreshData->Text = L"Actualiser";
-			this->refreshData->UseVisualStyleBackColor = true;
-			this->refreshData->Click += gcnew System::EventHandler(this, &Main::button2_Click_1);
+			this->refreshData->UseVisualStyleBackColor = false;
+			this->refreshData->Click += gcnew System::EventHandler(this, &Main::refreshData_Click);
 			// 
 			// showData
 			// 
-			this->showData->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->showData->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			this->showData->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->showData->Location = System::Drawing::Point(1000, 556);
+			this->showData->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->showData->Location = System::Drawing::Point(1118, 23);
 			this->showData->Name = L"showData";
-			this->showData->Size = System::Drawing::Size(200, 41);
+			this->showData->Size = System::Drawing::Size(164, 36);
 			this->showData->TabIndex = 49;
 			this->showData->Text = L"Afficher";
-			this->showData->UseVisualStyleBackColor = true;
-			this->showData->Click += gcnew System::EventHandler(this, &Main::button1_Click);
+			this->showData->UseVisualStyleBackColor = false;
+			this->showData->Click += gcnew System::EventHandler(this, &Main::showData_Click);
 			// 
 			// clientForm
 			// 
 			this->clientForm->BackColor = System::Drawing::SystemColors::GrayText;
-			this->clientForm->Controls->Add(this->endButton);
-			this->clientForm->Controls->Add(this->nextButton);
-			this->clientForm->Controls->Add(this->previousButton);
-			this->clientForm->Controls->Add(this->firstButton);
+			this->clientForm->Controls->Add(this->adresseLivr);
+			this->clientForm->Controls->Add(this->adresseFact);
+			this->clientForm->Controls->Add(this->previousClient_btn);
+			this->clientForm->Controls->Add(this->nextClient_btn);
 			this->clientForm->Controls->Add(this->label28);
 			this->clientForm->Controls->Add(this->idClient_textbox);
-			this->clientForm->Controls->Add(this->adresse_livr);
-			this->clientForm->Controls->Add(this->adresse_fact);
 			this->clientForm->Controls->Add(this->datePreAchat_box);
 			this->clientForm->Controls->Add(this->dateNaiss_box);
 			this->clientForm->Controls->Add(this->deleteClient_btn);
@@ -638,46 +645,25 @@ private: System::Windows::Forms::Button^ showData;
 			this->clientForm->Size = System::Drawing::Size(413, 672);
 			this->clientForm->TabIndex = 43;
 			// 
-			// endButton
+			// previousClient_btn
 			// 
-			this->endButton->Location = System::Drawing::Point(311, 422);
-			this->endButton->Margin = System::Windows::Forms::Padding(4);
-			this->endButton->Name = L"endButton";
-			this->endButton->Size = System::Drawing::Size(100, 28);
-			this->endButton->TabIndex = 54;
-			this->endButton->Text = L">>";
-			this->endButton->UseVisualStyleBackColor = true;
+			this->previousClient_btn->Location = System::Drawing::Point(16, 427);
+			this->previousClient_btn->Name = L"previousClient_btn";
+			this->previousClient_btn->Size = System::Drawing::Size(112, 23);
+			this->previousClient_btn->TabIndex = 52;
+			this->previousClient_btn->Text = L"Précédent";
+			this->previousClient_btn->UseVisualStyleBackColor = true;
+			this->previousClient_btn->Click += gcnew System::EventHandler(this, &Main::previousClient_btn_Click);
 			// 
-			// nextButton
+			// nextClient_btn
 			// 
-			this->nextButton->Location = System::Drawing::Point(203, 422);
-			this->nextButton->Margin = System::Windows::Forms::Padding(4);
-			this->nextButton->Name = L"nextButton";
-			this->nextButton->Size = System::Drawing::Size(100, 28);
-			this->nextButton->TabIndex = 53;
-			this->nextButton->Text = L">";
-			this->nextButton->UseVisualStyleBackColor = true;
-			this->nextButton->Click += gcnew System::EventHandler(this, &Main::nextButton_Click);
-			// 
-			// previousButton
-			// 
-			this->previousButton->Location = System::Drawing::Point(95, 422);
-			this->previousButton->Margin = System::Windows::Forms::Padding(4);
-			this->previousButton->Name = L"previousButton";
-			this->previousButton->Size = System::Drawing::Size(100, 28);
-			this->previousButton->TabIndex = 52;
-			this->previousButton->Text = L"<";
-			this->previousButton->UseVisualStyleBackColor = true;
-			// 
-			// firstButton
-			// 
-			this->firstButton->Location = System::Drawing::Point(1, 422);
-			this->firstButton->Margin = System::Windows::Forms::Padding(4);
-			this->firstButton->Name = L"firstButton";
-			this->firstButton->Size = System::Drawing::Size(85, 28);
-			this->firstButton->TabIndex = 51;
-			this->firstButton->Text = L"<<";
-			this->firstButton->UseVisualStyleBackColor = true;
+			this->nextClient_btn->Location = System::Drawing::Point(288, 425);
+			this->nextClient_btn->Name = L"nextClient_btn";
+			this->nextClient_btn->Size = System::Drawing::Size(113, 25);
+			this->nextClient_btn->TabIndex = 51;
+			this->nextClient_btn->Text = L"Suivant";
+			this->nextClient_btn->UseVisualStyleBackColor = true;
+			this->nextClient_btn->Click += gcnew System::EventHandler(this, &Main::nextClient_btn_Click);
 			// 
 			// label28
 			// 
@@ -692,32 +678,13 @@ private: System::Windows::Forms::Button^ showData;
 			// 
 			// idClient_textbox
 			// 
+			this->idClient_textbox->Enabled = false;
 			this->idClient_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->idClient_textbox->Location = System::Drawing::Point(12, 35);
 			this->idClient_textbox->Name = L"idClient_textbox";
 			this->idClient_textbox->Size = System::Drawing::Size(194, 30);
 			this->idClient_textbox->TabIndex = 44;
-			// 
-			// adresse_livr
-			// 
-			this->adresse_livr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->adresse_livr->FormattingEnabled = true;
-			this->adresse_livr->Location = System::Drawing::Point(216, 314);
-			this->adresse_livr->Name = L"adresse_livr";
-			this->adresse_livr->Size = System::Drawing::Size(187, 37);
-			this->adresse_livr->TabIndex = 49;
-			// 
-			// adresse_fact
-			// 
-			this->adresse_fact->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->adresse_fact->FormattingEnabled = true;
-			this->adresse_fact->Location = System::Drawing::Point(9, 315);
-			this->adresse_fact->Name = L"adresse_fact";
-			this->adresse_fact->Size = System::Drawing::Size(194, 37);
-			this->adresse_fact->TabIndex = 44;
 			// 
 			// datePreAchat_box
 			// 
@@ -1338,7 +1305,7 @@ private: System::Windows::Forms::Button^ showData;
 			this->messageLabel->AutoSize = true;
 			this->messageLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->messageLabel->Location = System::Drawing::Point(442, 532);
+			this->messageLabel->Location = System::Drawing::Point(441, 584);
 			this->messageLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->messageLabel->Name = L"messageLabel";
 			this->messageLabel->Size = System::Drawing::Size(77, 20);
@@ -1347,12 +1314,12 @@ private: System::Windows::Forms::Button^ showData;
 			// 
 			// messageTxt
 			// 
-			this->messageTxt->Location = System::Drawing::Point(445, 556);
+			this->messageTxt->Location = System::Drawing::Point(445, 606);
 			this->messageTxt->Margin = System::Windows::Forms::Padding(4);
 			this->messageTxt->Multiline = true;
 			this->messageTxt->Name = L"messageTxt";
 			this->messageTxt->ReadOnly = true;
-			this->messageTxt->Size = System::Drawing::Size(548, 133);
+			this->messageTxt->Size = System::Drawing::Size(548, 83);
 			this->messageTxt->TabIndex = 48;
 			// 
 			// produitForm
@@ -1584,11 +1551,11 @@ private: System::Windows::Forms::Button^ showData;
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(445, 21);
+			this->dataGridView1->Location = System::Drawing::Point(445, 65);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1006, 508);
+			this->dataGridView1->Size = System::Drawing::Size(1006, 516);
 			this->dataGridView1->TabIndex = 39;
 			// 
 			// statsForm
@@ -1728,6 +1695,24 @@ private: System::Windows::Forms::Button^ showData;
 			this->btnMt->Text = L"Montant total";
 			this->btnMt->UseVisualStyleBackColor = false;
 			// 
+			// adresseFact
+			// 
+			this->adresseFact->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->adresseFact->Location = System::Drawing::Point(12, 314);
+			this->adresseFact->Name = L"adresseFact";
+			this->adresseFact->Size = System::Drawing::Size(194, 34);
+			this->adresseFact->TabIndex = 53;
+			// 
+			// adresseLivr
+			// 
+			this->adresseLivr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->adresseLivr->Location = System::Drawing::Point(223, 314);
+			this->adresseLivr->Name = L"adresseLivr";
+			this->adresseLivr->Size = System::Drawing::Size(181, 34);
+			this->adresseLivr->TabIndex = 54;
+			// 
 			// Main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1863,7 +1848,7 @@ private: System::Void saveButton_Click(System::Object^ sender, System::EventArgs
 
 	   //BUTTON AJOUTER UN CLIENT
 private: System::Void addClient_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->gestionClients->addClient(this->nomC_textbox->Text, this->prenomC_textBox->Text, this->dateNaiss_box->MaxDate, this->datePreAchat_box->MaxDate);
+	this->gestionClients->addClient(this->nomC_textbox->Text, this->prenomC_textBox->Text, this->dateNaiss_box->MaxDate, this->datePreAchat_box->MaxDate, this->adresseFact->Text, this->adresseLivr->Text);
 	
 	this->dataGridView1->Refresh();
 	this->dataset = this->gestionClients->listeClients("Rsl");
@@ -1873,12 +1858,18 @@ private: System::Void addClient_btn_Click(System::Object^ sender, System::EventA
 	// Reset des champs graphiques de l'interface
 	this->nomC_textbox->Clear();
 	this->prenomC_textBox->Clear();
+	this->adresseFact->Clear();
+	this->adresseFact->Clear();
 
 	MessageBox::Show("Opération réussie : le client a été créé", "Notification");
 }
+
+private: System::Void updateClient_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
 	   //BUTTON SUPPRIMER UN CLIENT
 private: System::Void deleteClient_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-		   // Confirmation
+	// Confirmation
 	if (MessageBox::Show("Voulez-vous vraiment supprimer ce client?", "Notification", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 	{
 		this->gestionClients->deleteClient(Convert::ToInt32(this->idClient_textbox->Text));
@@ -1888,11 +1879,54 @@ private: System::Void deleteClient_btn_Click(System::Object^ sender, System::Eve
 		this->dataGridView1->DataSource = this->dataset;
 		this->dataGridView1->DataMember = "Rsl";
 		MessageBox::Show("Opération réussie : Client supprimé", "Notification");
+
+		this->nomC_textbox->Clear();
+		this->prenomC_textBox->Clear();
+		this->adresseFact->Clear();
+		this->adresseFact->Clear();
 	}
 	else
 	{
 		MessageBox::Show("Opération annulée!", "Status");
 	}
+}
+
+private: void loadData(int index) {
+	// Mise à jour du cache bdd de la table de personne
+	this->dataset = this->gestionClients->listeClients("Client");
+	this->rowsCount = this->dataset->Tables["Client"]->Rows->Count;
+
+	// On remplit l'interface avec les informations de la personne index de la bdd
+	this->idClient_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[0]);
+	this->nomC_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[1]);
+	this->prenomC_textBox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[2]);
+	this->adresseFact->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[3]);
+	this->adresseLivr->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[4]);
+}
+
+private: System::Void nextClient_btn_Click(System::Object ^ sender, System::EventArgs ^ e) {
+	if (this->index < this->rowsCount - 1)
+	{
+		this->index++;
+		this->loadData(this->index);
+	}
+}
+private: System::Void previousClient_btn_Click(System::Object ^ sender, System::EventArgs ^ e) {
+	if (this->index > 0)
+	{
+		this->index--;
+		this->loadData(this->index);
+	}
+}
+private: System::Void refreshData_Click(System::Object ^ sender, System::EventArgs ^ e) {
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionClients->listeClients("Rsl");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "Rsl";
+}
+private: System::Void showData_Click(System::Object ^ sender, System::EventArgs ^ e) {
+	this->index = 0;
+	this->loadData(this->index);
 }
 										//*******************PERSONNEL************************
 
@@ -1910,47 +1944,6 @@ private: System::Void addPersonnel_btn_Click(System::Object^ sender, System::Eve
 	this->prenomP_textbox->Clear();
 	this->adresseP_textbox->Clear();
 	this->superieurP->Clear();
-}
-
-private: System::Void updateClient_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	//this->gestionClients->clientById(Convert::ToInt32(this->idClient_textbox->Text));
-
-	//int id = Convert::ToInt32(this->idClient_textbox->Text);
-	this->index = 0;
-	this->loadData(this->index);
-
-}
-
-		private: void loadData(int index)
-		{
-			// Mise à jour du cache bdd de la table de personne
-			this->dataset = this->gestionClients->listeClients("Client");
-			this->rowsCount = this->dataset->Tables["Client"]->Rows->Count;
-
-			// On remplit l'interface avec les informations de la personne index de la bdd
-			this->idClient_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[0]);
-			this->nomC_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[1]);
-			this->prenomC_textBox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[2]);
-
-		}
-
-
-private: System::Void nextButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->index < this->rowsCount - 1)
-	{
-		this->index++;
-		this->loadData(this->index);
-	}
-}
-private: System::Void showData(System::Object^ sender, System::EventArgs^ e) {
-
-}
-private: System::Void refreshData(System::Object^ sender, System::EventArgs^ e) {
-	this->dataGridView1->Refresh();
-	this->dataset = this->gestionClients->listeClients("Rsl");
-	this->dataGridView1->DataSource = this->dataset;
-	this->dataGridView1->DataMember = "Rsl";
 }
 };
 }

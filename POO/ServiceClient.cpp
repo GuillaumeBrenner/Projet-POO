@@ -15,7 +15,7 @@ DataSet^ Services::ServiceClient::listeClients(String^ dataTableName)
     return this->cad->getRows(sql, dataTableName);
 }
 
-void Services::ServiceClient::addClient(String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat)
+void Services::ServiceClient::addClient(String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat, String^ adresseFacturation, String^ adresseLivraison)
 {
     String^ sql;
 
@@ -23,6 +23,8 @@ void Services::ServiceClient::addClient(String^ nom, String^ prenom, DateTime da
     this->client->setPrenom(prenom);
     this->client->setDateNaissance(dateNaissance);
     this->client->setDatePreAchat(datePreAchat);
+    this->client->setAdresseFacturation(adresseFacturation);
+    this->client->setAdresseLivraison(adresseLivraison);
 
     sql = this->client->INSERT();
     this->cad->actionRows(sql);

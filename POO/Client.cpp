@@ -12,7 +12,7 @@ Mappage::Client::Client()
 
 String^ Mappage::Client::SELECT()
 {
-    return "SELECT [numClient] AS ID, [nom] AS NOM , [prenom] AS PRENOM, [dateNaissance] AS 'DATE DE NAISSANCE', [datePreAchat] AS 'DATE PREMIER ACHAT' FROM [poo].[dbo].[Client]";
+    return "SELECT [numClient] AS ID, [nom] AS NOM , [prenom] AS PRENOM, [dateNaissance] AS 'DATE DE NAISSANCE', [datePreAchat] AS 'DATE PREMIER ACHAT', [adresseFacturation] AS 'ADR FACTURATION', [adresseLivraison] AS 'ADR LIVRAISON' FROM [poo].[dbo].[Client]";
 }
 
 String^ Mappage::Client::SELECTBYID()
@@ -22,7 +22,7 @@ String^ Mappage::Client::SELECTBYID()
 
 String^ Mappage::Client::INSERT()
 {
-    return "INSERT INTO Client(nom, prenom, dateNaissance, datePreAchat) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateNaissance + "', '" + this->datePreAchat + "');";
+    return "INSERT INTO Client(nom, prenom, dateNaissance, datePreAchat, adresseFacturation, adresseLivraison) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateNaissance + "', '" + this->datePreAchat + "', '" + this->adresseFacturation + "', '" + this->adresseLivraison + "');";
 }
 
 String^ Mappage::Client::UPDATE()
@@ -73,6 +73,22 @@ void Mappage::Client::setDatePreAchat(DateTime datePreAchat)
     this->datePreAchat = datePreAchat;
 }
 
+void Mappage::Client::setAdresseFacturation(String^ adresseFacturation)
+{
+    if (!String::IsNullOrEmpty(adresseFacturation))
+    {
+        this->adresseFacturation = adresseFacturation;
+    }
+}
+
+void Mappage::Client::setAdresseLivraison(String^ adresseLivraison)
+{
+    if (!String::IsNullOrEmpty(adresseLivraison))
+    {
+        this->adresseLivraison = adresseLivraison;
+    }
+}
+
 // GETTERS
 
 int Mappage::Client::getId()
@@ -98,4 +114,14 @@ DateTime Mappage::Client::getDateNaissance()
 DateTime Mappage::Client::getDatePreAchat()
 {
     return this->dateNaissance;
+}
+
+String^ Mappage::Client::getAdresseFacturation()
+{
+    return this->adresseFacturation;
+}
+
+String^ Mappage::Client::getAdresseLivraison()
+{
+    return this->adresseFacturation;
 }
