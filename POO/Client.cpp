@@ -15,6 +15,11 @@ String^ Mappage::Client::SELECT()
     return "SELECT [numClient] AS ID, [nom] AS NOM , [prenom] AS PRENOM, [dateNaissance] AS 'DATE DE NAISSANCE', [datePreAchat] AS 'DATE PREMIER ACHAT' FROM [poo].[dbo].[Client]";
 }
 
+String^ Mappage::Client::SELECTBYID()
+{
+    return "SELECT [numClient], [nom], [prenom], [dateNaissance], [datePreAchat] FROM [poo].[dbo].[Client] WHERE numClient = " + this->getId() + ";";
+}
+
 String^ Mappage::Client::INSERT()
 {
     return "INSERT INTO Client(nom, prenom, dateNaissance, datePreAchat) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateNaissance + "', '" + this->datePreAchat + "');";
