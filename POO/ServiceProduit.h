@@ -13,13 +13,15 @@ namespace Services
 
         DataSet^ listeProduits(String^ dataTableName);
 
-        //DataSet^ adressesClient(int idPersonne, String^ dataTableName);
+        DataSet^ ProduitById(int idProduit, String^ dataTableName);
 
-        void addProduit(String^ reference, String^ designation, float prixHt, int quantite, int seuil, float tauxTva, array<String^>^ categorie);
+        void addProduit(String^ reference, String^ designation, float prixHt, int quantite, int seuil, float tauxTva, String^ categorie);
 
-        //void modifier(int idPersonne, String^ nom, String^ prenom, array<String^>^ adresses);
+        //void updateProduit(int idPersonne, String^ nom, String^ prenom, array<String^>^ adresses);
 
-        //void supprimer(int idPersonne);
+        void deleteProduit(int idProduit);
+
+        DataSet^ listeCategorie(String^ dataTableName);
 
     private:
         Composants::Cad^ cad;

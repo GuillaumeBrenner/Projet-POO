@@ -4,7 +4,6 @@
 
 namespace Mappage
 {
-    // Cette classe permet de transiter les informations contenues dans la bdd dans une classe de donnée
     ref class Produit
     {
     public:
@@ -13,11 +12,15 @@ namespace Mappage
 
         String^ SELECT();
 
+        String^ SELECTBYID();
+
+        String^ SELECTCAT();
+
         String^ INSERT();
 
-        //String^ UPDATE();
+        String^ UPDATE();
 
-        //String^ DELETE();
+        String^ DELETE();
 
         // Accesseurs et setters classique de donnees
         void setId(int id);
@@ -27,7 +30,7 @@ namespace Mappage
         void setQuantite(int quantite);
         void setSeuil(int seuil);
         void setTaux(float tauxTva);
-        void setCategorie(array<String^>^ categorie);
+        void setCategorie(String^ categorie);
 
         int getId();
         String^ getRef();
@@ -36,7 +39,7 @@ namespace Mappage
         int getQuantite();
         int getSeuil();
         float getTaux();
-        array<String^>^ getCategorie();
+        String^ getCategorie();
 
     private:
         String^ sqlrequest;
@@ -48,7 +51,7 @@ namespace Mappage
         int quantite;
         int seuil;
         float tauxTva;
-        array<String^>^ categorie;
+        String^ categorie;
 
     };
 }

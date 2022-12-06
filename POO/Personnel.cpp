@@ -29,7 +29,7 @@ String^ Mappage::Personnel::UPDATE()
 {
     return "UPDATE Personnel " +
         "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "' " +
-        "WHERE(id_personne = " + this->getId() + ");";
+        "WHERE(idPersonnel = " + this->getId() + ");";
 }
 
 String^ Mappage::Personnel::DELETE()

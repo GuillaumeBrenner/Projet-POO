@@ -13,7 +13,16 @@ DataSet^ Services::ServiceProduit::listeProduits(String^ dataTableName)
     sql = this->produit->SELECT();
     return this->cad->getRows(sql, dataTableName);
 }
-void Services::ServiceProduit::addProduit(String^ reference, String^ designation, float prixHt, int quantite, int seuil, float tauxTva, array<String^>^ categorie)
+
+DataSet^ Services::ServiceProduit::listeCategorie(String^ dataTableName)
+{
+    System::String^ sql;
+
+    sql = this->produit->SELECTCAT();
+    return this->cad->getRows(sql, dataTableName);
+}
+
+void Services::ServiceProduit::addProduit(String^ reference, String^ designation, float prixHt, int quantite, int seuil, float tauxTva, String^ categorie)
 {
     String^ sql;
 
@@ -27,5 +36,30 @@ void Services::ServiceProduit::addProduit(String^ reference, String^ designation
 
     sql = this->produit->INSERT();
     this->cad->actionRows(sql);
+}
+
+void Services::ServiceProduit::deleteProduit(int idProduit)
+{
+    this->produit->setId(idProduit);
+    String^ sql;
+
+    this->produit->getId();
+
+    sql = this->produit->DELETE();
+    this->cad->actionRows(sql);
+}
+
+DataSet^ Services::ServiceProduit::ProduitById(int idProduit, String^ dataTableName)
+{
+
+    String^ sql;
+    sql = this->produit->SELECTBYID();
+
+    //this->client->setId(numClient);
+    //this->dataSet = this->cad->getRows(sql, dataTableName);
+   // return this->dataSet;
+
+    //this->cad->actionRowsId(sql);
+    return this->cad->getRows(sql, dataTableName);
 }
 

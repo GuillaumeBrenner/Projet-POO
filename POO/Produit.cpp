@@ -13,12 +13,34 @@ Mappage::Produit::Produit()
 
 String^ Mappage::Produit::SELECT()
 {
-    return "SELECT [idProduit] AS ID, [reference] AS REFERENCE, [designation] AS DESIGNATION, [prixHt] AS 'PRIX HT', [quantite] AS QUANTITE, [seuil] AS SEUIL , [tauxTva] AS 'TAUX TVA', [categorie] AS CATEGORIE FROM[poo].[dbo].[Produit]";
+    return "SELECT [idProduit] AS ID, [reference] AS REFERENCE, [designation] AS DESIGNATION, [prixHt] AS 'PRIX HT', [quantite] AS QUANTITE, [seuil] AS SEUIL , [tauxTva] AS 'TAUX TVA', [IdCategorie] AS CATEGORIE FROM [poo].[dbo].[Produit]";
+}
+
+String^ Mappage::Produit::SELECTCAT()
+{
+    return "SELECT libelle FROM [poo].[dbo].[Categorie]";
+}
+
+String^ Mappage::Produit::SELECTBYID()
+{
+    return "SELECT [idProduit], [reference], [designation], [prixHt], [quantite], [seuil], [tauxTva], [categorie] FROM [poo].[dbo].[Produit] WHERE idPersonnel = " + this->getId() + ";";
 }
 
 String^ Mappage::Produit::INSERT()
 {
     return "INSERT INTO Produit(reference, designation, prixHt, quantite, seuil, tauxTva, categorie) VALUES('" + this->reference + "','" + this->designation + "', '" + this->prixHt + "', '" + this->quantite + "', '" + this->seuil + "',  '" + this->tauxTva + "',  '" + this->categorie + "');";
+}
+
+String^ Mappage::Produit::UPDATE()
+{
+    return "UPDATE Produit " +
+        "SET reference = '" + this->getRef() + "', designation = '" + this->getDesignation() + "' " +
+        "WHERE(idProduit = " + this->getId() + ");";
+}
+
+String^ Mappage::Produit::DELETE()
+{
+    return "DELETE FROM Produit WHERE(idProduit = " + this->getId() + ");";
 }
 
 // SETTERS
@@ -79,7 +101,7 @@ void Mappage::Produit::setTaux(float tauxTva)
     }
 }
 
-void Mappage::Produit::setCategorie(array<String^>^ categorie)
+void Mappage::Produit::setCategorie(String^ categorie)
 {
     if (!String::IsNullOrEmpty(designation))
     {
@@ -124,7 +146,7 @@ float Mappage::Produit::getTaux()
     return this->tauxTva;
 }
 
-array<String^>^ Mappage::Produit::getCategorie()
+String^ Mappage::Produit::getCategorie()
 {
     return this->categorie;
 }
