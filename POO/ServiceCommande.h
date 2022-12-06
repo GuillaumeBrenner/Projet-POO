@@ -6,7 +6,7 @@
 
 namespace Services
 {
-    ref class ServicesCommande
+    ref class ServiceCommande
     {
     public:
         ServiceCommande();

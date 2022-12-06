@@ -18,8 +18,8 @@ void Services::ServiceCommande::addCommande(String^ refCmd, DateTime dateEmissio
 {
     String^ sql;
 
-    this->commande->setRefCmd(refCmd);
-    this->commande->dateEmission(dateEmission);
+    this->commande->setRef(refCmd);
+    this->commande->setDateEmission(dateEmission);
     this->commande->setDateLivraison(dateLivraison);
     this->commande->setDatePaiement(datePaiement);
     this->commande->setMoyenPaiement(moyenPaiement);
@@ -30,12 +30,13 @@ void Services::ServiceCommande::addCommande(String^ refCmd, DateTime dateEmissio
     this->cad->actionRows(sql);
 }
 
-void Services::ServiceCommande::updatePersonnel(int idCommande, String^ refCmd, DateTime dateEmission, DateTime dateLivraison, DateTime datePaiement, String^ moyenPaiement, int totalArticles, int numClient)
+void Services::ServiceCommande::updateCommande(int idCommande, String^ refCmd, DateTime dateEmission, DateTime dateLivraison, DateTime datePaiement, String^ moyenPaiement, int totalArticles, int numClient)
 {
     String^ sql;
 
-    this->commande->setRefCmd(refCmd);
-    this->commande->dateEmission(dateEmission);
+    this->commande->setId(idCommande);
+    this->commande->setRef(refCmd);
+    this->commande->setDateEmission(dateEmission);
     this->commande->setDateLivraison(dateLivraison);
     this->commande->setDatePaiement(datePaiement);
     this->commande->setMoyenPaiement(moyenPaiement);
@@ -46,7 +47,7 @@ void Services::ServiceCommande::updatePersonnel(int idCommande, String^ refCmd, 
     this->cad->actionRows(sql);
 }
 
-void Services::ServiceCommande::deletePersonnel(int idCommande)
+void Services::ServiceCommande::deleteCommande(int idCommande)
 {
     this->commande->setId(idCommande);
     String^ sql;

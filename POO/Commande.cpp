@@ -14,9 +14,9 @@ Mappage::Commande::Commande()
 
 String^ Mappage::Commande::SELECT()
 {
-    return "SELECT [idCommande] AS ID, [refCmd] AS REFERENCE , [dateEmission] AS 'DATE EMISSION', [dateLivraison] AS 'DATE EMBAUCHE', [datePaiement] AS ADRESSE, [moyenPaiement] AS MOYEN PAIEMENT, [totalArticles} AS 'TOTAL ARTICLE', [numClient] " +
+    return "SELECT [idCommande] AS ID, [refCmd] AS REFERENCE , [dateEmission] AS 'DATE EMISSION', [dateLivraison] AS 'DATE LIVRAISON', [datePaiement] AS 'DATE PAIEMENT', [moyenPaiement] AS 'MOYEN PAIEMENT', [totalArticles] AS 'TOTAL ARTICLE', [numClient] AS 'CLIENT' " +
         "FROM[poo].[dbo].[Commande]" +
-        "WHERE(id_personne = " + this->numClient + ");";
+        "WHERE(numClient = " + this->numClient + ");";
 }
 
 String^ Mappage::Commande::INSERT()

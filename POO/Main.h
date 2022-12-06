@@ -273,7 +273,7 @@ private: System::Windows::Forms::Label^ label26;
 	private: Services::ServiceClient^ gestionClients;
 	private: Services::ServiceProduit^ gestionProduits;
 	private: Services::ServicePersonnel^ gestionPersonnels;
-	private: Services::ServicesCommande^ gestionCommandes;
+	private: Services::ServiceCommande^ gestionCommandes;
 		   // Le mode 
 	private: EditionMode mode;
 
@@ -1758,6 +1758,7 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 		this->gestionClients = gcnew Services::ServiceClient();
 		this->gestionProduits = gcnew Services::ServiceProduit();
 		this->gestionPersonnels = gcnew Services::ServicePersonnel();
+		this->gestionCommandes = gcnew Services::ServiceCommande();
 	}
 private: System::Void newButton_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1845,6 +1846,9 @@ private: System::Void btnProduit_Click(System::Object^ sender, System::EventArgs
 		this->categorieCombo->DisplayMember = "libelle";
 	}
 	//****************************************************************
+
+	this->updateProduit_btn->Enabled = false;
+	this->deleteProduit_btn->Enabled = false;
 }
 
 	   //MENU ACCEUIL
@@ -1865,6 +1869,11 @@ private: System::Void btnCommande_Click(System::Object^ sender, System::EventArg
 	this->clientForm->Visible = false;
 	this->personnelForm->Visible = false;
 	this->produitForm->Visible = false;
+
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionCommandes->listeCommandes("Rsl");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "Rsl";
 }
 private: System::Void btnSouseuil_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1954,7 +1963,7 @@ private: void loadData(int index) {
 	}
 
 	if (this->produitForm->Visible) {
-		this->addPersonnel_btn->Enabled = false;
+		this->addProduit_btn->Enabled = false;
 		this->updateProduit_btn->Enabled = true;
 		this->deleteProduit_btn->Enabled = true;
 		// Mise à jour du cache bdd de la table de personne
