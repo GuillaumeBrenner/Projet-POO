@@ -17,7 +17,7 @@ namespace Services
 
         void addPersonnel(String^ nom, String^ prenom, DateTime dateEmbauche, String^ adresse, String^ superieur);
 
-        //void modifier(int idPersonne, String^ nom, String^ prenom, array<String^>^ adresses);
+        void updatePersonnel(int idPersonnel, String^ nom, String^ prenom, DateTime dateEmbauche, String^ adresse, String^ superieur);
 
         void deletePersonnel(int idPersonne);
 

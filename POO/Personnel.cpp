@@ -28,22 +28,22 @@ String^ Mappage::Personnel::INSERT()
 String^ Mappage::Personnel::UPDATE()
 {
     return "UPDATE Personnel " +
-        "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "' " +
-        "WHERE(idPersonnel = " + this->getId() + ");";
+        "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "', dateEmbauche = '" + this->getDateEmbauche() + "', adresse = '" + this->getAdresse() + "', superieur = '" + this->getSuperieur() + "' " +
+        "WHERE (idPersonnel = " + this->getId() + ");";
 }
 
 String^ Mappage::Personnel::DELETE()
 {
-    return "DELETE FROM Personnel WHERE(idPersonnel = " + this->getId() + ");";
+    return "DELETE FROM [poo].[dbo].[Client] WHERE idPersonnel = " + this->getId() + ";";
 }
 
 // SETTERS
 
-void Mappage::Personnel::setId(int id)
+void Mappage::Personnel::setId(int idPersonnel)
 {
-    if (id > 0)
+    if (idPersonnel > 0)
     {
-        this->idPersonnel = id;
+        this->idPersonnel = idPersonnel;
     }
 }
 

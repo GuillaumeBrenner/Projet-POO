@@ -587,11 +587,11 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->panel2->Controls->Add(this->messageLabel);
 			this->panel2->Controls->Add(this->messageTxt);
 			this->panel2->Controls->Add(this->dataGridView1);
-			this->panel2->Controls->Add(this->clientForm);
-			this->panel2->Controls->Add(this->commandeForm);
 			this->panel2->Controls->Add(this->personnelForm);
 			this->panel2->Controls->Add(this->produitForm);
 			this->panel2->Controls->Add(this->statsForm);
+			this->panel2->Controls->Add(this->clientForm);
+			this->panel2->Controls->Add(this->commandeForm);
 			this->panel2->Location = System::Drawing::Point(218, 12);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(1471, 704);
@@ -1250,6 +1250,7 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->updatePersonnel_btn->TabIndex = 43;
 			this->updatePersonnel_btn->Text = L"Modifier";
 			this->updatePersonnel_btn->UseVisualStyleBackColor = true;
+			this->updatePersonnel_btn->Click += gcnew System::EventHandler(this, &Main::updatePersonnel_btn_Click);
 			// 
 			// addPersonnel_btn
 			// 
@@ -1896,6 +1897,7 @@ private: System::Void updateClient_btn_Click(System::Object^ sender, System::Eve
 	this->dataGridView1->DataMember = "Rsl";
 
 	// Reset des champs graphiques de l'interface
+	this->idClient_textbox->Clear();
 	this->nomC_textbox->Clear();
 	this->prenomC_textBox->Clear();
 	this->adresseFact->Clear();
@@ -2054,6 +2056,26 @@ private: System::Void addPersonnel_btn_Click(System::Object^ sender, System::Eve
 
 	MessageBox::Show("Opération réussie : Personnel a été créé", "Notification");
 }
+
+	   ///////////////////////////////////////////BUTTON MODIFIER UN PERSONNEL
+	private: System::Void updatePersonnel_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->gestionPersonnels->updatePersonnel(Convert::ToInt32(this->idPersonnel_box->Text), this->nomP_textbox->Text, this->prenomP_textbox->Text, this->dateEmbauche->Value, this->adresseP_textbox->Text, this->superieurP->Text);
+
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionPersonnels->listePersonnels("Rsl");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "Rsl";
+
+		   // Reset des champs graphiques de l'interface
+	this->idPersonnel_box->Clear();
+	this->nomP_textbox->Clear();
+	this->prenomP_textbox->Clear();
+	this->adresseP_textbox->Clear();
+	this->superieurP->Clear();
+
+	MessageBox::Show("Opération réussie : le personnel a été modifié", "Notification");
+}
+
 	   /////////////////////////////////////////////BUTTON SUPPRIMER UN PERSONNEL
 private: System::Void deletePersonnel_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 	// Confirmation
@@ -2065,7 +2087,7 @@ private: System::Void deletePersonnel_btn_Click(System::Object^ sender, System::
 		this->dataset = this->gestionPersonnels->listePersonnels("Rsl");
 		this->dataGridView1->DataSource = this->dataset;
 		this->dataGridView1->DataMember = "Rsl";
-		MessageBox::Show("Opération réussie : Personnel supprimé", "Notification");
+		MessageBox::Show("Opération réussie : le personnel supprimé", "Notification");
 
 		// Reset des champs graphiques de l'interface
 		this->nomP_textbox->Clear();
