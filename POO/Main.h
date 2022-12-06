@@ -704,11 +704,12 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			// idProduit_textbox
 			// 
+			this->idProduit_textbox->Enabled = false;
 			this->idProduit_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->idProduit_textbox->Location = System::Drawing::Point(15, 42);
 			this->idProduit_textbox->Name = L"idProduit_textbox";
-			this->idProduit_textbox->Size = System::Drawing::Size(383, 34);
+			this->idProduit_textbox->Size = System::Drawing::Size(199, 34);
 			this->idProduit_textbox->TabIndex = 48;
 			// 
 			// label27
@@ -1937,11 +1938,28 @@ private: System::Void previousClient_btn_Click(System::Object ^ sender, System::
 		this->loadData(this->index);
 	}
 }
-private: System::Void refreshData_Click(System::Object ^ sender, System::EventArgs ^ e) {
-	this->dataGridView1->Refresh();
-	this->dataset = this->gestionClients->listeClients("Rsl");
-	this->dataGridView1->DataSource = this->dataset;
-	this->dataGridView1->DataMember = "Rsl";
+private: System::Void refreshData_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->clientForm->Visible) {
+		this->dataGridView1->Refresh();
+		this->dataset = this->gestionClients->listeClients("Rsl");
+		this->dataGridView1->DataSource = this->dataset;
+		this->dataGridView1->DataMember = "Rsl";
+	}
+
+	if (this->produitForm->Visible) {
+		this->dataGridView1->Refresh();
+		this->dataset = this->gestionProduits->listeProduits("Rsl");
+		this->dataGridView1->DataSource = this->dataset;
+		this->dataGridView1->DataMember = "Rsl";
+	}
+
+	if (this->personnelForm->Visible) {
+		this->dataGridView1->Refresh();
+		this->dataset = this->gestionPersonnels->listePersonnels("Rsl");
+		this->dataGridView1->DataSource = this->dataset;
+		this->dataGridView1->DataMember = "Rsl";
+	}
+
 }
 private: System::Void showData_Click(System::Object ^ sender, System::EventArgs ^ e) {
 	this->index = 0;
