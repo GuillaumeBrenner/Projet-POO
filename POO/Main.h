@@ -765,12 +765,12 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 				static_cast<System::Byte>(0)));
 			this->dateNaiss_box->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateNaiss_box->Location = System::Drawing::Point(12, 242);
-			this->dateNaiss_box->MaxDate = System::DateTime(2005, 1, 1, 0, 0, 0, 0);
+			this->dateNaiss_box->MaxDate = System::DateTime(2008, 12, 31, 0, 0, 0, 0);
 			this->dateNaiss_box->MinDate = System::DateTime(1940, 1, 1, 0, 0, 0, 0);
 			this->dateNaiss_box->Name = L"dateNaiss_box";
 			this->dateNaiss_box->Size = System::Drawing::Size(194, 34);
 			this->dateNaiss_box->TabIndex = 46;
-			this->dateNaiss_box->Value = System::DateTime(2005, 1, 1, 0, 0, 0, 0);
+			this->dateNaiss_box->Value = System::DateTime(2004, 12, 30, 0, 0, 0, 0);
 			// 
 			// deleteClient_btn
 			// 
@@ -1888,7 +1888,7 @@ private: System::Void addClient_btn_Click(System::Object^ sender, System::EventA
 
 	   //////////////////////////////////////////////BUTTON MODIFIER UN CLIENT
 private: System::Void updateClient_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->gestionClients->updateClient(int::Parse(this->idClient_textbox->Text), this->nomC_textbox->Text, this->prenomC_textBox->Text, this->dateNaiss_box->Value, this->datePreAchat_box->Value, this->adresseFact->Text, this->adresseLivr->Text);
+	this->gestionClients->updateClient(Convert::ToInt32(this->idClient_textbox->Text), this->nomC_textbox->Text, this->prenomC_textBox->Text, this->dateNaiss_box->Value, this->datePreAchat_box->Value, this->adresseFact->Text, this->adresseLivr->Text);
 
 	this->dataGridView1->Refresh();
 	this->dataset = this->gestionClients->listeClients("Rsl");
@@ -1938,8 +1938,6 @@ private: void loadData(int index) {
 		this->idClient_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[0]);
 		this->nomC_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[1]);
 		this->prenomC_textBox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[2]);
-		this->dateNaiss_box->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[3]);
-		this->datePreAchat_box->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[4]);
 		this->adresseFact->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[5]);
 		this->adresseLivr->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[6]);
 	}
@@ -2036,6 +2034,7 @@ private: System::Void showData_Click(System::Object ^ sender, System::EventArgs 
 	this->index = 0;
 	this->loadData(this->index);
 }
+
 										//*******************PERSONNEL************************
 
 	   ///////////////////////////////////////////BUTTON AJOUTER UN PERSONNEL

@@ -27,9 +27,9 @@ String^ Mappage::Client::INSERT()
 
 String^ Mappage::Client::UPDATE()
 {
-    return "UPDATE [poo].[dbo].[Client] " +
-        "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "', dateNaissance = '" + this->getDateNaissance() + "', datePreAchat = ' " + this->getDatePreAchat() +
-        "WHERE numClient = " + this->getId() + ";";
+    return "UPDATE Client " +
+        "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "', dateNaissance = '" + this->getDateNaissance() + "', datePreAchat = '" + this->getDatePreAchat() + "', adresseFacturation = '" + this->getAdresseFacturation() + "', adresseLivraison = '" + this->getAdresseLivraison() + "' " +
+        "WHERE (numClient = " + this->getId() + ");";
 }
 
 String^ Mappage::Client::DELETE()
