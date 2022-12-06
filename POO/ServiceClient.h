@@ -17,7 +17,7 @@ namespace Services
 
         void addClient(String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat, String^ adresseFacturation, String^ adresseLivraison);
 
-        //void updateClient(String^ dataTableName);
+        void updateClient(int numClient,String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat, String^ adresseFacturation, String^ adresseLivraison);
 
         void deleteClient(int numClient);
 

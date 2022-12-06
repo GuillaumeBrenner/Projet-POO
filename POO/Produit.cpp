@@ -9,11 +9,12 @@ Mappage::Produit::Produit()
     this->quantite = -1;
     this->seuil = -1;
     this->tauxTva = -1;
+    this->categorie = "RIEN";
 }
 
 String^ Mappage::Produit::SELECT()
 {
-    return "SELECT [idProduit] AS ID, [reference] AS REFERENCE, [designation] AS DESIGNATION, [prixHt] AS 'PRIX HT', [quantite] AS QUANTITE, [seuil] AS SEUIL , [tauxTva] AS 'TAUX TVA', [IdCategorie] AS CATEGORIE FROM [poo].[dbo].[Produit]";
+    return "SELECT [idProduit] AS ID, [reference] AS REFERENCE, [designation] AS DESIGNATION, [prixHt] AS 'PRIX HT', [quantite] AS QUANTITE, [seuil] AS SEUIL , [tauxTva] AS 'TAUX TVA', [categorie] AS CATEGORIE FROM [poo].[dbo].[Produit]";
 }
 
 String^ Mappage::Produit::SELECTCAT()
@@ -103,7 +104,7 @@ void Mappage::Produit::setTaux(float tauxTva)
 
 void Mappage::Produit::setCategorie(String^ categorie)
 {
-    if (!String::IsNullOrEmpty(designation))
+    if (!String::IsNullOrEmpty(categorie))
     {
         this->categorie = categorie;
     }
