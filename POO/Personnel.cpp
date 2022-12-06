@@ -12,7 +12,8 @@ Mappage::Personnel::Personnel()
 
 String^ Mappage::Personnel::SELECT()
 {
-    return "SELECT [idPersonnel] AS ID, [nom] AS NOM , [prenom] AS PRENOM, [dateEmbauche] AS 'DATE EMBAUCHE', [adresse] AS 'ADRESSE', [superieur] AS 'SUPERIEUR' FROM [poo].[dbo].[Personnel]";
+    return "SELECT [idPersonnel] AS ID, [nom] AS NOM , [prenom] AS PRENOM, [dateEmbauche] AS 'DATE EMBAUCHE', [adresse] AS 'ADRESSE', [superieur] AS 'SUPERIEUR' " +
+        "FROM[poo].[dbo].[Personnel]";
 }
 
 String^ Mappage::Personnel::SELECTBYID()
@@ -22,13 +23,14 @@ String^ Mappage::Personnel::SELECTBYID()
 
 String^ Mappage::Personnel::INSERT()
 {
-    return "INSERT INTO Personnel (nom, prenom, dateEmbauche, adresse, superieur) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateEmbauche + "', '" + this->adresse + "', '" + this->superieur + "');";
+    return "INSERT INTO Personnel (nom, prenom, dateEmbauche, adresse, superieur)" +
+        "VALUES('" + this->nom + "', '" + this->prenom + "', '" + this->dateEmbauche + "', '" + this->adresse + "', '" + this->superieur + "');";
 }
 
 String^ Mappage::Personnel::UPDATE()
 {
     return "UPDATE Personnel " +
-        "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "', dateEmbauche = '" + this->getDateEmbauche() + "', adresse = '" + this->getAdresse() + "', superieur = '" + this->getSuperieur() + "' " +
+        "SET nom = '" + this->nom + "', prenom = '" + this->prenom + "', dateEmbauche = '" + this->dateEmbauche + "', adresse = '" + this->adresse + "', superieur = '" + this->superieur + "' " +
         "WHERE (idPersonnel = " + this->getId() + ");";
 }
 

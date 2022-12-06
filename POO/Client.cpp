@@ -28,7 +28,7 @@ String^ Mappage::Client::INSERT()
 String^ Mappage::Client::UPDATE()
 {
     return "UPDATE Client " +
-        "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "', dateNaissance = '" + this->getDateNaissance() + "', datePreAchat = '" + this->getDatePreAchat() + "', adresseFacturation = '" + this->getAdresseFacturation() + "', adresseLivraison = '" + this->getAdresseLivraison() + "' " +
+        "SET nom = '" + this->nom + "', prenom = '" + this->prenom + "', dateNaissance = '" + this->dateNaissance + "', datePreAchat = '" + this->datePreAchat + "', adresseFacturation = '" + this->adresseFacturation + "', adresseLivraison = '" + this->adresseLivraison+ "' " +
         "WHERE (numClient = " + this->getId() + ");";
 }
 
