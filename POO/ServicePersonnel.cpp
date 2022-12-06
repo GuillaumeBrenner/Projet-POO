@@ -1,4 +1,5 @@
 #include "ServicePersonnel.h"
+using namespace Services;
 
 Services::ServicePersonnel::ServicePersonnel()
 {
@@ -14,8 +15,10 @@ DataSet^ Services::ServicePersonnel::listePersonnels(String^ dataTableName)
     return this->cad->getRows(sql, dataTableName);
 }
 
+
 void Services::ServicePersonnel::addPersonnel(String^ nom, String^ prenom, DateTime dateEmbauche, String^ adresse, String^ superieur)
 {
+    int idPersonnel;
     String^ sql;
 
     this->personnel->setNom(nom);
@@ -23,7 +26,7 @@ void Services::ServicePersonnel::addPersonnel(String^ nom, String^ prenom, DateT
     this->personnel->setDateEmbauche(dateEmbauche);
     this->personnel->setAdresse(adresse);
     this->personnel->setSuperieur(superieur);
-
+    idPersonnel = this->databaseAccess->actionRowsID(this->personnel->INSERT());
     sql = this->personnel->INSERT();
     this->cad->actionRows(sql);
 }

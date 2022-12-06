@@ -2,6 +2,7 @@
 
 #include "Cad.h" 
 #include "Personnel.h" 
+#include "DatabaseAccess.h" 
 
 
 namespace Services
@@ -20,10 +21,17 @@ namespace Services
         //void modifier(int idPersonne, String^ nom, String^ prenom, array<String^>^ adresses);
 
         //void supprimer(int idPersonne);
+        // 
+          // Permet d'ajouter une personne (nom, prenom, adresses)
+
+        int ajouter(String^ nom, String^ prenom, array<String^>^ adresses);
 
     private:
         Composants::Cad^ cad;
         Mappage::Personnel^ personnel;
+
+        Composants::DatabaseAccess^ databaseAccess;
+
 
         DataSet^ dataSet;
     };
