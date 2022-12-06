@@ -1756,6 +1756,8 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 		this->gestionClients = gcnew Services::ServiceClient();
 		this->gestionProduits = gcnew Services::ServiceProduit();
 		this->gestionPersonnels = gcnew Services::ServicePersonnel();
+
+		System::DateTime^ dateT = gcnew System::DateTime;
 	}
 private: System::Void newButton_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1868,7 +1870,7 @@ private: System::Void saveButton_Click(System::Object^ sender, System::EventArgs
 
 	   //////////////////////////////////////////////BUTTON AJOUTER UN CLIENT
 private: System::Void addClient_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->gestionClients->addClient(this->nomC_textbox->Text, this->prenomC_textBox->Text, this->dateNaiss_box->MaxDate, this->datePreAchat_box->MaxDate, this->adresseFact->Text, this->adresseLivr->Text);
+	this->gestionClients->addClient(this->nomC_textbox->Text, this->prenomC_textBox->Text, this->dateNaiss_box->Value, this->datePreAchat_box->Value, this->adresseFact->Text, this->adresseLivr->Text);
 	
 	this->dataGridView1->Refresh();
 	this->dataset = this->gestionClients->listeClients("Rsl");
@@ -1886,7 +1888,7 @@ private: System::Void addClient_btn_Click(System::Object^ sender, System::EventA
 
 	   //////////////////////////////////////////////BUTTON MODIFIER UN CLIENT
 private: System::Void updateClient_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->gestionClients->updateClient(int::Parse(this->idClient_textbox->Text), this->nomC_textbox->Text, this->prenomC_textBox->Text, this->dateNaiss_box->MaxDate, this->datePreAchat_box->MaxDate, this->adresseFact->Text, this->adresseLivr->Text);
+	this->gestionClients->updateClient(int::Parse(this->idClient_textbox->Text), this->nomC_textbox->Text, this->prenomC_textBox->Text, this->dateNaiss_box->Value, this->datePreAchat_box->Value, this->adresseFact->Text, this->adresseLivr->Text);
 
 	this->dataGridView1->Refresh();
 	this->dataset = this->gestionClients->listeClients("Rsl");
@@ -2038,7 +2040,7 @@ private: System::Void showData_Click(System::Object ^ sender, System::EventArgs 
 
 	   ///////////////////////////////////////////BUTTON AJOUTER UN PERSONNEL
 private: System::Void addPersonnel_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->gestionPersonnels->addPersonnel(this->nomP_textbox->Text, this->prenomP_textbox->Text, this->dateEmbauche->MaxDate, this->adresseP_textbox->Text, this->superieurP->Text);
+	this->gestionPersonnels->addPersonnel(this->nomP_textbox->Text, this->prenomP_textbox->Text, this->dateEmbauche->Value, this->adresseP_textbox->Text, this->superieurP->Text);
 
 	this->dataGridView1->Refresh();
 	this->dataset = this->gestionPersonnels->listePersonnels("Rsl");
