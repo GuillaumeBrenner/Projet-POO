@@ -133,6 +133,7 @@
     <ClCompile Include="ServiceCommande.cpp" />
     <ClCompile Include="ServicePersonnel.cpp" />
     <ClCompile Include="ServiceProduit.cpp" />
+    <ClCompile Include="Statistique.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cad.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="ServiceCommande.h" />
     <ClInclude Include="ServicePersonnel.h" />
     <ClInclude Include="ServiceProduit.h" />
+    <ClInclude Include="Statistique.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">

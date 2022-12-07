@@ -516,9 +516,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			// btnPersonnel
 			// 
-			this->btnPersonnel->Location = System::Drawing::Point(17, 391);
+			this->btnPersonnel->Location = System::Drawing::Point(13, 318);
+			this->btnPersonnel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnPersonnel->Name = L"btnPersonnel";
-			this->btnPersonnel->Size = System::Drawing::Size(154, 46);
+			this->btnPersonnel->Size = System::Drawing::Size(116, 37);
 			this->btnPersonnel->TabIndex = 0;
 			this->btnPersonnel->Text = L"Personnel";
 			this->btnPersonnel->UseVisualStyleBackColor = true;
@@ -526,9 +527,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			// btnClient
 			// 
-			this->btnClient->Location = System::Drawing::Point(17, 171);
+			this->btnClient->Location = System::Drawing::Point(13, 139);
+			this->btnClient->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnClient->Name = L"btnClient";
-			this->btnClient->Size = System::Drawing::Size(154, 46);
+			this->btnClient->Size = System::Drawing::Size(116, 37);
 			this->btnClient->TabIndex = 1;
 			this->btnClient->Text = L"Client";
 			this->btnClient->UseVisualStyleBackColor = true;
@@ -536,9 +538,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			// btnProduit
 			// 
-			this->btnProduit->Location = System::Drawing::Point(17, 239);
+			this->btnProduit->Location = System::Drawing::Point(13, 194);
+			this->btnProduit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnProduit->Name = L"btnProduit";
-			this->btnProduit->Size = System::Drawing::Size(154, 46);
+			this->btnProduit->Size = System::Drawing::Size(116, 37);
 			this->btnProduit->TabIndex = 2;
 			this->btnProduit->Text = L"Produit";
 			this->btnProduit->UseVisualStyleBackColor = true;
@@ -546,9 +549,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			// btnCommande
 			// 
-			this->btnCommande->Location = System::Drawing::Point(17, 316);
+			this->btnCommande->Location = System::Drawing::Point(13, 257);
+			this->btnCommande->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnCommande->Name = L"btnCommande";
-			this->btnCommande->Size = System::Drawing::Size(154, 46);
+			this->btnCommande->Size = System::Drawing::Size(116, 37);
 			this->btnCommande->TabIndex = 3;
 			this->btnCommande->Text = L"Commande";
 			this->btnCommande->UseVisualStyleBackColor = true;
@@ -556,9 +560,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			// btnStats
 			// 
-			this->btnStats->Location = System::Drawing::Point(17, 106);
+			this->btnStats->Location = System::Drawing::Point(13, 86);
+			this->btnStats->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnStats->Name = L"btnStats";
-			this->btnStats->Size = System::Drawing::Size(154, 46);
+			this->btnStats->Size = System::Drawing::Size(116, 37);
 			this->btnStats->TabIndex = 4;
 			this->btnStats->Text = L"Accueil";
 			this->btnStats->UseVisualStyleBackColor = true;
@@ -572,9 +577,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->panel1->Controls->Add(this->btnCommande);
 			this->panel1->Controls->Add(this->btnClient);
 			this->panel1->Controls->Add(this->btnProduit);
-			this->panel1->Location = System::Drawing::Point(12, 12);
+			this->panel1->Location = System::Drawing::Point(9, 10);
+			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(200, 704);
+			this->panel1->Size = System::Drawing::Size(150, 572);
 			this->panel1->TabIndex = 5;
 			// 
 			// panel2
@@ -587,14 +593,15 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->panel2->Controls->Add(this->messageLabel);
 			this->panel2->Controls->Add(this->messageTxt);
 			this->panel2->Controls->Add(this->dataGridView1);
+			this->panel2->Controls->Add(this->statsForm);
 			this->panel2->Controls->Add(this->clientForm);
 			this->panel2->Controls->Add(this->commandeForm);
 			this->panel2->Controls->Add(this->personnelForm);
 			this->panel2->Controls->Add(this->produitForm);
-			this->panel2->Controls->Add(this->statsForm);
-			this->panel2->Location = System::Drawing::Point(218, 12);
+			this->panel2->Location = System::Drawing::Point(164, 10);
+			this->panel2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(1471, 704);
+			this->panel2->Size = System::Drawing::Size(1103, 572);
 			this->panel2->TabIndex = 6;
 			// 
 			// refreshData
@@ -602,9 +609,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->refreshData->BackColor = System::Drawing::SystemColors::MenuHighlight;
 			this->refreshData->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->refreshData->Location = System::Drawing::Point(1288, 23);
+			this->refreshData->Location = System::Drawing::Point(966, 19);
+			this->refreshData->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->refreshData->Name = L"refreshData";
-			this->refreshData->Size = System::Drawing::Size(163, 33);
+			this->refreshData->Size = System::Drawing::Size(122, 27);
 			this->refreshData->TabIndex = 50;
 			this->refreshData->Text = L"Actualiser";
 			this->refreshData->UseVisualStyleBackColor = false;
@@ -616,9 +624,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->showData->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->showData->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->showData->Location = System::Drawing::Point(1118, 23);
+			this->showData->Location = System::Drawing::Point(838, 19);
+			this->showData->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->showData->Name = L"showData";
-			this->showData->Size = System::Drawing::Size(164, 36);
+			this->showData->Size = System::Drawing::Size(123, 29);
 			this->showData->TabIndex = 49;
 			this->showData->Text = L"Afficher";
 			this->showData->UseVisualStyleBackColor = false;
@@ -626,9 +635,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			// nextClient_btn
 			// 
-			this->nextClient_btn->Location = System::Drawing::Point(563, 31);
+			this->nextClient_btn->Location = System::Drawing::Point(422, 25);
+			this->nextClient_btn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->nextClient_btn->Name = L"nextClient_btn";
-			this->nextClient_btn->Size = System::Drawing::Size(113, 28);
+			this->nextClient_btn->Size = System::Drawing::Size(85, 23);
 			this->nextClient_btn->TabIndex = 51;
 			this->nextClient_btn->Text = L"Suivant";
 			this->nextClient_btn->UseVisualStyleBackColor = true;
@@ -636,9 +646,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			// previousClient_btn
 			// 
-			this->previousClient_btn->Location = System::Drawing::Point(445, 31);
+			this->previousClient_btn->Location = System::Drawing::Point(334, 25);
+			this->previousClient_btn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->previousClient_btn->Name = L"previousClient_btn";
-			this->previousClient_btn->Size = System::Drawing::Size(112, 29);
+			this->previousClient_btn->Size = System::Drawing::Size(84, 24);
 			this->previousClient_btn->TabIndex = 52;
 			this->previousClient_btn->Text = L"Précédent";
 			this->previousClient_btn->UseVisualStyleBackColor = true;
@@ -649,31 +660,30 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->messageLabel->AutoSize = true;
 			this->messageLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->messageLabel->Location = System::Drawing::Point(441, 584);
-			this->messageLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->messageLabel->Location = System::Drawing::Point(331, 474);
 			this->messageLabel->Name = L"messageLabel";
-			this->messageLabel->Size = System::Drawing::Size(77, 20);
+			this->messageLabel->Size = System::Drawing::Size(65, 17);
 			this->messageLabel->TabIndex = 48;
 			this->messageLabel->Text = L"Message";
 			// 
 			// messageTxt
 			// 
-			this->messageTxt->Location = System::Drawing::Point(445, 606);
-			this->messageTxt->Margin = System::Windows::Forms::Padding(4);
+			this->messageTxt->Location = System::Drawing::Point(334, 492);
 			this->messageTxt->Multiline = true;
 			this->messageTxt->Name = L"messageTxt";
 			this->messageTxt->ReadOnly = true;
-			this->messageTxt->Size = System::Drawing::Size(548, 83);
+			this->messageTxt->Size = System::Drawing::Size(412, 68);
 			this->messageTxt->TabIndex = 48;
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(445, 65);
+			this->dataGridView1->Location = System::Drawing::Point(334, 53);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1006, 516);
+			this->dataGridView1->Size = System::Drawing::Size(754, 419);
 			this->dataGridView1->TabIndex = 39;
 			// 
 			// clientForm
@@ -696,27 +706,30 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->clientForm->Controls->Add(this->label22);
 			this->clientForm->Controls->Add(this->label23);
 			this->clientForm->Controls->Add(this->nomC_textbox);
-			this->clientForm->Location = System::Drawing::Point(12, 20);
+			this->clientForm->Location = System::Drawing::Point(9, 16);
+			this->clientForm->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->clientForm->Name = L"clientForm";
-			this->clientForm->Size = System::Drawing::Size(413, 672);
+			this->clientForm->Size = System::Drawing::Size(310, 546);
 			this->clientForm->TabIndex = 43;
 			// 
 			// adresseLivr
 			// 
 			this->adresseLivr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->adresseLivr->Location = System::Drawing::Point(223, 314);
+			this->adresseLivr->Location = System::Drawing::Point(167, 255);
+			this->adresseLivr->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->adresseLivr->Name = L"adresseLivr";
-			this->adresseLivr->Size = System::Drawing::Size(181, 34);
+			this->adresseLivr->Size = System::Drawing::Size(137, 28);
 			this->adresseLivr->TabIndex = 54;
 			// 
 			// adresseFact
 			// 
 			this->adresseFact->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->adresseFact->Location = System::Drawing::Point(12, 314);
+			this->adresseFact->Location = System::Drawing::Point(9, 255);
+			this->adresseFact->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->adresseFact->Name = L"adresseFact";
-			this->adresseFact->Size = System::Drawing::Size(194, 34);
+			this->adresseFact->Size = System::Drawing::Size(146, 28);
 			this->adresseFact->TabIndex = 53;
 			// 
 			// label28
@@ -724,9 +737,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label28->AutoSize = true;
 			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label28->Location = System::Drawing::Point(9, 3);
+			this->label28->Location = System::Drawing::Point(7, 2);
+			this->label28->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(38, 29);
+			this->label28->Size = System::Drawing::Size(29, 24);
 			this->label28->TabIndex = 50;
 			this->label28->Text = L"ID";
 			// 
@@ -735,9 +749,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->idClient_textbox->Enabled = false;
 			this->idClient_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->idClient_textbox->Location = System::Drawing::Point(12, 35);
+			this->idClient_textbox->Location = System::Drawing::Point(9, 28);
+			this->idClient_textbox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->idClient_textbox->Name = L"idClient_textbox";
-			this->idClient_textbox->Size = System::Drawing::Size(194, 30);
+			this->idClient_textbox->Size = System::Drawing::Size(146, 26);
 			this->idClient_textbox->TabIndex = 44;
 			// 
 			// datePreAchat_box
@@ -748,11 +763,12 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->datePreAchat_box->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->datePreAchat_box->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->datePreAchat_box->Location = System::Drawing::Point(220, 242);
+			this->datePreAchat_box->Location = System::Drawing::Point(165, 197);
+			this->datePreAchat_box->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->datePreAchat_box->MaxDate = System::DateTime(2022, 12, 5, 0, 0, 0, 0);
 			this->datePreAchat_box->MinDate = System::DateTime(2017, 1, 1, 0, 0, 0, 0);
 			this->datePreAchat_box->Name = L"datePreAchat_box";
-			this->datePreAchat_box->Size = System::Drawing::Size(184, 34);
+			this->datePreAchat_box->Size = System::Drawing::Size(139, 28);
 			this->datePreAchat_box->TabIndex = 47;
 			this->datePreAchat_box->Value = System::DateTime(2022, 12, 3, 0, 0, 0, 0);
 			// 
@@ -764,11 +780,12 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->dateNaiss_box->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->dateNaiss_box->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateNaiss_box->Location = System::Drawing::Point(12, 242);
+			this->dateNaiss_box->Location = System::Drawing::Point(9, 197);
+			this->dateNaiss_box->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dateNaiss_box->MaxDate = System::DateTime(2005, 1, 1, 0, 0, 0, 0);
 			this->dateNaiss_box->MinDate = System::DateTime(1940, 1, 1, 0, 0, 0, 0);
 			this->dateNaiss_box->Name = L"dateNaiss_box";
-			this->dateNaiss_box->Size = System::Drawing::Size(194, 34);
+			this->dateNaiss_box->Size = System::Drawing::Size(146, 28);
 			this->dateNaiss_box->TabIndex = 46;
 			this->dateNaiss_box->Value = System::DateTime(2005, 1, 1, 0, 0, 0, 0);
 			// 
@@ -777,10 +794,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->deleteClient_btn->BackColor = System::Drawing::Color::Red;
 			this->deleteClient_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->deleteClient_btn->Location = System::Drawing::Point(16, 586);
-			this->deleteClient_btn->Margin = System::Windows::Forms::Padding(4);
+			this->deleteClient_btn->Location = System::Drawing::Point(12, 476);
 			this->deleteClient_btn->Name = L"deleteClient_btn";
-			this->deleteClient_btn->Size = System::Drawing::Size(391, 37);
+			this->deleteClient_btn->Size = System::Drawing::Size(293, 30);
 			this->deleteClient_btn->TabIndex = 44;
 			this->deleteClient_btn->Text = L"Supprimer";
 			this->deleteClient_btn->UseVisualStyleBackColor = false;
@@ -790,10 +806,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->updateClient_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->updateClient_btn->Location = System::Drawing::Point(16, 526);
-			this->updateClient_btn->Margin = System::Windows::Forms::Padding(4);
+			this->updateClient_btn->Location = System::Drawing::Point(12, 427);
 			this->updateClient_btn->Name = L"updateClient_btn";
-			this->updateClient_btn->Size = System::Drawing::Size(391, 40);
+			this->updateClient_btn->Size = System::Drawing::Size(293, 32);
 			this->updateClient_btn->TabIndex = 43;
 			this->updateClient_btn->Text = L"Modifier";
 			this->updateClient_btn->UseVisualStyleBackColor = true;
@@ -804,10 +819,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->addClient_btn->BackColor = System::Drawing::Color::LimeGreen;
 			this->addClient_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->addClient_btn->Location = System::Drawing::Point(15, 471);
-			this->addClient_btn->Margin = System::Windows::Forms::Padding(4);
+			this->addClient_btn->Location = System::Drawing::Point(11, 383);
 			this->addClient_btn->Name = L"addClient_btn";
-			this->addClient_btn->Size = System::Drawing::Size(392, 38);
+			this->addClient_btn->Size = System::Drawing::Size(294, 31);
 			this->addClient_btn->TabIndex = 42;
 			this->addClient_btn->Text = L"Ajouter";
 			this->addClient_btn->UseVisualStyleBackColor = false;
@@ -818,9 +832,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(9, 284);
+			this->label8->Location = System::Drawing::Point(7, 231);
+			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(180, 25);
+			this->label8->Size = System::Drawing::Size(148, 20);
 			this->label8->TabIndex = 21;
 			this->label8->Text = L"Adresse facturation";
 			// 
@@ -829,9 +844,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label19->AutoSize = true;
 			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label19->Location = System::Drawing::Point(223, 284);
+			this->label19->Location = System::Drawing::Point(167, 231);
+			this->label19->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(161, 25);
+			this->label19->Size = System::Drawing::Size(128, 20);
 			this->label19->TabIndex = 20;
 			this->label19->Text = L"Adresse livraison";
 			// 
@@ -840,9 +856,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label20->AutoSize = true;
 			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label20->Location = System::Drawing::Point(218, 212);
+			this->label20->Location = System::Drawing::Point(164, 172);
+			this->label20->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(142, 25);
+			this->label20->Size = System::Drawing::Size(117, 20);
 			this->label20->TabIndex = 17;
 			this->label20->Text = L"Date 1er Achat";
 			// 
@@ -851,9 +868,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label21->AutoSize = true;
 			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label21->Location = System::Drawing::Point(7, 211);
+			this->label21->Location = System::Drawing::Point(5, 171);
+			this->label21->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(177, 25);
+			this->label21->Size = System::Drawing::Size(144, 20);
 			this->label21->TabIndex = 16;
 			this->label21->Text = L"Date de Naissance";
 			// 
@@ -861,9 +879,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->prenomC_textBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->prenomC_textBox->Location = System::Drawing::Point(12, 166);
+			this->prenomC_textBox->Location = System::Drawing::Point(9, 135);
+			this->prenomC_textBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->prenomC_textBox->Name = L"prenomC_textBox";
-			this->prenomC_textBox->Size = System::Drawing::Size(392, 38);
+			this->prenomC_textBox->Size = System::Drawing::Size(295, 32);
 			this->prenomC_textBox->TabIndex = 15;
 			// 
 			// label22
@@ -871,9 +890,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label22->AutoSize = true;
 			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label22->Location = System::Drawing::Point(7, 138);
+			this->label22->Location = System::Drawing::Point(5, 112);
+			this->label22->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(98, 29);
+			this->label22->Size = System::Drawing::Size(77, 24);
 			this->label22->TabIndex = 13;
 			this->label22->Text = L"Prénom";
 			// 
@@ -882,9 +902,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label23->AutoSize = true;
 			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label23->Location = System::Drawing::Point(7, 66);
+			this->label23->Location = System::Drawing::Point(5, 54);
+			this->label23->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(65, 29);
+			this->label23->Size = System::Drawing::Size(51, 24);
 			this->label23->TabIndex = 12;
 			this->label23->Text = L"Nom";
 			// 
@@ -892,9 +913,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->nomC_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->nomC_textbox->Location = System::Drawing::Point(12, 96);
+			this->nomC_textbox->Location = System::Drawing::Point(9, 78);
+			this->nomC_textbox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->nomC_textbox->Name = L"nomC_textbox";
-			this->nomC_textbox->Size = System::Drawing::Size(392, 38);
+			this->nomC_textbox->Size = System::Drawing::Size(295, 32);
 			this->nomC_textbox->TabIndex = 14;
 			// 
 			// commandeForm
@@ -923,18 +945,20 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->commandeForm->Controls->Add(this->refCommande);
 			this->commandeForm->Controls->Add(this->label6);
 			this->commandeForm->Controls->Add(this->label29);
-			this->commandeForm->Location = System::Drawing::Point(15, 20);
+			this->commandeForm->Location = System::Drawing::Point(11, 16);
+			this->commandeForm->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->commandeForm->Name = L"commandeForm";
-			this->commandeForm->Size = System::Drawing::Size(410, 669);
+			this->commandeForm->Size = System::Drawing::Size(308, 544);
 			this->commandeForm->TabIndex = 42;
 			// 
 			// idCommande_textbox
 			// 
 			this->idCommande_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->idCommande_textbox->Location = System::Drawing::Point(9, 51);
+			this->idCommande_textbox->Location = System::Drawing::Point(7, 41);
+			this->idCommande_textbox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->idCommande_textbox->Name = L"idCommande_textbox";
-			this->idCommande_textbox->Size = System::Drawing::Size(202, 34);
+			this->idCommande_textbox->Size = System::Drawing::Size(152, 28);
 			this->idCommande_textbox->TabIndex = 41;
 			// 
 			// deleteCommande_btn
@@ -942,10 +966,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->deleteCommande_btn->BackColor = System::Drawing::Color::Red;
 			this->deleteCommande_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->deleteCommande_btn->Location = System::Drawing::Point(15, 604);
-			this->deleteCommande_btn->Margin = System::Windows::Forms::Padding(4);
+			this->deleteCommande_btn->Location = System::Drawing::Point(11, 491);
 			this->deleteCommande_btn->Name = L"deleteCommande_btn";
-			this->deleteCommande_btn->Size = System::Drawing::Size(383, 42);
+			this->deleteCommande_btn->Size = System::Drawing::Size(287, 34);
 			this->deleteCommande_btn->TabIndex = 40;
 			this->deleteCommande_btn->Text = L"Supprimer";
 			this->deleteCommande_btn->UseVisualStyleBackColor = false;
@@ -954,10 +977,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->updateCommande_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->updateCommande_btn->Location = System::Drawing::Point(15, 555);
-			this->updateCommande_btn->Margin = System::Windows::Forms::Padding(4);
+			this->updateCommande_btn->Location = System::Drawing::Point(11, 451);
 			this->updateCommande_btn->Name = L"updateCommande_btn";
-			this->updateCommande_btn->Size = System::Drawing::Size(383, 41);
+			this->updateCommande_btn->Size = System::Drawing::Size(287, 33);
 			this->updateCommande_btn->TabIndex = 39;
 			this->updateCommande_btn->Text = L"Modifier";
 			this->updateCommande_btn->UseVisualStyleBackColor = true;
@@ -967,10 +989,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->addCommande_btn->BackColor = System::Drawing::Color::LimeGreen;
 			this->addCommande_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->addCommande_btn->Location = System::Drawing::Point(15, 502);
-			this->addCommande_btn->Margin = System::Windows::Forms::Padding(4);
+			this->addCommande_btn->Location = System::Drawing::Point(11, 408);
 			this->addCommande_btn->Name = L"addCommande_btn";
-			this->addCommande_btn->Size = System::Drawing::Size(383, 43);
+			this->addCommande_btn->Size = System::Drawing::Size(287, 35);
 			this->addCommande_btn->TabIndex = 38;
 			this->addCommande_btn->Text = L"Ajouter";
 			this->addCommande_btn->UseVisualStyleBackColor = false;
@@ -980,9 +1001,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label25->AutoSize = true;
 			this->label25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label25->Location = System::Drawing::Point(220, 377);
+			this->label25->Location = System::Drawing::Point(165, 306);
+			this->label25->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(129, 25);
+			this->label25->Size = System::Drawing::Size(103, 20);
 			this->label25->TabIndex = 29;
 			this->label25->Text = L"Montant TVA";
 			// 
@@ -990,18 +1012,20 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->montantTva->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->montantTva->Location = System::Drawing::Point(222, 402);
+			this->montantTva->Location = System::Drawing::Point(166, 327);
+			this->montantTva->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->montantTva->Name = L"montantTva";
-			this->montantTva->Size = System::Drawing::Size(173, 38);
+			this->montantTva->Size = System::Drawing::Size(131, 32);
 			this->montantTva->TabIndex = 28;
 			// 
 			// montantHt
 			// 
 			this->montantHt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->montantHt->Location = System::Drawing::Point(12, 402);
+			this->montantHt->Location = System::Drawing::Point(9, 327);
+			this->montantHt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->montantHt->Name = L"montantHt";
-			this->montantHt->Size = System::Drawing::Size(199, 38);
+			this->montantHt->Size = System::Drawing::Size(150, 32);
 			this->montantHt->TabIndex = 27;
 			// 
 			// label26
@@ -1009,9 +1033,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label26->AutoSize = true;
 			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label26->Location = System::Drawing::Point(10, 374);
+			this->label26->Location = System::Drawing::Point(8, 304);
+			this->label26->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(115, 25);
+			this->label26->Size = System::Drawing::Size(93, 20);
 			this->label26->TabIndex = 26;
 			this->label26->Text = L"Montant HT";
 			// 
@@ -1020,9 +1045,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label24->AutoSize = true;
 			this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label24->Location = System::Drawing::Point(220, 298);
+			this->label24->Location = System::Drawing::Point(165, 242);
+			this->label24->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(62, 25);
+			this->label24->Size = System::Drawing::Size(49, 20);
 			this->label24->TabIndex = 25;
 			this->label24->Text = L"Client";
 			// 
@@ -1030,45 +1056,50 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->clientCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->clientCommande->Location = System::Drawing::Point(222, 324);
+			this->clientCommande->Location = System::Drawing::Point(166, 263);
+			this->clientCommande->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->clientCommande->Name = L"clientCommande";
-			this->clientCommande->Size = System::Drawing::Size(173, 38);
+			this->clientCommande->Size = System::Drawing::Size(131, 32);
 			this->clientCommande->TabIndex = 24;
 			// 
 			// dateLivr
 			// 
 			this->dateLivr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dateLivr->Location = System::Drawing::Point(222, 189);
+			this->dateLivr->Location = System::Drawing::Point(166, 154);
+			this->dateLivr->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dateLivr->Name = L"dateLivr";
-			this->dateLivr->Size = System::Drawing::Size(173, 38);
+			this->dateLivr->Size = System::Drawing::Size(131, 32);
 			this->dateLivr->TabIndex = 22;
 			// 
 			// moyenPaiement
 			// 
 			this->moyenPaiement->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->moyenPaiement->Location = System::Drawing::Point(222, 257);
+			this->moyenPaiement->Location = System::Drawing::Point(166, 209);
+			this->moyenPaiement->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->moyenPaiement->Name = L"moyenPaiement";
-			this->moyenPaiement->Size = System::Drawing::Size(173, 38);
+			this->moyenPaiement->Size = System::Drawing::Size(131, 32);
 			this->moyenPaiement->TabIndex = 23;
 			// 
 			// datePaiement
 			// 
 			this->datePaiement->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->datePaiement->Location = System::Drawing::Point(12, 257);
+			this->datePaiement->Location = System::Drawing::Point(9, 209);
+			this->datePaiement->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->datePaiement->Name = L"datePaiement";
-			this->datePaiement->Size = System::Drawing::Size(199, 38);
+			this->datePaiement->Size = System::Drawing::Size(150, 32);
 			this->datePaiement->TabIndex = 21;
 			// 
 			// totalArticles
 			// 
 			this->totalArticles->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->totalArticles->Location = System::Drawing::Point(12, 326);
+			this->totalArticles->Location = System::Drawing::Point(9, 265);
+			this->totalArticles->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->totalArticles->Name = L"totalArticles";
-			this->totalArticles->Size = System::Drawing::Size(199, 38);
+			this->totalArticles->Size = System::Drawing::Size(150, 32);
 			this->totalArticles->TabIndex = 20;
 			// 
 			// label1
@@ -1076,9 +1107,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(10, 230);
+			this->label1->Location = System::Drawing::Point(8, 187);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(140, 25);
+			this->label1->Size = System::Drawing::Size(115, 20);
 			this->label1->TabIndex = 19;
 			this->label1->Text = L"Date Paiement";
 			// 
@@ -1087,9 +1119,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(7, 298);
+			this->label2->Location = System::Drawing::Point(5, 242);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(122, 25);
+			this->label2->Size = System::Drawing::Size(98, 20);
 			this->label2->TabIndex = 18;
 			this->label2->Text = L"Total articles";
 			// 
@@ -1098,9 +1131,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(217, 230);
+			this->label3->Location = System::Drawing::Point(163, 187);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(159, 25);
+			this->label3->Size = System::Drawing::Size(127, 20);
 			this->label3->TabIndex = 17;
 			this->label3->Text = L"Moyen Paiement";
 			// 
@@ -1109,9 +1143,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(217, 163);
+			this->label4->Location = System::Drawing::Point(163, 132);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(136, 25);
+			this->label4->Size = System::Drawing::Size(110, 20);
 			this->label4->TabIndex = 16;
 			this->label4->Text = L"Date Livraison";
 			// 
@@ -1119,9 +1154,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->dateEmission->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dateEmission->Location = System::Drawing::Point(12, 189);
+			this->dateEmission->Location = System::Drawing::Point(9, 154);
+			this->dateEmission->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dateEmission->Name = L"dateEmission";
-			this->dateEmission->Size = System::Drawing::Size(199, 38);
+			this->dateEmission->Size = System::Drawing::Size(150, 32);
 			this->dateEmission->TabIndex = 15;
 			// 
 			// label5
@@ -1129,9 +1165,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(10, 160);
+			this->label5->Location = System::Drawing::Point(8, 130);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(168, 29);
+			this->label5->Size = System::Drawing::Size(130, 24);
 			this->label5->TabIndex = 13;
 			this->label5->Text = L"Date Emission";
 			// 
@@ -1139,9 +1176,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->refCommande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->refCommande->Location = System::Drawing::Point(12, 118);
+			this->refCommande->Location = System::Drawing::Point(9, 96);
+			this->refCommande->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->refCommande->Name = L"refCommande";
-			this->refCommande->Size = System::Drawing::Size(383, 38);
+			this->refCommande->Size = System::Drawing::Size(288, 32);
 			this->refCommande->TabIndex = 14;
 			// 
 			// label6
@@ -1149,9 +1187,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(7, 86);
+			this->label6->Location = System::Drawing::Point(5, 70);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(125, 29);
+			this->label6->Size = System::Drawing::Size(98, 24);
 			this->label6->TabIndex = 12;
 			this->label6->Text = L"Référence";
 			// 
@@ -1160,9 +1199,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label29->AutoSize = true;
 			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label29->Location = System::Drawing::Point(10, 14);
+			this->label29->Location = System::Drawing::Point(8, 11);
+			this->label29->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(38, 29);
+			this->label29->Size = System::Drawing::Size(29, 24);
 			this->label29->TabIndex = 51;
 			this->label29->Text = L"ID";
 			// 
@@ -1184,9 +1224,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->personnelForm->Controls->Add(this->label11);
 			this->personnelForm->Controls->Add(this->nomP_textbox);
 			this->personnelForm->Controls->Add(this->label12);
-			this->personnelForm->Location = System::Drawing::Point(12, 20);
+			this->personnelForm->Location = System::Drawing::Point(9, 16);
+			this->personnelForm->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->personnelForm->Name = L"personnelForm";
-			this->personnelForm->Size = System::Drawing::Size(413, 672);
+			this->personnelForm->Size = System::Drawing::Size(310, 546);
 			this->personnelForm->TabIndex = 42;
 			// 
 			// label30
@@ -1194,9 +1235,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label30->AutoSize = true;
 			this->label30->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label30->Location = System::Drawing::Point(10, 1);
+			this->label30->Location = System::Drawing::Point(8, 1);
+			this->label30->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label30->Name = L"label30";
-			this->label30->Size = System::Drawing::Size(38, 29);
+			this->label30->Size = System::Drawing::Size(29, 24);
 			this->label30->TabIndex = 51;
 			this->label30->Text = L"ID";
 			// 
@@ -1205,9 +1247,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->idPersonnel_box->Enabled = false;
 			this->idPersonnel_box->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->idPersonnel_box->Location = System::Drawing::Point(15, 39);
+			this->idPersonnel_box->Location = System::Drawing::Point(11, 32);
+			this->idPersonnel_box->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->idPersonnel_box->Name = L"idPersonnel_box";
-			this->idPersonnel_box->Size = System::Drawing::Size(205, 30);
+			this->idPersonnel_box->Size = System::Drawing::Size(155, 26);
 			this->idPersonnel_box->TabIndex = 47;
 			// 
 			// dateEmbauche
@@ -1217,11 +1260,12 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->dateEmbauche->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->dateEmbauche->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateEmbauche->Location = System::Drawing::Point(15, 262);
+			this->dateEmbauche->Location = System::Drawing::Point(11, 213);
+			this->dateEmbauche->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dateEmbauche->MaxDate = System::DateTime(2022, 12, 3, 0, 0, 0, 0);
 			this->dateEmbauche->MinDate = System::DateTime(1990, 1, 1, 0, 0, 0, 0);
 			this->dateEmbauche->Name = L"dateEmbauche";
-			this->dateEmbauche->Size = System::Drawing::Size(375, 34);
+			this->dateEmbauche->Size = System::Drawing::Size(282, 28);
 			this->dateEmbauche->TabIndex = 46;
 			this->dateEmbauche->Value = System::DateTime(2022, 12, 3, 0, 0, 0, 0);
 			// 
@@ -1230,10 +1274,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->deletePersonnel_btn->BackColor = System::Drawing::Color::Red;
 			this->deletePersonnel_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->deletePersonnel_btn->Location = System::Drawing::Point(15, 609);
-			this->deletePersonnel_btn->Margin = System::Windows::Forms::Padding(4);
+			this->deletePersonnel_btn->Location = System::Drawing::Point(11, 495);
 			this->deletePersonnel_btn->Name = L"deletePersonnel_btn";
-			this->deletePersonnel_btn->Size = System::Drawing::Size(375, 44);
+			this->deletePersonnel_btn->Size = System::Drawing::Size(281, 36);
 			this->deletePersonnel_btn->TabIndex = 44;
 			this->deletePersonnel_btn->Text = L"Supprimer";
 			this->deletePersonnel_btn->UseVisualStyleBackColor = false;
@@ -1243,10 +1286,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->updatePersonnel_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->updatePersonnel_btn->Location = System::Drawing::Point(15, 560);
-			this->updatePersonnel_btn->Margin = System::Windows::Forms::Padding(4);
+			this->updatePersonnel_btn->Location = System::Drawing::Point(11, 455);
 			this->updatePersonnel_btn->Name = L"updatePersonnel_btn";
-			this->updatePersonnel_btn->Size = System::Drawing::Size(375, 39);
+			this->updatePersonnel_btn->Size = System::Drawing::Size(281, 32);
 			this->updatePersonnel_btn->TabIndex = 43;
 			this->updatePersonnel_btn->Text = L"Modifier";
 			this->updatePersonnel_btn->UseVisualStyleBackColor = true;
@@ -1256,10 +1298,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->addPersonnel_btn->BackColor = System::Drawing::Color::LimeGreen;
 			this->addPersonnel_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->addPersonnel_btn->Location = System::Drawing::Point(15, 507);
-			this->addPersonnel_btn->Margin = System::Windows::Forms::Padding(4);
+			this->addPersonnel_btn->Location = System::Drawing::Point(11, 412);
 			this->addPersonnel_btn->Name = L"addPersonnel_btn";
-			this->addPersonnel_btn->Size = System::Drawing::Size(375, 41);
+			this->addPersonnel_btn->Size = System::Drawing::Size(281, 33);
 			this->addPersonnel_btn->TabIndex = 42;
 			this->addPersonnel_btn->Text = L"Ajouter";
 			this->addPersonnel_btn->UseVisualStyleBackColor = false;
@@ -1270,9 +1311,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(14, 377);
+			this->label7->Location = System::Drawing::Point(10, 306);
+			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(119, 29);
+			this->label7->Size = System::Drawing::Size(93, 24);
 			this->label7->TabIndex = 19;
 			this->label7->Text = L"Supérieur";
 			// 
@@ -1280,18 +1322,20 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->superieurP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->superieurP->Location = System::Drawing::Point(18, 408);
+			this->superieurP->Location = System::Drawing::Point(14, 332);
+			this->superieurP->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->superieurP->Name = L"superieurP";
-			this->superieurP->Size = System::Drawing::Size(375, 38);
+			this->superieurP->Size = System::Drawing::Size(282, 32);
 			this->superieurP->TabIndex = 23;
 			// 
 			// adresseP_textbox
 			// 
 			this->adresseP_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->adresseP_textbox->Location = System::Drawing::Point(18, 337);
+			this->adresseP_textbox->Location = System::Drawing::Point(14, 274);
+			this->adresseP_textbox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->adresseP_textbox->Name = L"adresseP_textbox";
-			this->adresseP_textbox->Size = System::Drawing::Size(375, 38);
+			this->adresseP_textbox->Size = System::Drawing::Size(282, 32);
 			this->adresseP_textbox->TabIndex = 21;
 			// 
 			// label9
@@ -1299,9 +1343,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(18, 307);
+			this->label9->Location = System::Drawing::Point(14, 249);
+			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(102, 29);
+			this->label9->Size = System::Drawing::Size(80, 24);
 			this->label9->TabIndex = 17;
 			this->label9->Text = L"Adresse";
 			// 
@@ -1310,9 +1355,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(10, 224);
+			this->label10->Location = System::Drawing::Point(8, 182);
+			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(184, 29);
+			this->label10->Size = System::Drawing::Size(146, 24);
 			this->label10->TabIndex = 16;
 			this->label10->Text = L"Date Embauche";
 			// 
@@ -1320,9 +1366,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->prenomP_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->prenomP_textbox->Location = System::Drawing::Point(15, 180);
+			this->prenomP_textbox->Location = System::Drawing::Point(11, 146);
+			this->prenomP_textbox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->prenomP_textbox->Name = L"prenomP_textbox";
-			this->prenomP_textbox->Size = System::Drawing::Size(375, 38);
+			this->prenomP_textbox->Size = System::Drawing::Size(282, 32);
 			this->prenomP_textbox->TabIndex = 15;
 			// 
 			// label11
@@ -1330,9 +1377,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(10, 148);
+			this->label11->Location = System::Drawing::Point(8, 120);
+			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(98, 29);
+			this->label11->Size = System::Drawing::Size(77, 24);
 			this->label11->TabIndex = 13;
 			this->label11->Text = L"Prénom";
 			// 
@@ -1340,9 +1388,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->nomP_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->nomP_textbox->Location = System::Drawing::Point(15, 104);
+			this->nomP_textbox->Location = System::Drawing::Point(11, 84);
+			this->nomP_textbox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->nomP_textbox->Name = L"nomP_textbox";
-			this->nomP_textbox->Size = System::Drawing::Size(375, 38);
+			this->nomP_textbox->Size = System::Drawing::Size(282, 32);
 			this->nomP_textbox->TabIndex = 14;
 			// 
 			// label12
@@ -1350,9 +1399,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label12->AutoSize = true;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(10, 72);
+			this->label12->Location = System::Drawing::Point(8, 58);
+			this->label12->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(65, 29);
+			this->label12->Size = System::Drawing::Size(51, 24);
 			this->label12->TabIndex = 12;
 			this->label12->Text = L"Nom";
 			// 
@@ -1378,9 +1428,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->produitForm->Controls->Add(this->label17);
 			this->produitForm->Controls->Add(this->designation);
 			this->produitForm->Controls->Add(this->label18);
-			this->produitForm->Location = System::Drawing::Point(12, 21);
+			this->produitForm->Location = System::Drawing::Point(9, 17);
+			this->produitForm->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->produitForm->Name = L"produitForm";
-			this->produitForm->Size = System::Drawing::Size(413, 669);
+			this->produitForm->Size = System::Drawing::Size(310, 544);
 			this->produitForm->TabIndex = 41;
 			// 
 			// categorieCombo
@@ -1388,9 +1439,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->categorieCombo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->categorieCombo->FormattingEnabled = true;
-			this->categorieCombo->Location = System::Drawing::Point(238, 410);
+			this->categorieCombo->Location = System::Drawing::Point(178, 333);
+			this->categorieCombo->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->categorieCombo->Name = L"categorieCombo";
-			this->categorieCombo->Size = System::Drawing::Size(160, 37);
+			this->categorieCombo->Size = System::Drawing::Size(121, 30);
 			this->categorieCombo->TabIndex = 52;
 			// 
 			// label31
@@ -1398,9 +1450,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label31->AutoSize = true;
 			this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label31->Location = System::Drawing::Point(11, 11);
+			this->label31->Location = System::Drawing::Point(8, 9);
+			this->label31->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label31->Name = L"label31";
-			this->label31->Size = System::Drawing::Size(38, 29);
+			this->label31->Size = System::Drawing::Size(29, 24);
 			this->label31->TabIndex = 51;
 			this->label31->Text = L"ID";
 			// 
@@ -1409,9 +1462,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->idProduit_textbox->Enabled = false;
 			this->idProduit_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->idProduit_textbox->Location = System::Drawing::Point(15, 42);
+			this->idProduit_textbox->Location = System::Drawing::Point(11, 34);
+			this->idProduit_textbox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->idProduit_textbox->Name = L"idProduit_textbox";
-			this->idProduit_textbox->Size = System::Drawing::Size(199, 34);
+			this->idProduit_textbox->Size = System::Drawing::Size(150, 28);
 			this->idProduit_textbox->TabIndex = 48;
 			// 
 			// label27
@@ -1419,9 +1473,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label27->AutoSize = true;
 			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label27->Location = System::Drawing::Point(11, 81);
+			this->label27->Location = System::Drawing::Point(8, 66);
+			this->label27->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(125, 29);
+			this->label27->Size = System::Drawing::Size(98, 24);
 			this->label27->TabIndex = 47;
 			this->label27->Text = L"Référence";
 			// 
@@ -1429,9 +1484,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->refProduit_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->refProduit_textbox->Location = System::Drawing::Point(15, 113);
+			this->refProduit_textbox->Location = System::Drawing::Point(11, 92);
+			this->refProduit_textbox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->refProduit_textbox->Name = L"refProduit_textbox";
-			this->refProduit_textbox->Size = System::Drawing::Size(383, 34);
+			this->refProduit_textbox->Size = System::Drawing::Size(288, 28);
 			this->refProduit_textbox->TabIndex = 46;
 			// 
 			// deleteProduit_btn
@@ -1439,10 +1495,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->deleteProduit_btn->BackColor = System::Drawing::Color::Red;
 			this->deleteProduit_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->deleteProduit_btn->Location = System::Drawing::Point(15, 620);
-			this->deleteProduit_btn->Margin = System::Windows::Forms::Padding(4);
+			this->deleteProduit_btn->Location = System::Drawing::Point(11, 504);
 			this->deleteProduit_btn->Name = L"deleteProduit_btn";
-			this->deleteProduit_btn->Size = System::Drawing::Size(386, 35);
+			this->deleteProduit_btn->Size = System::Drawing::Size(290, 28);
 			this->deleteProduit_btn->TabIndex = 44;
 			this->deleteProduit_btn->Text = L"Supprimer";
 			this->deleteProduit_btn->UseVisualStyleBackColor = false;
@@ -1452,10 +1507,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->updateProduit_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->updateProduit_btn->Location = System::Drawing::Point(14, 573);
-			this->updateProduit_btn->Margin = System::Windows::Forms::Padding(4);
+			this->updateProduit_btn->Location = System::Drawing::Point(10, 466);
 			this->updateProduit_btn->Name = L"updateProduit_btn";
-			this->updateProduit_btn->Size = System::Drawing::Size(386, 36);
+			this->updateProduit_btn->Size = System::Drawing::Size(290, 29);
 			this->updateProduit_btn->TabIndex = 43;
 			this->updateProduit_btn->Text = L"Modifier";
 			this->updateProduit_btn->UseVisualStyleBackColor = true;
@@ -1465,10 +1519,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->addProduit_btn->BackColor = System::Drawing::Color::LimeGreen;
 			this->addProduit_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->addProduit_btn->Location = System::Drawing::Point(15, 519);
-			this->addProduit_btn->Margin = System::Windows::Forms::Padding(4);
+			this->addProduit_btn->Location = System::Drawing::Point(11, 422);
 			this->addProduit_btn->Name = L"addProduit_btn";
-			this->addProduit_btn->Size = System::Drawing::Size(386, 40);
+			this->addProduit_btn->Size = System::Drawing::Size(290, 32);
 			this->addProduit_btn->TabIndex = 42;
 			this->addProduit_btn->Text = L"Ajouter";
 			this->addProduit_btn->UseVisualStyleBackColor = false;
@@ -1478,27 +1531,30 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->quantiteStock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->quantiteStock->Location = System::Drawing::Point(15, 336);
+			this->quantiteStock->Location = System::Drawing::Point(11, 273);
+			this->quantiteStock->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->quantiteStock->Name = L"quantiteStock";
-			this->quantiteStock->Size = System::Drawing::Size(199, 38);
+			this->quantiteStock->Size = System::Drawing::Size(150, 32);
 			this->quantiteStock->TabIndex = 22;
 			// 
 			// seuil
 			// 
 			this->seuil->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->seuil->Location = System::Drawing::Point(238, 336);
+			this->seuil->Location = System::Drawing::Point(178, 273);
+			this->seuil->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->seuil->Name = L"seuil";
-			this->seuil->Size = System::Drawing::Size(160, 38);
+			this->seuil->Size = System::Drawing::Size(121, 32);
 			this->seuil->TabIndex = 23;
 			// 
 			// tvaProduit
 			// 
 			this->tvaProduit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->tvaProduit->Location = System::Drawing::Point(15, 409);
+			this->tvaProduit->Location = System::Drawing::Point(11, 332);
+			this->tvaProduit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tvaProduit->Name = L"tvaProduit";
-			this->tvaProduit->Size = System::Drawing::Size(201, 38);
+			this->tvaProduit->Size = System::Drawing::Size(152, 32);
 			this->tvaProduit->TabIndex = 21;
 			this->tvaProduit->TextChanged += gcnew System::EventHandler(this, &Main::textBox13_TextChanged);
 			// 
@@ -1507,9 +1563,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label13->AutoSize = true;
 			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label13->Location = System::Drawing::Point(15, 382);
+			this->label13->Location = System::Drawing::Point(11, 310);
+			this->label13->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(103, 25);
+			this->label13->Size = System::Drawing::Size(78, 20);
 			this->label13->TabIndex = 19;
 			this->label13->Text = L"Taux TVA";
 			// 
@@ -1518,9 +1575,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label14->AutoSize = true;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label14->Location = System::Drawing::Point(242, 381);
+			this->label14->Location = System::Drawing::Point(182, 310);
+			this->label14->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(97, 25);
+			this->label14->Size = System::Drawing::Size(78, 20);
 			this->label14->TabIndex = 18;
 			this->label14->Text = L"Catégorie";
 			// 
@@ -1529,9 +1587,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label15->AutoSize = true;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label15->Location = System::Drawing::Point(242, 309);
+			this->label15->Location = System::Drawing::Point(182, 251);
+			this->label15->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(61, 25);
+			this->label15->Size = System::Drawing::Size(48, 20);
 			this->label15->TabIndex = 17;
 			this->label15->Text = L"Seuil ";
 			// 
@@ -1540,9 +1599,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label16->AutoSize = true;
 			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label16->Location = System::Drawing::Point(10, 309);
+			this->label16->Location = System::Drawing::Point(8, 251);
+			this->label16->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(141, 25);
+			this->label16->Size = System::Drawing::Size(115, 20);
 			this->label16->TabIndex = 16;
 			this->label16->Text = L"Quantité Stock";
 			// 
@@ -1550,9 +1610,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->prixHt_produit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->prixHt_produit->Location = System::Drawing::Point(15, 261);
+			this->prixHt_produit->Location = System::Drawing::Point(11, 212);
+			this->prixHt_produit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->prixHt_produit->Name = L"prixHt_produit";
-			this->prixHt_produit->Size = System::Drawing::Size(383, 38);
+			this->prixHt_produit->Size = System::Drawing::Size(288, 32);
 			this->prixHt_produit->TabIndex = 15;
 			// 
 			// label17
@@ -1560,9 +1621,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label17->AutoSize = true;
 			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label17->Location = System::Drawing::Point(11, 230);
+			this->label17->Location = System::Drawing::Point(8, 187);
+			this->label17->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(93, 29);
+			this->label17->Size = System::Drawing::Size(73, 24);
 			this->label17->TabIndex = 13;
 			this->label17->Text = L"Prix HT";
 			// 
@@ -1570,9 +1632,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			// 
 			this->designation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->designation->Location = System::Drawing::Point(15, 188);
+			this->designation->Location = System::Drawing::Point(11, 153);
+			this->designation->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->designation->Name = L"designation";
-			this->designation->Size = System::Drawing::Size(383, 38);
+			this->designation->Size = System::Drawing::Size(288, 32);
 			this->designation->TabIndex = 14;
 			// 
 			// label18
@@ -1580,9 +1643,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->label18->AutoSize = true;
 			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label18->Location = System::Drawing::Point(10, 157);
+			this->label18->Location = System::Drawing::Point(8, 128);
+			this->label18->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(141, 29);
+			this->label18->Size = System::Drawing::Size(109, 24);
 			this->label18->TabIndex = 12;
 			this->label18->Text = L"Désignation";
 			// 
@@ -1598,9 +1662,10 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->statsForm->Controls->Add(this->btnPanier);
 			this->statsForm->Controls->Add(this->btnCa);
 			this->statsForm->Controls->Add(this->btnMt);
-			this->statsForm->Location = System::Drawing::Point(12, 24);
+			this->statsForm->Location = System::Drawing::Point(9, 20);
+			this->statsForm->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->statsForm->Name = L"statsForm";
-			this->statsForm->Size = System::Drawing::Size(413, 669);
+			this->statsForm->Size = System::Drawing::Size(310, 544);
 			this->statsForm->TabIndex = 40;
 			this->statsForm->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Main::statsForm_Paint);
 			// 
@@ -1609,10 +1674,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->btnSimul->BackColor = System::Drawing::Color::White;
 			this->btnSimul->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnSimul->Location = System::Drawing::Point(4, 491);
-			this->btnSimul->Margin = System::Windows::Forms::Padding(4);
+			this->btnSimul->Location = System::Drawing::Point(3, 399);
 			this->btnSimul->Name = L"btnSimul";
-			this->btnSimul->Size = System::Drawing::Size(402, 39);
+			this->btnSimul->Size = System::Drawing::Size(302, 32);
 			this->btnSimul->TabIndex = 8;
 			this->btnSimul->Text = L"Simulation";
 			this->btnSimul->UseVisualStyleBackColor = false;
@@ -1622,10 +1686,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->btnValAchat->BackColor = System::Drawing::Color::White;
 			this->btnValAchat->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnValAchat->Location = System::Drawing::Point(3, 371);
-			this->btnValAchat->Margin = System::Windows::Forms::Padding(4);
+			this->btnValAchat->Location = System::Drawing::Point(2, 301);
 			this->btnValAchat->Name = L"btnValAchat";
-			this->btnValAchat->Size = System::Drawing::Size(403, 39);
+			this->btnValAchat->Size = System::Drawing::Size(302, 32);
 			this->btnValAchat->TabIndex = 7;
 			this->btnValAchat->Text = L"Valeur d\'achat";
 			this->btnValAchat->UseVisualStyleBackColor = false;
@@ -1635,10 +1698,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->btnValCom->BackColor = System::Drawing::Color::White;
 			this->btnValCom->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnValCom->Location = System::Drawing::Point(4, 433);
-			this->btnValCom->Margin = System::Windows::Forms::Padding(4);
+			this->btnValCom->Location = System::Drawing::Point(3, 352);
 			this->btnValCom->Name = L"btnValCom";
-			this->btnValCom->Size = System::Drawing::Size(402, 39);
+			this->btnValCom->Size = System::Drawing::Size(302, 32);
 			this->btnValCom->TabIndex = 6;
 			this->btnValCom->Text = L"Valeur Commercial";
 			this->btnValCom->UseVisualStyleBackColor = false;
@@ -1648,10 +1710,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->btnMoinsVendus->BackColor = System::Drawing::Color::White;
 			this->btnMoinsVendus->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnMoinsVendus->Location = System::Drawing::Point(4, 306);
-			this->btnMoinsVendus->Margin = System::Windows::Forms::Padding(4);
+			this->btnMoinsVendus->Location = System::Drawing::Point(3, 249);
 			this->btnMoinsVendus->Name = L"btnMoinsVendus";
-			this->btnMoinsVendus->Size = System::Drawing::Size(402, 39);
+			this->btnMoinsVendus->Size = System::Drawing::Size(302, 32);
 			this->btnMoinsVendus->TabIndex = 5;
 			this->btnMoinsVendus->Text = L"10 Moins vendus";
 			this->btnMoinsVendus->UseVisualStyleBackColor = false;
@@ -1661,10 +1722,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->btnPlusVendus->BackColor = System::Drawing::Color::White;
 			this->btnPlusVendus->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnPlusVendus->Location = System::Drawing::Point(3, 248);
-			this->btnPlusVendus->Margin = System::Windows::Forms::Padding(4);
+			this->btnPlusVendus->Location = System::Drawing::Point(2, 202);
 			this->btnPlusVendus->Name = L"btnPlusVendus";
-			this->btnPlusVendus->Size = System::Drawing::Size(403, 39);
+			this->btnPlusVendus->Size = System::Drawing::Size(302, 32);
 			this->btnPlusVendus->TabIndex = 4;
 			this->btnPlusVendus->Text = L"10 Plus vendus";
 			this->btnPlusVendus->UseVisualStyleBackColor = false;
@@ -1675,10 +1735,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->btnSouseuil->BackColor = System::Drawing::Color::White;
 			this->btnSouseuil->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnSouseuil->Location = System::Drawing::Point(3, 124);
-			this->btnSouseuil->Margin = System::Windows::Forms::Padding(4);
+			this->btnSouseuil->Location = System::Drawing::Point(2, 101);
 			this->btnSouseuil->Name = L"btnSouseuil";
-			this->btnSouseuil->Size = System::Drawing::Size(403, 39);
+			this->btnSouseuil->Size = System::Drawing::Size(302, 32);
 			this->btnSouseuil->TabIndex = 2;
 			this->btnSouseuil->Text = L"Produit Sous Seuil";
 			this->btnSouseuil->UseVisualStyleBackColor = false;
@@ -1689,10 +1748,9 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->btnPanier->BackColor = System::Drawing::Color::White;
 			this->btnPanier->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnPanier->Location = System::Drawing::Point(3, 4);
-			this->btnPanier->Margin = System::Windows::Forms::Padding(4);
+			this->btnPanier->Location = System::Drawing::Point(2, 3);
 			this->btnPanier->Name = L"btnPanier";
-			this->btnPanier->Size = System::Drawing::Size(403, 39);
+			this->btnPanier->Size = System::Drawing::Size(302, 32);
 			this->btnPanier->TabIndex = 0;
 			this->btnPanier->Text = L"Panier moyen";
 			this->btnPanier->UseVisualStyleBackColor = false;
@@ -1702,34 +1760,34 @@ private: System::Windows::Forms::ComboBox^ categorieCombo;
 			this->btnCa->BackColor = System::Drawing::Color::White;
 			this->btnCa->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnCa->Location = System::Drawing::Point(3, 64);
-			this->btnCa->Margin = System::Windows::Forms::Padding(4);
+			this->btnCa->Location = System::Drawing::Point(2, 52);
 			this->btnCa->Name = L"btnCa";
-			this->btnCa->Size = System::Drawing::Size(403, 39);
+			this->btnCa->Size = System::Drawing::Size(302, 32);
 			this->btnCa->TabIndex = 1;
 			this->btnCa->Text = L"Chiffre d\'affaire";
 			this->btnCa->UseVisualStyleBackColor = false;
+			this->btnCa->Click += gcnew System::EventHandler(this, &Main::btnCa_Click);
 			// 
 			// btnMt
 			// 
 			this->btnMt->BackColor = System::Drawing::Color::White;
 			this->btnMt->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnMt->Location = System::Drawing::Point(3, 188);
-			this->btnMt->Margin = System::Windows::Forms::Padding(4);
+			this->btnMt->Location = System::Drawing::Point(2, 153);
 			this->btnMt->Name = L"btnMt";
-			this->btnMt->Size = System::Drawing::Size(403, 39);
+			this->btnMt->Size = System::Drawing::Size(302, 32);
 			this->btnMt->TabIndex = 3;
 			this->btnMt->Text = L"Montant total";
 			this->btnMt->UseVisualStyleBackColor = false;
 			// 
 			// Main
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1737, 748);
+			this->ClientSize = System::Drawing::Size(1028, 608);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"Main";
 			this->Text = L"Main";
 			this->Load += gcnew System::EventHandler(this, &Main::Main_Load);
@@ -2125,6 +2183,10 @@ private: System::Void deleteProduit_btn_Click(System::Object^ sender, System::Ev
 	{
 		MessageBox::Show("Opération annulée!", "Status");
 	}
+}
+private: System::Void btnCa_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
 }
 };
 }
