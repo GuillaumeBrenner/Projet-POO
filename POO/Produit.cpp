@@ -35,7 +35,7 @@ String^ Mappage::Produit::INSERT()
 String^ Mappage::Produit::UPDATE()
 {
     return "UPDATE Produit " +
-        "SET reference = '" + this->getRef() + "', designation = '" + this->getDesignation() + "' " +
+        "SET reference = '" + this->reference + "', designation = '" + this->designation + "', prixHt = '" + this->prixHt + "',quantite = '" + this->quantite + "', seuil = '" + this->seuil + "',tauxTva = '" + this->tauxTva + "',categorie = '" + this->categorie + "' " +
         "WHERE(idProduit = " + this->getId() + ");";
 }
 

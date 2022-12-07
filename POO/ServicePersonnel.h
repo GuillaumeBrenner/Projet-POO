@@ -19,7 +19,7 @@ namespace Services
 
         void updatePersonnel(int idPersonnel, String^ nom, String^ prenom, DateTime dateEmbauche, String^ adresse, String^ superieur);
 
-        void deletePersonnel(int idPersonne);
+        void deletePersonnel(int idPersonnel);
 
     private:
         Composants::Cad^ cad;

@@ -38,6 +38,23 @@ void Services::ServiceProduit::addProduit(String^ reference, String^ designation
     this->cad->actionRows(sql);
 }
 
+void Services::ServiceProduit::updateProduit(int idPersonnel, String^ reference, String^ designation, float prixHt, int quantite, int seuil, float tauxTva, String^ categorie)
+{
+    String^ sql;
+
+    this->produit->setId(idPersonnel);
+    this->produit->setRef(reference);
+    this->produit->setDesignation(designation);
+    this->produit->setPrixHt(prixHt);
+    this->produit->setQuantite(quantite);
+    this->produit->setSeuil(seuil);
+    this->produit->setTaux(tauxTva);
+    this->produit->setCategorie(categorie);
+
+    sql = this->produit->UPDATE();
+    this->cad->actionRows(sql);
+}
+
 void Services::ServiceProduit::deleteProduit(int idProduit)
 {
     this->produit->setId(idProduit);

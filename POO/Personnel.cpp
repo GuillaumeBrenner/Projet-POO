@@ -36,7 +36,7 @@ String^ Mappage::Personnel::UPDATE()
 
 String^ Mappage::Personnel::DELETE()
 {
-    return "DELETE FROM [poo].[dbo].[Client] WHERE idPersonnel = " + this->getId() + ";";
+    return "DELETE FROM [poo].[dbo].[Personnel] WHERE idPersonnel = " + this->getId() + ";";
 }
 
 // SETTERS
