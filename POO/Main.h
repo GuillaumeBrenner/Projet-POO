@@ -4,6 +4,7 @@
 #include "ServiceProduit.h"
 #include "ServiceCommande.h"
 #include "ServicePersonnel.h"
+#include "ServiceStatistique.h"
 
 namespace POO {
 
@@ -274,6 +275,7 @@ private: System::Windows::Forms::TextBox^ clientCommande;
 	private: Services::ServiceProduit^ gestionProduits;
 	private: Services::ServicePersonnel^ gestionPersonnels;
 	private: Services::ServiceCommande^ gestionCommandes;
+	private: Services::ServiceStatistique^ gestionStatistique;
 		   // Le mode 
 	private: EditionMode mode;
 
@@ -648,11 +650,11 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			this->panel2->Controls->Add(this->messageLabel);
 			this->panel2->Controls->Add(this->messageTxt);
 			this->panel2->Controls->Add(this->dataGridView1);
+			this->panel2->Controls->Add(this->statsForm);
+			this->panel2->Controls->Add(this->clientForm);
 			this->panel2->Controls->Add(this->commandeForm);
 			this->panel2->Controls->Add(this->personnelForm);
 			this->panel2->Controls->Add(this->produitForm);
-			this->panel2->Controls->Add(this->statsForm);
-			this->panel2->Controls->Add(this->clientForm);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel2->Location = System::Drawing::Point(200, 0);
 			this->panel2->Name = L"panel2";
@@ -1525,6 +1527,7 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			this->btnCa->TabIndex = 1;
 			this->btnCa->Text = L"Chiffre d\'affaire";
 			this->btnCa->UseVisualStyleBackColor = false;
+			this->btnCa->Click += gcnew System::EventHandler(this, &Main::btnCa_Click);
 			// 
 			// btnMt
 			// 
@@ -1795,6 +1798,7 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 		this->gestionProduits = gcnew Services::ServiceProduit();
 		this->gestionPersonnels = gcnew Services::ServicePersonnel();
 		this->gestionCommandes = gcnew Services::ServiceCommande();
+		this->gestionStatistique = gcnew Services::ServiceStatistique();
 	}
 private: System::Void newButton_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -2353,5 +2357,11 @@ private: System::Void maximized_Click(System::Object^ sender, System::EventArgs^
 	WindowState = FormWindowState::Maximized;
 }
 
+private: System::Void btnCa_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionStatistique->ChiffreAff("Rsl");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "Rsl";
+}
 };
 }
