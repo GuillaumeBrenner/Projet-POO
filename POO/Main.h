@@ -643,6 +643,7 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->panel2->Controls->Add(this->commandeForm);
 			this->panel2->Controls->Add(this->refreshData);
 			this->panel2->Controls->Add(this->showData);
 			this->panel2->Controls->Add(this->nextClient_btn);
@@ -652,7 +653,6 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			this->panel2->Controls->Add(this->dataGridView1);
 			this->panel2->Controls->Add(this->statsForm);
 			this->panel2->Controls->Add(this->clientForm);
-			this->panel2->Controls->Add(this->commandeForm);
 			this->panel2->Controls->Add(this->personnelForm);
 			this->panel2->Controls->Add(this->produitForm);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -1207,6 +1207,7 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			this->updateCommande_btn->TabIndex = 39;
 			this->updateCommande_btn->Text = L"Modifier";
 			this->updateCommande_btn->UseVisualStyleBackColor = true;
+			this->updateCommande_btn->Click += gcnew System::EventHandler(this, &Main::updateCommande_btn_Click);
 			// 
 			// addCommande_btn
 			// 
@@ -2357,6 +2358,35 @@ private: System::Void deleteCommande_btn_Click(System::Object^ sender, System::E
 		this->datePaiement_box->ResetText();
 		this->moyenPaiement->Clear();
 		this->totalArticles->Clear();
+		this->clientCmd_box->Refresh();
+	}
+	else
+	{
+		MessageBox::Show("Opération annulée!", "Status");
+	}
+}
+	   /////////////////////////////////////////////BUTTON MODIFIER UNE COMMANDE
+private: System::Void updateCommande_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		   // Confirmation
+	if (MessageBox::Show("Voulez-vous vraiment supprimer cette Commande?", "Notification", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+		{
+		this->gestionCommandes->deleteCommande(Convert::ToInt32(this->idCommande_textbox->Text));
+		this->idCommande_textbox->Clear();
+		this->dataGridView1->Refresh();
+		this->dataset = this->gestionCommandes->listeCommandes("Rsl");
+		this->dataGridView1->DataSource = this->dataset;
+		this->dataGridView1->DataMember = "Rsl";
+		MessageBox::Show("Opération réussie : le Produit supprimé", "Notification");
+
+			   // Reset des champs graphiques de l'interface
+		this->refCommande->Clear();
+		this->dateEmission_box->ResetText();
+		this->dateLivr_box->ResetText();
+		this->datePaiement_box->ResetText();
+		this->moyenPaiement->Clear();
+		this->totalArticles->Clear();
+		this->clientCmd_box->Refresh();
 	}
 	else
 	{
@@ -2437,5 +2467,6 @@ private: System::Void btnMoinsVendus_Click(System::Object^ sender, System::Event
 	this->dataGridView1->DataSource = this->dataset;
 	this->dataGridView1->DataMember = "moins";
 }
+
 };
 }
