@@ -9,6 +9,12 @@ namespace Mappage {
 		Statistique();
 
 		String^ ChiffreAff();
+		String^ ValeurCommerciale();
+		String^ ValeurAchat();
+		String^ SousSeuil();
+		String^ PlusVendus();
+		String^ MoinsVendus();
+
 	private:
 		float ca;
 	};

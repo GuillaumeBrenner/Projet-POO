@@ -432,6 +432,34 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			this->messageLabel = (gcnew System::Windows::Forms::Label());
 			this->messageTxt = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->statsForm = (gcnew System::Windows::Forms::Panel());
+			this->btnSimul = (gcnew System::Windows::Forms::Button());
+			this->btnValAchat = (gcnew System::Windows::Forms::Button());
+			this->btnValCom = (gcnew System::Windows::Forms::Button());
+			this->btnMoinsVendus = (gcnew System::Windows::Forms::Button());
+			this->btnPlusVendus = (gcnew System::Windows::Forms::Button());
+			this->btnSouseuil = (gcnew System::Windows::Forms::Button());
+			this->btnPanier = (gcnew System::Windows::Forms::Button());
+			this->btnCa = (gcnew System::Windows::Forms::Button());
+			this->btnMt = (gcnew System::Windows::Forms::Button());
+			this->clientForm = (gcnew System::Windows::Forms::Panel());
+			this->adresseLivr = (gcnew System::Windows::Forms::TextBox());
+			this->adresseFact = (gcnew System::Windows::Forms::TextBox());
+			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->idClient_textbox = (gcnew System::Windows::Forms::TextBox());
+			this->datePreAchat_box = (gcnew System::Windows::Forms::DateTimePicker());
+			this->dateNaiss_box = (gcnew System::Windows::Forms::DateTimePicker());
+			this->deleteClient_btn = (gcnew System::Windows::Forms::Button());
+			this->updateClient_btn = (gcnew System::Windows::Forms::Button());
+			this->addClient_btn = (gcnew System::Windows::Forms::Button());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->prenomC_textBox = (gcnew System::Windows::Forms::TextBox());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->nomC_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->commandeForm = (gcnew System::Windows::Forms::Panel());
 			this->clientCmd_box = (gcnew System::Windows::Forms::ComboBox());
 			this->datePaiement_box = (gcnew System::Windows::Forms::DateTimePicker());
@@ -489,47 +517,19 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->designation = (gcnew System::Windows::Forms::TextBox());
 			this->label18 = (gcnew System::Windows::Forms::Label());
-			this->statsForm = (gcnew System::Windows::Forms::Panel());
-			this->btnSimul = (gcnew System::Windows::Forms::Button());
-			this->btnValAchat = (gcnew System::Windows::Forms::Button());
-			this->btnValCom = (gcnew System::Windows::Forms::Button());
-			this->btnMoinsVendus = (gcnew System::Windows::Forms::Button());
-			this->btnPlusVendus = (gcnew System::Windows::Forms::Button());
-			this->btnSouseuil = (gcnew System::Windows::Forms::Button());
-			this->btnPanier = (gcnew System::Windows::Forms::Button());
-			this->btnCa = (gcnew System::Windows::Forms::Button());
-			this->btnMt = (gcnew System::Windows::Forms::Button());
-			this->clientForm = (gcnew System::Windows::Forms::Panel());
-			this->adresseLivr = (gcnew System::Windows::Forms::TextBox());
-			this->adresseFact = (gcnew System::Windows::Forms::TextBox());
-			this->label28 = (gcnew System::Windows::Forms::Label());
-			this->idClient_textbox = (gcnew System::Windows::Forms::TextBox());
-			this->datePreAchat_box = (gcnew System::Windows::Forms::DateTimePicker());
-			this->dateNaiss_box = (gcnew System::Windows::Forms::DateTimePicker());
-			this->deleteClient_btn = (gcnew System::Windows::Forms::Button());
-			this->updateClient_btn = (gcnew System::Windows::Forms::Button());
-			this->addClient_btn = (gcnew System::Windows::Forms::Button());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label19 = (gcnew System::Windows::Forms::Label());
-			this->label20 = (gcnew System::Windows::Forms::Label());
-			this->label21 = (gcnew System::Windows::Forms::Label());
-			this->prenomC_textBox = (gcnew System::Windows::Forms::TextBox());
-			this->label22 = (gcnew System::Windows::Forms::Label());
-			this->label23 = (gcnew System::Windows::Forms::Label());
-			this->nomC_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->statsForm->SuspendLayout();
+			this->clientForm->SuspendLayout();
 			this->commandeForm->SuspendLayout();
 			this->personnelForm->SuspendLayout();
 			this->produitForm->SuspendLayout();
-			this->statsForm->SuspendLayout();
-			this->clientForm->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// btnPersonnel
 			// 
-			this->btnPersonnel->Location = System::Drawing::Point(24, 388);
+			this->btnPersonnel->Location = System::Drawing::Point(24, 450);
 			this->btnPersonnel->Name = L"btnPersonnel";
 			this->btnPersonnel->Size = System::Drawing::Size(154, 46);
 			this->btnPersonnel->TabIndex = 0;
@@ -539,7 +539,7 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			// 
 			// btnClient
 			// 
-			this->btnClient->Location = System::Drawing::Point(24, 168);
+			this->btnClient->Location = System::Drawing::Point(24, 230);
 			this->btnClient->Name = L"btnClient";
 			this->btnClient->Size = System::Drawing::Size(154, 46);
 			this->btnClient->TabIndex = 1;
@@ -549,7 +549,7 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			// 
 			// btnProduit
 			// 
-			this->btnProduit->Location = System::Drawing::Point(24, 236);
+			this->btnProduit->Location = System::Drawing::Point(24, 298);
 			this->btnProduit->Name = L"btnProduit";
 			this->btnProduit->Size = System::Drawing::Size(154, 46);
 			this->btnProduit->TabIndex = 2;
@@ -559,7 +559,7 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			// 
 			// btnCommande
 			// 
-			this->btnCommande->Location = System::Drawing::Point(24, 313);
+			this->btnCommande->Location = System::Drawing::Point(24, 375);
 			this->btnCommande->Name = L"btnCommande";
 			this->btnCommande->Size = System::Drawing::Size(154, 46);
 			this->btnCommande->TabIndex = 3;
@@ -569,7 +569,7 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			// 
 			// btnStats
 			// 
-			this->btnStats->Location = System::Drawing::Point(24, 103);
+			this->btnStats->Location = System::Drawing::Point(24, 165);
 			this->btnStats->Name = L"btnStats";
 			this->btnStats->Size = System::Drawing::Size(154, 46);
 			this->btnStats->TabIndex = 4;
@@ -611,7 +611,7 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			this->label33->AutoSize = true;
 			this->label33->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label33->Location = System::Drawing::Point(28, 59);
+			this->label33->Location = System::Drawing::Point(24, 59);
 			this->label33->Name = L"label33";
 			this->label33->Size = System::Drawing::Size(148, 20);
 			this->label33->TabIndex = 7;
@@ -722,6 +722,8 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			// 
 			// messageTxt
 			// 
+			this->messageTxt->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->messageTxt->Location = System::Drawing::Point(445, 606);
 			this->messageTxt->Margin = System::Windows::Forms::Padding(4);
 			this->messageTxt->Multiline = true;
@@ -737,8 +739,370 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1070, 516);
+			this->dataGridView1->Size = System::Drawing::Size(1249, 516);
 			this->dataGridView1->TabIndex = 39;
+			// 
+			// statsForm
+			// 
+			this->statsForm->BackColor = System::Drawing::SystemColors::WindowFrame;
+			this->statsForm->Controls->Add(this->btnSimul);
+			this->statsForm->Controls->Add(this->btnValAchat);
+			this->statsForm->Controls->Add(this->btnValCom);
+			this->statsForm->Controls->Add(this->btnMoinsVendus);
+			this->statsForm->Controls->Add(this->btnPlusVendus);
+			this->statsForm->Controls->Add(this->btnSouseuil);
+			this->statsForm->Controls->Add(this->btnPanier);
+			this->statsForm->Controls->Add(this->btnCa);
+			this->statsForm->Controls->Add(this->btnMt);
+			this->statsForm->Location = System::Drawing::Point(12, 24);
+			this->statsForm->Name = L"statsForm";
+			this->statsForm->Size = System::Drawing::Size(413, 669);
+			this->statsForm->TabIndex = 40;
+			this->statsForm->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Main::statsForm_Paint);
+			// 
+			// btnSimul
+			// 
+			this->btnSimul->BackColor = System::Drawing::Color::White;
+			this->btnSimul->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnSimul->Location = System::Drawing::Point(4, 491);
+			this->btnSimul->Margin = System::Windows::Forms::Padding(4);
+			this->btnSimul->Name = L"btnSimul";
+			this->btnSimul->Size = System::Drawing::Size(402, 39);
+			this->btnSimul->TabIndex = 8;
+			this->btnSimul->Text = L"Simulation";
+			this->btnSimul->UseVisualStyleBackColor = false;
+			// 
+			// btnValAchat
+			// 
+			this->btnValAchat->BackColor = System::Drawing::Color::White;
+			this->btnValAchat->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnValAchat->Location = System::Drawing::Point(3, 371);
+			this->btnValAchat->Margin = System::Windows::Forms::Padding(4);
+			this->btnValAchat->Name = L"btnValAchat";
+			this->btnValAchat->Size = System::Drawing::Size(403, 39);
+			this->btnValAchat->TabIndex = 7;
+			this->btnValAchat->Text = L"Valeur d\'achat";
+			this->btnValAchat->UseVisualStyleBackColor = false;
+			this->btnValAchat->Click += gcnew System::EventHandler(this, &Main::btnValAchat_Click);
+			// 
+			// btnValCom
+			// 
+			this->btnValCom->BackColor = System::Drawing::Color::White;
+			this->btnValCom->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnValCom->Location = System::Drawing::Point(4, 433);
+			this->btnValCom->Margin = System::Windows::Forms::Padding(4);
+			this->btnValCom->Name = L"btnValCom";
+			this->btnValCom->Size = System::Drawing::Size(402, 39);
+			this->btnValCom->TabIndex = 6;
+			this->btnValCom->Text = L"Valeur Commercial";
+			this->btnValCom->UseVisualStyleBackColor = false;
+			this->btnValCom->Click += gcnew System::EventHandler(this, &Main::btnValCom_Click);
+			// 
+			// btnMoinsVendus
+			// 
+			this->btnMoinsVendus->BackColor = System::Drawing::Color::White;
+			this->btnMoinsVendus->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnMoinsVendus->Location = System::Drawing::Point(4, 306);
+			this->btnMoinsVendus->Margin = System::Windows::Forms::Padding(4);
+			this->btnMoinsVendus->Name = L"btnMoinsVendus";
+			this->btnMoinsVendus->Size = System::Drawing::Size(402, 39);
+			this->btnMoinsVendus->TabIndex = 5;
+			this->btnMoinsVendus->Text = L"10 Moins vendus";
+			this->btnMoinsVendus->UseVisualStyleBackColor = false;
+			this->btnMoinsVendus->Click += gcnew System::EventHandler(this, &Main::btnMoinsVendus_Click);
+			// 
+			// btnPlusVendus
+			// 
+			this->btnPlusVendus->BackColor = System::Drawing::Color::White;
+			this->btnPlusVendus->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnPlusVendus->Location = System::Drawing::Point(3, 248);
+			this->btnPlusVendus->Margin = System::Windows::Forms::Padding(4);
+			this->btnPlusVendus->Name = L"btnPlusVendus";
+			this->btnPlusVendus->Size = System::Drawing::Size(403, 39);
+			this->btnPlusVendus->TabIndex = 4;
+			this->btnPlusVendus->Text = L"10 Plus vendus";
+			this->btnPlusVendus->UseVisualStyleBackColor = false;
+			this->btnPlusVendus->Click += gcnew System::EventHandler(this, &Main::button8_Click);
+			// 
+			// btnSouseuil
+			// 
+			this->btnSouseuil->BackColor = System::Drawing::Color::White;
+			this->btnSouseuil->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnSouseuil->Location = System::Drawing::Point(3, 124);
+			this->btnSouseuil->Margin = System::Windows::Forms::Padding(4);
+			this->btnSouseuil->Name = L"btnSouseuil";
+			this->btnSouseuil->Size = System::Drawing::Size(403, 39);
+			this->btnSouseuil->TabIndex = 2;
+			this->btnSouseuil->Text = L"Produit Sous Seuil";
+			this->btnSouseuil->UseVisualStyleBackColor = false;
+			this->btnSouseuil->Click += gcnew System::EventHandler(this, &Main::btnSouseuil_Click);
+			// 
+			// btnPanier
+			// 
+			this->btnPanier->BackColor = System::Drawing::Color::White;
+			this->btnPanier->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnPanier->Location = System::Drawing::Point(3, 4);
+			this->btnPanier->Margin = System::Windows::Forms::Padding(4);
+			this->btnPanier->Name = L"btnPanier";
+			this->btnPanier->Size = System::Drawing::Size(403, 39);
+			this->btnPanier->TabIndex = 0;
+			this->btnPanier->Text = L"Panier moyen";
+			this->btnPanier->UseVisualStyleBackColor = false;
+			// 
+			// btnCa
+			// 
+			this->btnCa->BackColor = System::Drawing::Color::White;
+			this->btnCa->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnCa->Location = System::Drawing::Point(3, 64);
+			this->btnCa->Margin = System::Windows::Forms::Padding(4);
+			this->btnCa->Name = L"btnCa";
+			this->btnCa->Size = System::Drawing::Size(403, 39);
+			this->btnCa->TabIndex = 1;
+			this->btnCa->Text = L"Chiffre d\'affaire";
+			this->btnCa->UseVisualStyleBackColor = false;
+			this->btnCa->Click += gcnew System::EventHandler(this, &Main::btnCa_Click);
+			// 
+			// btnMt
+			// 
+			this->btnMt->BackColor = System::Drawing::Color::White;
+			this->btnMt->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnMt->Location = System::Drawing::Point(3, 188);
+			this->btnMt->Margin = System::Windows::Forms::Padding(4);
+			this->btnMt->Name = L"btnMt";
+			this->btnMt->Size = System::Drawing::Size(403, 39);
+			this->btnMt->TabIndex = 3;
+			this->btnMt->Text = L"Montant total";
+			this->btnMt->UseVisualStyleBackColor = false;
+			// 
+			// clientForm
+			// 
+			this->clientForm->BackColor = System::Drawing::SystemColors::GrayText;
+			this->clientForm->Controls->Add(this->adresseLivr);
+			this->clientForm->Controls->Add(this->adresseFact);
+			this->clientForm->Controls->Add(this->label28);
+			this->clientForm->Controls->Add(this->idClient_textbox);
+			this->clientForm->Controls->Add(this->datePreAchat_box);
+			this->clientForm->Controls->Add(this->dateNaiss_box);
+			this->clientForm->Controls->Add(this->deleteClient_btn);
+			this->clientForm->Controls->Add(this->updateClient_btn);
+			this->clientForm->Controls->Add(this->addClient_btn);
+			this->clientForm->Controls->Add(this->label8);
+			this->clientForm->Controls->Add(this->label19);
+			this->clientForm->Controls->Add(this->label20);
+			this->clientForm->Controls->Add(this->label21);
+			this->clientForm->Controls->Add(this->prenomC_textBox);
+			this->clientForm->Controls->Add(this->label22);
+			this->clientForm->Controls->Add(this->label23);
+			this->clientForm->Controls->Add(this->nomC_textbox);
+			this->clientForm->Location = System::Drawing::Point(12, 20);
+			this->clientForm->Name = L"clientForm";
+			this->clientForm->Size = System::Drawing::Size(413, 672);
+			this->clientForm->TabIndex = 43;
+			// 
+			// adresseLivr
+			// 
+			this->adresseLivr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->adresseLivr->Location = System::Drawing::Point(12, 393);
+			this->adresseLivr->Name = L"adresseLivr";
+			this->adresseLivr->Size = System::Drawing::Size(392, 34);
+			this->adresseLivr->TabIndex = 54;
+			// 
+			// adresseFact
+			// 
+			this->adresseFact->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->adresseFact->Location = System::Drawing::Point(12, 314);
+			this->adresseFact->Name = L"adresseFact";
+			this->adresseFact->Size = System::Drawing::Size(392, 34);
+			this->adresseFact->TabIndex = 53;
+			// 
+			// label28
+			// 
+			this->label28->AutoSize = true;
+			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label28->Location = System::Drawing::Point(9, 3);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(38, 29);
+			this->label28->TabIndex = 50;
+			this->label28->Text = L"ID";
+			// 
+			// idClient_textbox
+			// 
+			this->idClient_textbox->Enabled = false;
+			this->idClient_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->idClient_textbox->Location = System::Drawing::Point(12, 35);
+			this->idClient_textbox->Name = L"idClient_textbox";
+			this->idClient_textbox->Size = System::Drawing::Size(194, 30);
+			this->idClient_textbox->TabIndex = 44;
+			// 
+			// datePreAchat_box
+			// 
+			this->datePreAchat_box->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->datePreAchat_box->CustomFormat = L"dd/MM/yyyy";
+			this->datePreAchat_box->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->datePreAchat_box->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->datePreAchat_box->Location = System::Drawing::Point(220, 242);
+			this->datePreAchat_box->MaxDate = System::DateTime(2022, 12, 5, 0, 0, 0, 0);
+			this->datePreAchat_box->MinDate = System::DateTime(2017, 1, 1, 0, 0, 0, 0);
+			this->datePreAchat_box->Name = L"datePreAchat_box";
+			this->datePreAchat_box->Size = System::Drawing::Size(184, 34);
+			this->datePreAchat_box->TabIndex = 47;
+			this->datePreAchat_box->Value = System::DateTime(2022, 12, 3, 0, 0, 0, 0);
+			// 
+			// dateNaiss_box
+			// 
+			this->dateNaiss_box->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->dateNaiss_box->CustomFormat = L"dd/MM/yyyy";
+			this->dateNaiss_box->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dateNaiss_box->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->dateNaiss_box->Location = System::Drawing::Point(12, 242);
+			this->dateNaiss_box->MaxDate = System::DateTime(2008, 12, 31, 0, 0, 0, 0);
+			this->dateNaiss_box->MinDate = System::DateTime(1940, 1, 1, 0, 0, 0, 0);
+			this->dateNaiss_box->Name = L"dateNaiss_box";
+			this->dateNaiss_box->Size = System::Drawing::Size(194, 34);
+			this->dateNaiss_box->TabIndex = 46;
+			this->dateNaiss_box->Value = System::DateTime(2004, 12, 30, 0, 0, 0, 0);
+			// 
+			// deleteClient_btn
+			// 
+			this->deleteClient_btn->BackColor = System::Drawing::Color::Red;
+			this->deleteClient_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->deleteClient_btn->Location = System::Drawing::Point(16, 586);
+			this->deleteClient_btn->Margin = System::Windows::Forms::Padding(4);
+			this->deleteClient_btn->Name = L"deleteClient_btn";
+			this->deleteClient_btn->Size = System::Drawing::Size(391, 37);
+			this->deleteClient_btn->TabIndex = 44;
+			this->deleteClient_btn->Text = L"Supprimer";
+			this->deleteClient_btn->UseVisualStyleBackColor = false;
+			this->deleteClient_btn->Click += gcnew System::EventHandler(this, &Main::deleteClient_btn_Click);
+			// 
+			// updateClient_btn
+			// 
+			this->updateClient_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->updateClient_btn->Location = System::Drawing::Point(16, 526);
+			this->updateClient_btn->Margin = System::Windows::Forms::Padding(4);
+			this->updateClient_btn->Name = L"updateClient_btn";
+			this->updateClient_btn->Size = System::Drawing::Size(391, 40);
+			this->updateClient_btn->TabIndex = 43;
+			this->updateClient_btn->Text = L"Modifier";
+			this->updateClient_btn->UseVisualStyleBackColor = true;
+			this->updateClient_btn->Click += gcnew System::EventHandler(this, &Main::updateClient_btn_Click);
+			// 
+			// addClient_btn
+			// 
+			this->addClient_btn->BackColor = System::Drawing::Color::LimeGreen;
+			this->addClient_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->addClient_btn->Location = System::Drawing::Point(15, 471);
+			this->addClient_btn->Margin = System::Windows::Forms::Padding(4);
+			this->addClient_btn->Name = L"addClient_btn";
+			this->addClient_btn->Size = System::Drawing::Size(392, 38);
+			this->addClient_btn->TabIndex = 42;
+			this->addClient_btn->Text = L"Ajouter";
+			this->addClient_btn->UseVisualStyleBackColor = false;
+			this->addClient_btn->Click += gcnew System::EventHandler(this, &Main::addClient_btn_Click);
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->Location = System::Drawing::Point(9, 284);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(180, 25);
+			this->label8->TabIndex = 21;
+			this->label8->Text = L"Adresse facturation";
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label19->Location = System::Drawing::Point(11, 362);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(161, 25);
+			this->label19->TabIndex = 20;
+			this->label19->Text = L"Adresse livraison";
+			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label20->Location = System::Drawing::Point(218, 212);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(142, 25);
+			this->label20->TabIndex = 17;
+			this->label20->Text = L"Date 1er Achat";
+			// 
+			// label21
+			// 
+			this->label21->AutoSize = true;
+			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label21->Location = System::Drawing::Point(7, 211);
+			this->label21->Name = L"label21";
+			this->label21->Size = System::Drawing::Size(177, 25);
+			this->label21->TabIndex = 16;
+			this->label21->Text = L"Date de Naissance";
+			// 
+			// prenomC_textBox
+			// 
+			this->prenomC_textBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->prenomC_textBox->Location = System::Drawing::Point(12, 166);
+			this->prenomC_textBox->Name = L"prenomC_textBox";
+			this->prenomC_textBox->Size = System::Drawing::Size(392, 38);
+			this->prenomC_textBox->TabIndex = 15;
+			// 
+			// label22
+			// 
+			this->label22->AutoSize = true;
+			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label22->Location = System::Drawing::Point(7, 138);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(98, 29);
+			this->label22->TabIndex = 13;
+			this->label22->Text = L"Prénom";
+			// 
+			// label23
+			// 
+			this->label23->AutoSize = true;
+			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label23->Location = System::Drawing::Point(7, 66);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(65, 29);
+			this->label23->TabIndex = 12;
+			this->label23->Text = L"Nom";
+			// 
+			// nomC_textbox
+			// 
+			this->nomC_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->nomC_textbox->Location = System::Drawing::Point(12, 96);
+			this->nomC_textbox->Name = L"nomC_textbox";
+			this->nomC_textbox->Size = System::Drawing::Size(392, 38);
+			this->nomC_textbox->TabIndex = 14;
 			// 
 			// commandeForm
 			// 
@@ -1404,365 +1768,6 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			this->label18->TabIndex = 12;
 			this->label18->Text = L"Désignation";
 			// 
-			// statsForm
-			// 
-			this->statsForm->BackColor = System::Drawing::SystemColors::WindowFrame;
-			this->statsForm->Controls->Add(this->btnSimul);
-			this->statsForm->Controls->Add(this->btnValAchat);
-			this->statsForm->Controls->Add(this->btnValCom);
-			this->statsForm->Controls->Add(this->btnMoinsVendus);
-			this->statsForm->Controls->Add(this->btnPlusVendus);
-			this->statsForm->Controls->Add(this->btnSouseuil);
-			this->statsForm->Controls->Add(this->btnPanier);
-			this->statsForm->Controls->Add(this->btnCa);
-			this->statsForm->Controls->Add(this->btnMt);
-			this->statsForm->Location = System::Drawing::Point(12, 24);
-			this->statsForm->Name = L"statsForm";
-			this->statsForm->Size = System::Drawing::Size(413, 669);
-			this->statsForm->TabIndex = 40;
-			this->statsForm->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Main::statsForm_Paint);
-			// 
-			// btnSimul
-			// 
-			this->btnSimul->BackColor = System::Drawing::Color::White;
-			this->btnSimul->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnSimul->Location = System::Drawing::Point(4, 491);
-			this->btnSimul->Margin = System::Windows::Forms::Padding(4);
-			this->btnSimul->Name = L"btnSimul";
-			this->btnSimul->Size = System::Drawing::Size(402, 39);
-			this->btnSimul->TabIndex = 8;
-			this->btnSimul->Text = L"Simulation";
-			this->btnSimul->UseVisualStyleBackColor = false;
-			// 
-			// btnValAchat
-			// 
-			this->btnValAchat->BackColor = System::Drawing::Color::White;
-			this->btnValAchat->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnValAchat->Location = System::Drawing::Point(3, 371);
-			this->btnValAchat->Margin = System::Windows::Forms::Padding(4);
-			this->btnValAchat->Name = L"btnValAchat";
-			this->btnValAchat->Size = System::Drawing::Size(403, 39);
-			this->btnValAchat->TabIndex = 7;
-			this->btnValAchat->Text = L"Valeur d\'achat";
-			this->btnValAchat->UseVisualStyleBackColor = false;
-			// 
-			// btnValCom
-			// 
-			this->btnValCom->BackColor = System::Drawing::Color::White;
-			this->btnValCom->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnValCom->Location = System::Drawing::Point(4, 433);
-			this->btnValCom->Margin = System::Windows::Forms::Padding(4);
-			this->btnValCom->Name = L"btnValCom";
-			this->btnValCom->Size = System::Drawing::Size(402, 39);
-			this->btnValCom->TabIndex = 6;
-			this->btnValCom->Text = L"Valeur Commercial";
-			this->btnValCom->UseVisualStyleBackColor = false;
-			// 
-			// btnMoinsVendus
-			// 
-			this->btnMoinsVendus->BackColor = System::Drawing::Color::White;
-			this->btnMoinsVendus->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnMoinsVendus->Location = System::Drawing::Point(4, 306);
-			this->btnMoinsVendus->Margin = System::Windows::Forms::Padding(4);
-			this->btnMoinsVendus->Name = L"btnMoinsVendus";
-			this->btnMoinsVendus->Size = System::Drawing::Size(402, 39);
-			this->btnMoinsVendus->TabIndex = 5;
-			this->btnMoinsVendus->Text = L"10 Moins vendus";
-			this->btnMoinsVendus->UseVisualStyleBackColor = false;
-			// 
-			// btnPlusVendus
-			// 
-			this->btnPlusVendus->BackColor = System::Drawing::Color::White;
-			this->btnPlusVendus->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnPlusVendus->Location = System::Drawing::Point(3, 248);
-			this->btnPlusVendus->Margin = System::Windows::Forms::Padding(4);
-			this->btnPlusVendus->Name = L"btnPlusVendus";
-			this->btnPlusVendus->Size = System::Drawing::Size(403, 39);
-			this->btnPlusVendus->TabIndex = 4;
-			this->btnPlusVendus->Text = L"10 Plus vendus";
-			this->btnPlusVendus->UseVisualStyleBackColor = false;
-			this->btnPlusVendus->Click += gcnew System::EventHandler(this, &Main::button8_Click);
-			// 
-			// btnSouseuil
-			// 
-			this->btnSouseuil->BackColor = System::Drawing::Color::White;
-			this->btnSouseuil->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnSouseuil->Location = System::Drawing::Point(3, 124);
-			this->btnSouseuil->Margin = System::Windows::Forms::Padding(4);
-			this->btnSouseuil->Name = L"btnSouseuil";
-			this->btnSouseuil->Size = System::Drawing::Size(403, 39);
-			this->btnSouseuil->TabIndex = 2;
-			this->btnSouseuil->Text = L"Produit Sous Seuil";
-			this->btnSouseuil->UseVisualStyleBackColor = false;
-			this->btnSouseuil->Click += gcnew System::EventHandler(this, &Main::btnSouseuil_Click);
-			// 
-			// btnPanier
-			// 
-			this->btnPanier->BackColor = System::Drawing::Color::White;
-			this->btnPanier->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnPanier->Location = System::Drawing::Point(3, 4);
-			this->btnPanier->Margin = System::Windows::Forms::Padding(4);
-			this->btnPanier->Name = L"btnPanier";
-			this->btnPanier->Size = System::Drawing::Size(403, 39);
-			this->btnPanier->TabIndex = 0;
-			this->btnPanier->Text = L"Panier moyen";
-			this->btnPanier->UseVisualStyleBackColor = false;
-			// 
-			// btnCa
-			// 
-			this->btnCa->BackColor = System::Drawing::Color::White;
-			this->btnCa->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnCa->Location = System::Drawing::Point(3, 64);
-			this->btnCa->Margin = System::Windows::Forms::Padding(4);
-			this->btnCa->Name = L"btnCa";
-			this->btnCa->Size = System::Drawing::Size(403, 39);
-			this->btnCa->TabIndex = 1;
-			this->btnCa->Text = L"Chiffre d\'affaire";
-			this->btnCa->UseVisualStyleBackColor = false;
-			this->btnCa->Click += gcnew System::EventHandler(this, &Main::btnCa_Click);
-			// 
-			// btnMt
-			// 
-			this->btnMt->BackColor = System::Drawing::Color::White;
-			this->btnMt->Font = (gcnew System::Drawing::Font(L"Arial", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnMt->Location = System::Drawing::Point(3, 188);
-			this->btnMt->Margin = System::Windows::Forms::Padding(4);
-			this->btnMt->Name = L"btnMt";
-			this->btnMt->Size = System::Drawing::Size(403, 39);
-			this->btnMt->TabIndex = 3;
-			this->btnMt->Text = L"Montant total";
-			this->btnMt->UseVisualStyleBackColor = false;
-			// 
-			// clientForm
-			// 
-			this->clientForm->BackColor = System::Drawing::SystemColors::GrayText;
-			this->clientForm->Controls->Add(this->adresseLivr);
-			this->clientForm->Controls->Add(this->adresseFact);
-			this->clientForm->Controls->Add(this->label28);
-			this->clientForm->Controls->Add(this->idClient_textbox);
-			this->clientForm->Controls->Add(this->datePreAchat_box);
-			this->clientForm->Controls->Add(this->dateNaiss_box);
-			this->clientForm->Controls->Add(this->deleteClient_btn);
-			this->clientForm->Controls->Add(this->updateClient_btn);
-			this->clientForm->Controls->Add(this->addClient_btn);
-			this->clientForm->Controls->Add(this->label8);
-			this->clientForm->Controls->Add(this->label19);
-			this->clientForm->Controls->Add(this->label20);
-			this->clientForm->Controls->Add(this->label21);
-			this->clientForm->Controls->Add(this->prenomC_textBox);
-			this->clientForm->Controls->Add(this->label22);
-			this->clientForm->Controls->Add(this->label23);
-			this->clientForm->Controls->Add(this->nomC_textbox);
-			this->clientForm->Location = System::Drawing::Point(12, 20);
-			this->clientForm->Name = L"clientForm";
-			this->clientForm->Size = System::Drawing::Size(413, 672);
-			this->clientForm->TabIndex = 43;
-			// 
-			// adresseLivr
-			// 
-			this->adresseLivr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->adresseLivr->Location = System::Drawing::Point(223, 314);
-			this->adresseLivr->Name = L"adresseLivr";
-			this->adresseLivr->Size = System::Drawing::Size(181, 34);
-			this->adresseLivr->TabIndex = 54;
-			// 
-			// adresseFact
-			// 
-			this->adresseFact->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->adresseFact->Location = System::Drawing::Point(12, 314);
-			this->adresseFact->Name = L"adresseFact";
-			this->adresseFact->Size = System::Drawing::Size(194, 34);
-			this->adresseFact->TabIndex = 53;
-			// 
-			// label28
-			// 
-			this->label28->AutoSize = true;
-			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label28->Location = System::Drawing::Point(9, 3);
-			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(38, 29);
-			this->label28->TabIndex = 50;
-			this->label28->Text = L"ID";
-			// 
-			// idClient_textbox
-			// 
-			this->idClient_textbox->Enabled = false;
-			this->idClient_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->idClient_textbox->Location = System::Drawing::Point(12, 35);
-			this->idClient_textbox->Name = L"idClient_textbox";
-			this->idClient_textbox->Size = System::Drawing::Size(194, 30);
-			this->idClient_textbox->TabIndex = 44;
-			// 
-			// datePreAchat_box
-			// 
-			this->datePreAchat_box->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->datePreAchat_box->CustomFormat = L"dd/MM/yyyy";
-			this->datePreAchat_box->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->datePreAchat_box->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->datePreAchat_box->Location = System::Drawing::Point(220, 242);
-			this->datePreAchat_box->MaxDate = System::DateTime(2022, 12, 5, 0, 0, 0, 0);
-			this->datePreAchat_box->MinDate = System::DateTime(2017, 1, 1, 0, 0, 0, 0);
-			this->datePreAchat_box->Name = L"datePreAchat_box";
-			this->datePreAchat_box->Size = System::Drawing::Size(184, 34);
-			this->datePreAchat_box->TabIndex = 47;
-			this->datePreAchat_box->Value = System::DateTime(2022, 12, 3, 0, 0, 0, 0);
-			// 
-			// dateNaiss_box
-			// 
-			this->dateNaiss_box->CalendarFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dateNaiss_box->CustomFormat = L"dd/MM/yyyy";
-			this->dateNaiss_box->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->dateNaiss_box->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateNaiss_box->Location = System::Drawing::Point(12, 242);
-			this->dateNaiss_box->MaxDate = System::DateTime(2008, 12, 31, 0, 0, 0, 0);
-			this->dateNaiss_box->MinDate = System::DateTime(1940, 1, 1, 0, 0, 0, 0);
-			this->dateNaiss_box->Name = L"dateNaiss_box";
-			this->dateNaiss_box->Size = System::Drawing::Size(194, 34);
-			this->dateNaiss_box->TabIndex = 46;
-			this->dateNaiss_box->Value = System::DateTime(2004, 12, 30, 0, 0, 0, 0);
-			// 
-			// deleteClient_btn
-			// 
-			this->deleteClient_btn->BackColor = System::Drawing::Color::Red;
-			this->deleteClient_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->deleteClient_btn->Location = System::Drawing::Point(16, 586);
-			this->deleteClient_btn->Margin = System::Windows::Forms::Padding(4);
-			this->deleteClient_btn->Name = L"deleteClient_btn";
-			this->deleteClient_btn->Size = System::Drawing::Size(391, 37);
-			this->deleteClient_btn->TabIndex = 44;
-			this->deleteClient_btn->Text = L"Supprimer";
-			this->deleteClient_btn->UseVisualStyleBackColor = false;
-			this->deleteClient_btn->Click += gcnew System::EventHandler(this, &Main::deleteClient_btn_Click);
-			// 
-			// updateClient_btn
-			// 
-			this->updateClient_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->updateClient_btn->Location = System::Drawing::Point(16, 526);
-			this->updateClient_btn->Margin = System::Windows::Forms::Padding(4);
-			this->updateClient_btn->Name = L"updateClient_btn";
-			this->updateClient_btn->Size = System::Drawing::Size(391, 40);
-			this->updateClient_btn->TabIndex = 43;
-			this->updateClient_btn->Text = L"Modifier";
-			this->updateClient_btn->UseVisualStyleBackColor = true;
-			this->updateClient_btn->Click += gcnew System::EventHandler(this, &Main::updateClient_btn_Click);
-			// 
-			// addClient_btn
-			// 
-			this->addClient_btn->BackColor = System::Drawing::Color::LimeGreen;
-			this->addClient_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->addClient_btn->Location = System::Drawing::Point(15, 471);
-			this->addClient_btn->Margin = System::Windows::Forms::Padding(4);
-			this->addClient_btn->Name = L"addClient_btn";
-			this->addClient_btn->Size = System::Drawing::Size(392, 38);
-			this->addClient_btn->TabIndex = 42;
-			this->addClient_btn->Text = L"Ajouter";
-			this->addClient_btn->UseVisualStyleBackColor = false;
-			this->addClient_btn->Click += gcnew System::EventHandler(this, &Main::addClient_btn_Click);
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(9, 284);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(180, 25);
-			this->label8->TabIndex = 21;
-			this->label8->Text = L"Adresse facturation";
-			// 
-			// label19
-			// 
-			this->label19->AutoSize = true;
-			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label19->Location = System::Drawing::Point(223, 284);
-			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(161, 25);
-			this->label19->TabIndex = 20;
-			this->label19->Text = L"Adresse livraison";
-			// 
-			// label20
-			// 
-			this->label20->AutoSize = true;
-			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label20->Location = System::Drawing::Point(218, 212);
-			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(142, 25);
-			this->label20->TabIndex = 17;
-			this->label20->Text = L"Date 1er Achat";
-			// 
-			// label21
-			// 
-			this->label21->AutoSize = true;
-			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label21->Location = System::Drawing::Point(7, 211);
-			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(177, 25);
-			this->label21->TabIndex = 16;
-			this->label21->Text = L"Date de Naissance";
-			// 
-			// prenomC_textBox
-			// 
-			this->prenomC_textBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->prenomC_textBox->Location = System::Drawing::Point(12, 166);
-			this->prenomC_textBox->Name = L"prenomC_textBox";
-			this->prenomC_textBox->Size = System::Drawing::Size(392, 38);
-			this->prenomC_textBox->TabIndex = 15;
-			// 
-			// label22
-			// 
-			this->label22->AutoSize = true;
-			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label22->Location = System::Drawing::Point(7, 138);
-			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(98, 29);
-			this->label22->TabIndex = 13;
-			this->label22->Text = L"Prénom";
-			// 
-			// label23
-			// 
-			this->label23->AutoSize = true;
-			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label23->Location = System::Drawing::Point(7, 66);
-			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(65, 29);
-			this->label23->TabIndex = 12;
-			this->label23->Text = L"Nom";
-			// 
-			// nomC_textbox
-			// 
-			this->nomC_textbox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->nomC_textbox->Location = System::Drawing::Point(12, 96);
-			this->nomC_textbox->Name = L"nomC_textbox";
-			this->nomC_textbox->Size = System::Drawing::Size(392, 38);
-			this->nomC_textbox->TabIndex = 14;
-			// 
 			// Main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1778,15 +1783,15 @@ private: System::Windows::Forms::ComboBox^ clientCmd_box;
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->statsForm->ResumeLayout(false);
+			this->clientForm->ResumeLayout(false);
+			this->clientForm->PerformLayout();
 			this->commandeForm->ResumeLayout(false);
 			this->commandeForm->PerformLayout();
 			this->personnelForm->ResumeLayout(false);
 			this->personnelForm->PerformLayout();
 			this->produitForm->ResumeLayout(false);
 			this->produitForm->PerformLayout();
-			this->statsForm->ResumeLayout(false);
-			this->clientForm->ResumeLayout(false);
-			this->clientForm->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -1827,16 +1832,12 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	this->dataGridView1->DataMember = "Rsl";
 
 
-	this->messageTxt->Text = "Pour ajouter un nouveau client, Veuillez renseigner les champs sans ID" +
-		" "+
-		"Pour supprimer un client, Veuillez rentrer dans ID son ID et cliquer sur supprimer";
+	this->messageTxt->Text = "Pour modifier ou supprimer un client, cliquer sur afficher -> Defiler la liste en appuyant sur Précédent ou Suivant et Choisir l'action à exécuter(Modifier | Supprimer)";
 
 	this->updateClient_btn->Enabled = false;
 	this->deleteClient_btn->Enabled = false;
 }
 private: System::Void button_s_seuil_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
 	   //MENU PERSONNEL
@@ -1854,7 +1855,7 @@ private: System::Void btnPersonnel_Click(System::Object^ sender, System::EventAr
 	this->dataGridView1->DataSource = this->dataset;
 	this->dataGridView1->DataMember = "Rsl";
 
-	this->messageTxt->Text = "Personnel";
+	this->messageTxt->Text = "Pour modifier ou supprimer un Personnel, cliquer sur afficher -> Defiler la liste en appuyant sur Précédent ou Suivant et Choisir l'action (Modifier | Supprimer)";
 
 	this->updatePersonnel_btn->Enabled = false;
 	this->deletePersonnel_btn->Enabled = false;
@@ -1899,6 +1900,9 @@ private: System::Void btnStats_Click(System::Object^ sender, System::EventArgs^ 
 	this->clientForm->Visible = false;
 	this->personnelForm->Visible = false;
 	this->produitForm->Visible = false;
+
+
+	this->messageTxt->Text = "Page acceuil";
 }
 private: System::Void statsForm_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
@@ -1918,13 +1922,12 @@ private: System::Void btnCommande_Click(System::Object^ sender, System::EventArg
 	this->dataGridView1->DataSource = this->dataset;
 	this->dataGridView1->DataMember = "Rsl";
 
-	this->messageTxt->Text = "Commande";
+	this->messageTxt->Text = "Pour modifier ou supprimer une Commande, cliquer sur afficher -> Defiler la liste en appuyant sur Précédent ou Suivant et Choisir l'action (Modifier | Supprimer)";
 
 	this->updateCommande_btn->Enabled = false;
 	this->deleteCommande_btn->Enabled = false;
 }
-private: System::Void btnSouseuil_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void saveButton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1944,6 +1947,8 @@ private: System::Void addClient_btn_Click(System::Object^ sender, System::EventA
 	// Reset des champs graphiques de l'interface
 	this->nomC_textbox->Clear();
 	this->prenomC_textBox->Clear();
+	this->dateNaiss_box->Refresh();
+	this->datePreAchat_box->Refresh();
 	this->adresseFact->Clear();
 	this->adresseLivr->Clear();
 
@@ -1963,6 +1968,8 @@ private: System::Void updateClient_btn_Click(System::Object^ sender, System::Eve
 	this->idClient_textbox->Clear();
 	this->nomC_textbox->Clear();
 	this->prenomC_textBox->Clear();
+	this->dateNaiss_box->Refresh();
+	this->datePreAchat_box->Refresh();
 	this->adresseFact->Clear();
 	this->adresseLivr->Clear();
 
@@ -1983,6 +1990,8 @@ private: System::Void deleteClient_btn_Click(System::Object^ sender, System::Eve
 
 		this->nomC_textbox->Clear();
 		this->prenomC_textBox->Clear();
+		this->dateNaiss_box->Refresh();
+		this->datePreAchat_box->Refresh();
 		this->adresseFact->Clear();
 		this->adresseLivr->Clear();
 	}
@@ -1992,6 +2001,7 @@ private: System::Void deleteClient_btn_Click(System::Object^ sender, System::Eve
 	}
 }
 
+	   /////////////////////////////////////////////////BUTTON AFFICHER
 private: void loadData(int index) {
 
 	if (this->clientForm->Visible) {
@@ -2000,14 +2010,21 @@ private: void loadData(int index) {
 		this->deleteClient_btn->Enabled = true;
 		// Mise à jour du cache bdd de la table de personne
 		this->dataset = this->gestionClients->listeClients("Client");
-		this->rowsCount = this->dataset->Tables["Client"]->Rows->Count;
 
-		// On remplit l'interface avec les informations de la personne index de la bdd
-		this->idClient_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[0]);
-		this->nomC_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[1]);
-		this->prenomC_textBox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[2]);
-		this->adresseFact->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[5]);
-		this->adresseLivr->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[6]);
+		if (this->rowsCount = this->dataset->Tables["Client"]->Rows->Count)
+		{
+			// On remplit l'interface avec les informations du client index de la bdd
+			this->idClient_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[0]);
+			this->nomC_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[1]);
+			this->prenomC_textBox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[2]);
+			this->dateNaiss_box->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[3]);
+			this->datePreAchat_box->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[4]);
+			this->adresseFact->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[5]);
+			this->adresseLivr->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[6]);
+		}
+		else {
+			MessageBox::Show("Aucune donnée", "Notification");
+		}
 	}
 
 	if (this->produitForm->Visible) {
@@ -2016,17 +2033,22 @@ private: void loadData(int index) {
 		this->deleteProduit_btn->Enabled = true;
 		// Mise à jour du cache bdd de la table de personne
 		this->dataset = this->gestionProduits->listeProduits("Produit");
-		this->rowsCount = this->dataset->Tables["Produit"]->Rows->Count;
 
-		// On remplit l'interface avec les informations de la personne index de la bdd
-		this->idProduit_textbox->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[0]);
-		this->refProduit_textbox->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[1]);
-		this->designation->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[2]);
-		this->prixHt_produit->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[3]);
-		this->quantiteStock->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[4]);
-		this->seuil->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[5]);
-		this->tvaProduit->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[6]);
-		this->categorieCombo->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[7]);
+		if (this->rowsCount = this->dataset->Tables["Produit"]->Rows->Count)
+		{
+			// On remplit l'interface avec les informations de la personne index de la bdd
+			this->idProduit_textbox->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[0]);
+			this->refProduit_textbox->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[1]);
+			this->designation->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[2]);
+			this->prixHt_produit->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[3]);
+			this->quantiteStock->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[4]);
+			this->seuil->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[5]);
+			this->tvaProduit->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[6]);
+			this->categorieCombo->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[7]);
+		}
+		else {
+			MessageBox::Show("Aucune donnée", "Notification");
+		}
 	}
 
 	if (this->personnelForm->Visible) {
@@ -2035,15 +2057,19 @@ private: void loadData(int index) {
 		this->deletePersonnel_btn->Enabled = true;
 		// Mise à jour du cache bdd de la table de personne
 		this->dataset = this->gestionPersonnels->listePersonnels("Personnel");
-		this->rowsCount = this->dataset->Tables["Personnel"]->Rows->Count;
 
-		// On remplit l'interface avec les informations de la personne index de la bdd
-		this->idPersonnel_box->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[0]);
-		this->nomP_textbox->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[1]);
-		this->prenomP_textbox->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[2]);
-		this->dateEmbauche->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[3]);
-		this->adresseP_textbox->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[4]);
-		this->superieurP->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[5]);
+		if (this->rowsCount = this->dataset->Tables["Personnel"]->Rows->Count)
+		{
+			this->idPersonnel_box->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[0]);
+			this->nomP_textbox->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[1]);
+			this->prenomP_textbox->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[2]);
+			this->dateEmbauche->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[3]);
+			this->adresseP_textbox->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[4]);
+			this->superieurP->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[5]);
+		}
+		else {
+			MessageBox::Show("Aucune donnée", "Notification");
+		}
 	}
 
 	if (this->commandeForm->Visible) {
@@ -2052,17 +2078,22 @@ private: void loadData(int index) {
 		this->deleteCommande_btn->Enabled = true;
 		// Mise à jour du cache bdd de la table de personne
 		this->dataset = this->gestionCommandes->listeCommandes("Commande");
-		this->rowsCount = this->dataset->Tables["Commande"]->Rows->Count;
 
-		// On remplit l'interface avec les informations de la personne index de la bdd
-		this->idCommande_textbox->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[0]);
-		this->refCommande->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[1]);
-		this->dateEmission_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[2]);
-		this->dateLivr_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[3]);
-		this->datePaiement_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[4]);
-		this->moyenPaiement->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[5]);
-		this->totalArticles->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[6]);
-		this->clientCmd_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[7]);
+		if (this->rowsCount = this->dataset->Tables["Commande"]->Rows->Count)
+		{
+			// On remplit l'interface avec les informations de la personne index de la bdd
+			this->idCommande_textbox->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[0]);
+			this->refCommande->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[1]);
+			this->dateEmission_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[2]);
+			this->dateLivr_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[3]);
+			this->datePaiement_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[4]);
+			this->moyenPaiement->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[5]);
+			this->totalArticles->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[6]);
+			this->clientCmd_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[7]);
+		}
+		else {
+			MessageBox::Show("Aucune donnée", "Notification");
+		}
 	}
 }
 
@@ -2080,6 +2111,8 @@ private: System::Void previousClient_btn_Click(System::Object ^ sender, System::
 		this->loadData(this->index);
 	}
 }
+
+	   /////////////////////////////////////////////////BUTTON ACTUALISER
 private: System::Void refreshData_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->clientForm->Visible) {
 		this->dataGridView1->Refresh();
@@ -2090,6 +2123,8 @@ private: System::Void refreshData_Click(System::Object^ sender, System::EventArg
 		this->idClient_textbox->Clear();
 		this->nomC_textbox->Clear();
 		this->prenomC_textBox->Clear();
+		this->dateNaiss_box->Refresh();
+		this->datePreAchat_box->Refresh();
 		this->adresseFact->Clear();
 		this->adresseLivr->Clear();
 	}
@@ -2118,6 +2153,7 @@ private: System::Void refreshData_Click(System::Object^ sender, System::EventArg
 		this->idPersonnel_box->Clear();
 		this->nomP_textbox->Clear();
 		this->prenomP_textbox->Clear();
+		this->dateEmbauche->Refresh();
 		this->adresseP_textbox->Clear();
 		this->superieurP->Clear();
 	}
@@ -2128,13 +2164,14 @@ private: System::Void refreshData_Click(System::Object^ sender, System::EventArg
 		this->dataGridView1->DataSource = this->dataset;
 		this->dataGridView1->DataMember = "Rsl";
 
-		this->idClient_textbox->Clear();
+		this->idCommande_textbox->Clear();
 		this->refCommande->Clear();
 		this->dateEmission_box->ResetText();
 		this->dateLivr_box->ResetText();
 		this->datePaiement_box->ResetText();
 		this->moyenPaiement->Clear();
 		this->totalArticles->Clear();
+		this->clientCmd_box->Refresh();
 	}
 
 }
@@ -2242,6 +2279,7 @@ private: System::Void updateProduit_btn_Click(System::Object^ sender, System::Ev
 	this->idProduit_textbox->Clear();
 	this->refProduit_textbox->Clear();
 	this->designation->Clear();
+	this->prixHt_produit->Clear();
 	this->quantiteStock->Clear();
 	this->seuil->Clear();
 	this->tvaProduit->Clear();
@@ -2295,7 +2333,7 @@ private: System::Void addCommande_btn_Click(System::Object^ sender, System::Even
 		this->moyenPaiement->Clear();
 		this->totalArticles->Clear();
 
-		MessageBox::Show("Opération réussie : La cammande est enrégistrée", "Notification");
+		MessageBox::Show("Opération réussie : La commande est enrégistrée", "Notification");
 }
 
 	   /////////////////////////////////////////////BUTTON SUPPRIMER UNE COMMANDE
@@ -2357,11 +2395,47 @@ private: System::Void maximized_Click(System::Object^ sender, System::EventArgs^
 	WindowState = FormWindowState::Maximized;
 }
 
+	   //*******************STATISTIQUES************************
+
 private: System::Void btnCa_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dataGridView1->Refresh();
-	this->dataset = this->gestionStatistique->ChiffreAff("Rsl");
+	this->dataset = this->gestionStatistique->ChiffreAff("ca");
 	this->dataGridView1->DataSource = this->dataset;
-	this->dataGridView1->DataMember = "Rsl";
+	this->dataGridView1->DataMember = "ca";
+}
+
+private: System::Void btnValCom_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionStatistique->ValeurCommerciale("valCom");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "valCom";
+}
+
+private: System::Void btnValAchat_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionStatistique->ValeurAchat("valAchat");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "valAchat";
+}
+
+private: System::Void btnSouseuil_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionStatistique->SousSeuil("seuil");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "seuil";
+}
+
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionStatistique->PlusVendus("plus");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "plus";
+}
+private: System::Void btnMoinsVendus_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView1->Refresh();
+	this->dataset = this->gestionStatistique->MoinsVendus("moins");
+	this->dataGridView1->DataSource = this->dataset;
+	this->dataGridView1->DataMember = "moins";
 }
 };
 }

@@ -12,6 +12,11 @@ namespace Services
         ServiceStatistique();
 
         DataSet^ ChiffreAff(String^ dataTableName);
+        DataSet^ ValeurCommerciale(String^ dataTableName);
+        DataSet^ ValeurAchat(String^ dataTableName);
+        DataSet^ SousSeuil(String^ dataTableName);
+        DataSet^ PlusVendus(String^ dataTableName);
+        DataSet^ MoinsVendus(String^ dataTableName);
 
     private:
         Composants::Cad^ cad;
