@@ -1835,8 +1835,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 	this->messageTxt->Text = "Pour modifier ou supprimer un client, cliquer sur afficher -> Defiler la liste en appuyant sur Précédent ou Suivant et Choisir l'action à exécuter(Modifier | Supprimer)";
 
-	this->updateClient_btn->Enabled = false;
-	this->deleteClient_btn->Enabled = false;
+	this->updateClient_btn->Visible = false;
+	this->deleteClient_btn->Visible = false;
 }
 private: System::Void button_s_seuil_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1858,8 +1858,8 @@ private: System::Void btnPersonnel_Click(System::Object^ sender, System::EventAr
 
 	this->messageTxt->Text = "Pour modifier ou supprimer un Personnel, cliquer sur afficher -> Defiler la liste en appuyant sur Précédent ou Suivant et Choisir l'action (Modifier | Supprimer)";
 
-	this->updatePersonnel_btn->Enabled = false;
-	this->deletePersonnel_btn->Enabled = false;
+	this->updatePersonnel_btn->Visible = false;
+	this->deletePersonnel_btn->Visible = false;
 }
 
 	   //MENU PRODUIT
@@ -1879,16 +1879,20 @@ private: System::Void btnProduit_Click(System::Object^ sender, System::EventArgs
 
 	this->messageTxt->Text = "Produit";
 
-	this->updateProduit_btn->Enabled = false;
-	this->deleteProduit_btn->Enabled = false;
+	this->updateProduit_btn->Visible = false;
+	this->deleteProduit_btn->Visible = false;
 
 	//***********************LISTE DES CATEGORIE***********************
 
-	for (int i = 0; i < this->rowsCount; i++) {
-		this->categorieCombo->DataSource = this->dataset->Tables["Categorie"];
-		this->categorieCombo->DisplayMember = "libelle";
-	}
+	//for (int i = 0; i < this->rowsCount; i++) {
+		//this->categorieCombo->DataSource = this->dataset->Tables["Categorie"];
+		//this->categorieCombo->DisplayMember = "libelle";
+	//}
 	//****************************************************************
+
+	this->categorieCombo->Items->Add("Alimentation");
+	this->categorieCombo->Items->Add("electronique");
+	this->categorieCombo->Items->Add("cosmetique");
 
 }
 
@@ -1925,8 +1929,8 @@ private: System::Void btnCommande_Click(System::Object^ sender, System::EventArg
 
 	this->messageTxt->Text = "Pour modifier ou supprimer une Commande, cliquer sur afficher -> Defiler la liste en appuyant sur Précédent ou Suivant et Choisir l'action (Modifier | Supprimer)";
 
-	this->updateCommande_btn->Enabled = false;
-	this->deleteCommande_btn->Enabled = false;
+	this->updateCommande_btn->Visible = false;
+	this->deleteCommande_btn->Visible = false;
 }
 
 private: System::Void textBox13_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -1975,6 +1979,10 @@ private: System::Void updateClient_btn_Click(System::Object^ sender, System::Eve
 	this->adresseLivr->Clear();
 
 	MessageBox::Show("Opération réussie : le client a été modifié", "Notification");
+
+	this->addClient_btn->Visible = true;
+	this->updateClient_btn->Visible = false;
+	this->deleteClient_btn->Visible = false;
 }
 	   /////////////////////////////////////////////////BUTTON SUPPRIMER UN CLIENT
 private: System::Void deleteClient_btn_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1995,6 +2003,11 @@ private: System::Void deleteClient_btn_Click(System::Object^ sender, System::Eve
 		this->datePreAchat_box->Refresh();
 		this->adresseFact->Clear();
 		this->adresseLivr->Clear();
+
+
+		this->addClient_btn->Visible = true;
+		this->updateClient_btn->Visible = false;
+		this->deleteClient_btn->Visible = false;
 	}
 	else
 	{
@@ -2006,14 +2019,15 @@ private: System::Void deleteClient_btn_Click(System::Object^ sender, System::Eve
 private: void loadData(int index) {
 
 	if (this->clientForm->Visible) {
-		this->addClient_btn->Enabled = false;
-		this->updateClient_btn->Enabled = true;
-		this->deleteClient_btn->Enabled = true;
+
 		// Mise à jour du cache bdd de la table de personne
 		this->dataset = this->gestionClients->listeClients("Client");
 
 		if (this->rowsCount = this->dataset->Tables["Client"]->Rows->Count)
 		{
+			this->addClient_btn->Visible = false;
+			this->updateClient_btn->Visible = true;
+			this->deleteClient_btn->Visible = true;
 			// On remplit l'interface avec les informations du client index de la bdd
 			this->idClient_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[0]);
 			this->nomC_textbox->Text = Convert::ToString(this->dataset->Tables["Client"]->Rows[this->index]->ItemArray[1]);
@@ -2029,14 +2043,14 @@ private: void loadData(int index) {
 	}
 
 	if (this->produitForm->Visible) {
-		this->addProduit_btn->Enabled = false;
-		this->updateProduit_btn->Enabled = true;
-		this->deleteProduit_btn->Enabled = true;
 		// Mise à jour du cache bdd de la table de personne
 		this->dataset = this->gestionProduits->listeProduits("Produit");
 
 		if (this->rowsCount = this->dataset->Tables["Produit"]->Rows->Count)
 		{
+			this->addProduit_btn->Visible = false;
+			this->updateProduit_btn->Visible = true;
+			this->deleteProduit_btn->Visible = true;
 			// On remplit l'interface avec les informations de la personne index de la bdd
 			this->idProduit_textbox->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[0]);
 			this->refProduit_textbox->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[1]);
@@ -2048,19 +2062,24 @@ private: void loadData(int index) {
 			this->categorieCombo->Text = Convert::ToString(this->dataset->Tables["Produit"]->Rows[this->index]->ItemArray[7]);
 		}
 		else {
+			this->addProduit_btn->Visible = true;
+			this->updateProduit_btn->Visible = false;
+			this->deleteProduit_btn->Visible = false;
 			MessageBox::Show("Aucune donnée", "Notification");
 		}
 	}
 
 	if (this->personnelForm->Visible) {
-		this->addPersonnel_btn->Enabled = false;
-		this->updatePersonnel_btn->Enabled = true;
-		this->deletePersonnel_btn->Enabled = true;
 		// Mise à jour du cache bdd de la table de personne
 		this->dataset = this->gestionPersonnels->listePersonnels("Personnel");
 
 		if (this->rowsCount = this->dataset->Tables["Personnel"]->Rows->Count)
 		{
+			this->addPersonnel_btn->Visible = false;
+			this->updatePersonnel_btn->Visible = true;
+			this->deletePersonnel_btn->Visible = true;
+
+			this->addPersonnel_btn->Visible = false;
 			this->idPersonnel_box->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[0]);
 			this->nomP_textbox->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[1]);
 			this->prenomP_textbox->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[2]);
@@ -2069,19 +2088,22 @@ private: void loadData(int index) {
 			this->superieurP->Text = Convert::ToString(this->dataset->Tables["Personnel"]->Rows[this->index]->ItemArray[5]);
 		}
 		else {
+			this->addPersonnel_btn->Visible = true;
+			this->updatePersonnel_btn->Visible = false;
+			this->deletePersonnel_btn->Visible = false;
 			MessageBox::Show("Aucune donnée", "Notification");
 		}
 	}
 
 	if (this->commandeForm->Visible) {
-		this->addCommande_btn->Enabled = false;
-		this->updateCommande_btn->Enabled = true;
-		this->deleteCommande_btn->Enabled = true;
 		// Mise à jour du cache bdd de la table de personne
 		this->dataset = this->gestionCommandes->listeCommandes("Commande");
 
 		if (this->rowsCount = this->dataset->Tables["Commande"]->Rows->Count)
 		{
+			this->addCommande_btn->Visible = false;
+			this->updateCommande_btn->Visible = true;
+			this->deleteCommande_btn->Visible = true;
 			// On remplit l'interface avec les informations de la personne index de la bdd
 			this->idCommande_textbox->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[0]);
 			this->refCommande->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[1]);
@@ -2093,6 +2115,9 @@ private: void loadData(int index) {
 			this->clientCmd_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[7]);
 		}
 		else {
+			this->addCommande_btn->Enabled = true;
+			this->updateCommande_btn->Enabled = false;
+			this->deleteCommande_btn->Enabled = false;
 			MessageBox::Show("Aucune donnée", "Notification");
 		}
 	}
@@ -2128,6 +2153,10 @@ private: System::Void refreshData_Click(System::Object^ sender, System::EventArg
 		this->datePreAchat_box->Refresh();
 		this->adresseFact->Clear();
 		this->adresseLivr->Clear();
+
+		this->addClient_btn->Visible = true;
+		this->updateClient_btn->Visible = false;
+		this->deleteClient_btn->Visible = false;
 	}
 
 	if (this->produitForm->Visible) {
@@ -2143,6 +2172,11 @@ private: System::Void refreshData_Click(System::Object^ sender, System::EventArg
 		this->quantiteStock->Clear();
 		this->seuil->Clear();
 		this->tvaProduit->Clear();
+		this->categorieCombo->SelectedIndex = -1;
+
+		this->addProduit_btn->Visible = true;
+		this->updateProduit_btn->Visible = false;
+		this->deleteProduit_btn->Visible = false;
 	}
 
 	if (this->personnelForm->Visible) {
@@ -2157,6 +2191,10 @@ private: System::Void refreshData_Click(System::Object^ sender, System::EventArg
 		this->dateEmbauche->Refresh();
 		this->adresseP_textbox->Clear();
 		this->superieurP->Clear();
+
+		this->addPersonnel_btn->Visible = true;
+		this->updatePersonnel_btn->Visible = false;
+		this->deletePersonnel_btn->Visible = false;
 	}
 
 	if (this->commandeForm->Visible) {
@@ -2173,6 +2211,10 @@ private: System::Void refreshData_Click(System::Object^ sender, System::EventArg
 		this->moyenPaiement->Clear();
 		this->totalArticles->Clear();
 		this->clientCmd_box->Refresh();
+
+		this->addCommande_btn->Visible = true;
+		this->updateCommande_btn->Visible = false;
+		this->deleteCommande_btn->Visible = false;
 	}
 
 }
@@ -2218,6 +2260,10 @@ private: System::Void addPersonnel_btn_Click(System::Object^ sender, System::Eve
 	this->superieurP->Clear();
 
 	MessageBox::Show("Opération réussie : le personnel a été modifié", "Notification");
+
+	this->addPersonnel_btn->Visible = true;
+	this->updatePersonnel_btn->Visible = false;
+	this->deletePersonnel_btn->Visible = false;
 }
 
 	   /////////////////////////////////////////////BUTTON SUPPRIMER UN PERSONNEL
@@ -2226,7 +2272,6 @@ private: System::Void deletePersonnel_btn_Click(System::Object^ sender, System::
 	if (MessageBox::Show("Voulez-vous vraiment supprimer ce Personnel?", "Notification", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 	{
 		this->gestionPersonnels->deletePersonnel(Convert::ToInt32(this->idPersonnel_box->Text));
-		this->idClient_textbox->Clear();
 		this->dataGridView1->Refresh();
 		this->dataset = this->gestionPersonnels->listePersonnels("Rsl");
 		this->dataGridView1->DataSource = this->dataset;
@@ -2234,10 +2279,15 @@ private: System::Void deletePersonnel_btn_Click(System::Object^ sender, System::
 		MessageBox::Show("Opération réussie : le personnel supprimé", "Notification");
 
 		// Reset des champs graphiques de l'interface
+		this->idClient_textbox->Clear();
 		this->nomP_textbox->Clear();
 		this->prenomP_textbox->Clear();
 		this->adresseP_textbox->Clear();
 		this->superieurP->Clear();
+
+		this->addPersonnel_btn->Visible = true;
+		this->updatePersonnel_btn->Visible = false;
+		this->deletePersonnel_btn->Visible = false;
 	}
 	else
 	{
@@ -2249,7 +2299,7 @@ private: System::Void deletePersonnel_btn_Click(System::Object^ sender, System::
 
 	   ///////////////////////////////////////////BUTTON AJOUTER UN PRODUIT
 private: System::Void addProduit_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->gestionProduits->addProduit(this->refProduit_textbox->Text, this->designation->Text, float::Parse(this->prixHt_produit->Text), int::Parse(this->quantiteStock->Text), int::Parse(this->seuil->Text), float::Parse(this->tvaProduit->Text), this->categorieCombo->GetItemText(categorieCombo->SelectedValue));
+	this->gestionProduits->addProduit(this->refProduit_textbox->Text, this->designation->Text, float::Parse(this->prixHt_produit->Text), int::Parse(this->quantiteStock->Text), int::Parse(this->seuil->Text), float::Parse(this->tvaProduit->Text), this->categorieCombo->Text);
 
 	this->dataGridView1->Refresh();
 	this->dataset = this->gestionProduits->listeProduits("Rsl");
@@ -2263,6 +2313,7 @@ private: System::Void addProduit_btn_Click(System::Object^ sender, System::Event
 	this->quantiteStock->Clear();
 	this->seuil->Clear();
 	this->tvaProduit->Clear();
+	this->categorieCombo->SelectedIndex = -1;
 
 	MessageBox::Show("Opération réussie : Le Produit a été créé", "Notification");
 }
@@ -2284,9 +2335,14 @@ private: System::Void updateProduit_btn_Click(System::Object^ sender, System::Ev
 	this->quantiteStock->Clear();
 	this->seuil->Clear();
 	this->tvaProduit->Clear();
+	this->categorieCombo->Refresh();
 
-		   MessageBox::Show("Opération réussie : le produit a été modifié", "Notification");
-	   }
+	MessageBox::Show("Opération réussie : le produit a été modifié", "Notification");
+
+	this->addProduit_btn->Visible = true;
+	this->updateProduit_btn->Visible = false;
+	this->deleteProduit_btn->Visible = false;
+}
 
 	   /////////////////////////////////////////////BUTTON SUPPRIMER UN PRODUIT
 private: System::Void deleteProduit_btn_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2308,6 +2364,11 @@ private: System::Void deleteProduit_btn_Click(System::Object^ sender, System::Ev
 		this->quantiteStock->Clear();
 		this->seuil->Clear();
 		this->tvaProduit->Clear();
+		this->categorieCombo->Refresh();
+
+		this->addProduit_btn->Visible = true;
+		this->updateProduit_btn->Visible = false;
+		this->deleteProduit_btn->Visible = false;
 	}
 	else
 	{
@@ -2333,6 +2394,7 @@ private: System::Void addCommande_btn_Click(System::Object^ sender, System::Even
 		this->datePaiement_box->ResetText();
 		this->moyenPaiement->Clear();
 		this->totalArticles->Clear();
+		this->clientCmd_box->SelectedIndex = -1;
 
 		MessageBox::Show("Opération réussie : La commande est enrégistrée", "Notification");
 }
@@ -2358,7 +2420,11 @@ private: System::Void deleteCommande_btn_Click(System::Object^ sender, System::E
 		this->datePaiement_box->ResetText();
 		this->moyenPaiement->Clear();
 		this->totalArticles->Clear();
-		this->clientCmd_box->Refresh();
+		this->clientCmd_box->SelectedIndex = -1;
+
+		this->addCommande_btn->Visible = true;
+		this->updateCommande_btn->Visible = false;
+		this->deleteCommande_btn->Visible = false;
 	}
 	else
 	{
@@ -2369,15 +2435,15 @@ private: System::Void deleteCommande_btn_Click(System::Object^ sender, System::E
 private: System::Void updateCommande_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		   // Confirmation
-	if (MessageBox::Show("Voulez-vous vraiment supprimer cette Commande?", "Notification", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
+	if (MessageBox::Show("Voulez-vous vraiment modifier cette Commande?", "Notification", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 		{
-		this->gestionCommandes->deleteCommande(Convert::ToInt32(this->idCommande_textbox->Text));
+		this->gestionCommandes->updateCommande(Convert::ToInt32(this->idCommande_textbox->Text), this->refCommande->Text, this->dateEmission_box->Value, this->dateLivr_box->Value, this->datePaiement_box->Value, this->moyenPaiement->Text, int::Parse(this->totalArticles->Text), int::Parse(this->clientCmd_box->Text));
 		this->idCommande_textbox->Clear();
 		this->dataGridView1->Refresh();
 		this->dataset = this->gestionCommandes->listeCommandes("Rsl");
 		this->dataGridView1->DataSource = this->dataset;
 		this->dataGridView1->DataMember = "Rsl";
-		MessageBox::Show("Opération réussie : le Produit supprimé", "Notification");
+		MessageBox::Show("Opération réussie : la commande a été modifiée","Notification");
 
 			   // Reset des champs graphiques de l'interface
 		this->refCommande->Clear();
@@ -2386,7 +2452,11 @@ private: System::Void updateCommande_btn_Click(System::Object^ sender, System::E
 		this->datePaiement_box->ResetText();
 		this->moyenPaiement->Clear();
 		this->totalArticles->Clear();
-		this->clientCmd_box->Refresh();
+		this->clientCmd_box->SelectedIndex = -1;
+
+		this->addCommande_btn->Visible = true;
+		this->updateCommande_btn->Visible = false;
+		this->deleteCommande_btn->Visible = false;
 	}
 	else
 	{
