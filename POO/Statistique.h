@@ -1,10 +1,11 @@
 #pragma once
 #include "Header.h"
+
 namespace Mappage {
 	ref class Statistique
 	{
 	public:
-		int PanierMoyen();
+		String^ PanierMoyen();
 		String^ ChiffreAff();
 		int SeuilApp();
 		int MontantTotal();

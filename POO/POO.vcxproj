@@ -133,6 +133,7 @@
     <ClCompile Include="ServiceCommande.cpp" />
     <ClCompile Include="ServicePersonnel.cpp" />
     <ClCompile Include="ServiceProduit.cpp" />
+    <ClCompile Include="ServiceStatistique.cpp" />
     <ClCompile Include="Statistique.cpp" />
   </ItemGroup>
   <ItemGroup>

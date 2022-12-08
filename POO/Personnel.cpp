@@ -12,7 +12,8 @@ Mappage::Personnel::Personnel()
 
 String^ Mappage::Personnel::SELECT()
 {
-    return "SELECT [idPersonnel] AS ID, [nom] AS NOM , [prenom] AS PRENOM, [dateEmbauche] AS 'DATE EMBAUCHE', [adresse] AS 'ADRESSE', [superieur] AS 'SUPERIEUR' FROM [poo].[dbo].[Personnel]";
+    return "SELECT [idPersonnel] AS ID, [nom] AS NOM , [prenom] AS PRENOM, [dateEmbauche] AS 'DATE EMBAUCHE', [adresse] AS 'ADRESSE', [superieur] AS 'SUPERIEUR' " +
+        "FROM[poo].[dbo].[Personnel]";
 }
 
 String^ Mappage::Personnel::SELECTBYID()
@@ -22,28 +23,29 @@ String^ Mappage::Personnel::SELECTBYID()
 
 String^ Mappage::Personnel::INSERT()
 {
-    return "INSERT INTO Personnel (nom, prenom, dateEmbauche, adresse, superieur) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateEmbauche + "', '" + this->adresse + "', '" + this->superieur + "');";
+    return "INSERT INTO Personnel (nom, prenom, dateEmbauche, adresse, superieur)" +
+        "VALUES('" + this->nom + "', '" + this->prenom + "', '" + this->dateEmbauche + "', '" + this->adresse + "', '" + this->superieur + "');";
 }
 
 String^ Mappage::Personnel::UPDATE()
 {
     return "UPDATE Personnel " +
-        "SET nom = '" + this->getNom() + "', prenom = '" + this->getPrenom() + "' " +
-        "WHERE(idPersonnel = " + this->getId() + ");";
+        "SET nom = '" + this->nom + "', prenom = '" + this->prenom + "', dateEmbauche = '" + this->dateEmbauche + "', adresse = '" + this->adresse + "', superieur = '" + this->superieur + "' " +
+        "WHERE (idPersonnel = " + this->getId() + ");";
 }
 
 String^ Mappage::Personnel::DELETE()
 {
-    return "DELETE FROM Personnel WHERE(idPersonnel = " + this->getId() + ");";
+    return "DELETE FROM [poo].[dbo].[Personnel] WHERE idPersonnel = " + this->getId() + ";";
 }
 
 // SETTERS
 
-void Mappage::Personnel::setId(int id)
+void Mappage::Personnel::setId(int idPersonnel)
 {
-    if (id > 0)
+    if (idPersonnel > 0)
     {
-        this->idPersonnel = id;
+        this->idPersonnel = idPersonnel;
     }
 }
 

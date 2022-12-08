@@ -28,6 +28,21 @@ void Services::ServicePersonnel::addPersonnel(String^ nom, String^ prenom, DateT
     this->cad->actionRows(sql);
 }
 
+void Services::ServicePersonnel::updatePersonnel(int idPersonnel, String^ nom, String^ prenom, DateTime dateEmbauche, String^ adresse, String^ superieur)
+{
+    String^ sql;
+
+    this->personnel->setId(idPersonnel);
+    this->personnel->setNom(nom);
+    this->personnel->setPrenom(prenom);
+    this->personnel->setDateEmbauche(dateEmbauche);
+    this->personnel->setAdresse(adresse);
+    this->personnel->setSuperieur(superieur);
+
+    sql = this->personnel->UPDATE();
+    this->cad->actionRows(sql);
+}
+
 void Services::ServicePersonnel::deletePersonnel(int idPersonnel)
 {
     this->personnel->setId(idPersonnel);

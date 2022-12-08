@@ -17,7 +17,7 @@ namespace Services
 
         void addProduit(String^ reference, String^ designation, float prixHt, int quantite, int seuil, float tauxTva, String^ categorie);
 
-        //void updateProduit(int idPersonne, String^ nom, String^ prenom, array<String^>^ adresses);
+        void updateProduit(int idPersonne, String^ reference, String^ designation, float prixHt, int quantite, int seuil, float tauxTva, String^ categorie);
 
         void deleteProduit(int idProduit);
 

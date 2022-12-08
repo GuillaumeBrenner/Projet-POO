@@ -21,7 +21,7 @@ namespace Mappage
         String^ DELETE();
 
         // Accesseurs et setters de donnees
-        void setId(int id);
+        void setId(int idPersonnel);
         void setNom(String^ nom);
         void setPrenom(String^ prenom);
         void setDateEmbauche(DateTime dateEmbauche);

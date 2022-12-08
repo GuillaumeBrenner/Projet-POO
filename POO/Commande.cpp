@@ -1,28 +1,45 @@
 #include "Commande.h"
 
-
 Mappage::Commande::Commande()
 {
     this->idCommande = -1;
-    this->refCommande= "RIEN";
+    this->refCmd = "RIEN";
+    this->dateEmission = DateTime::Now;
     this->dateLivraison = DateTime::Now;
-    this->dateEmmission = DateTime::Now;
     this->datePaiement = DateTime::Now;
-    this->moyenPaiment= "RIEN";
+    this->moyenPaiement = "RIEN";
     this->totalArticles = -1;
-    this->montantHT = -1;
-    this->montantTVA = -1; 
-    this->montantTTC = -1;
+    this->numClient = -1;
 }
 
 String^ Mappage::Commande::SELECT()
 {
-    return "SELECT TOP (1000) [idPersonnel], [idCmd], [refCmd], [dateEmission], [dateLivraison] , [datePaiement], [moyenPaiement] , [totalArticles] , [montantHT], [montantTVA] , [montantTTC], [numClient] FROM[poo].[dbo].[Commande]";
+    return "SELECT [idCommande] AS ID, [refCmd] AS REFERENCE , [dateEmission] AS 'DATE EMISSION', [dateLivraison] AS 'DATE LIVRAISON', [datePaiement] AS 'DATE PAIEMENT', [moyenPaiement] AS 'MOYEN PAIEMENT', [totalArticles] AS 'TOTAL ARTICLE', [numClient] AS 'CLIENT' " +
+        "FROM[poo].[dbo].[Commande]" +
+        "WHERE(numClient = " + this->numClient + ");";
 }
 
-//seter
+String^ Mappage::Commande::INSERT()
+{
+    return "INSERT INTO Commande (refCmd, dateEmission, dateLivraison, datePaiement, moyenPaiement, totalArticles, numClient)" +
+        "VALUES('" + this->refCmd + "', '" + this->dateEmission + "', '" + this->dateLivraison + "', '" + this->datePaiement + "', '" + this->moyenPaiement + "', '" + this->totalArticles + "', '" + this->numClient + "');";
+}
 
-void Mappage::Commande::setIdCommande(int idCommande)
+String^ Mappage::Commande::UPDATE()
+{
+    return "UPDATE Commande " +
+        "SET refCmd = '" + this->refCmd + "', dateEmission = '" + this->dateEmission + "', dateLivraison = '" + this->dateLivraison + "', datePaiement = '" + this->datePaiement + "', moyenPaiement = '" + this->moyenPaiement + "', totalArticles = '" + this->totalArticles + "', numClient = '" + this->numClient + "' " +
+        "WHERE (idCommande = " + this->getId() + ");";
+}
+
+String^ Mappage::Commande::DELETE()
+{
+    return "DELETE FROM [poo].[dbo].[Commande] WHERE idCommande = " + this->getId() + ";";
+}
+
+// SETTERS
+
+void Mappage::Commande::setId(int idCommande)
 {
     if (idCommande > 0)
     {
@@ -30,82 +47,61 @@ void Mappage::Commande::setIdCommande(int idCommande)
     }
 }
 
-void Mappage::Commande::setRefCommande(String^ refCommande)
+void Mappage::Commande::setRef(String^ refCmd)
 {
-    if (!String::IsNullOrEmpty(refCommande))
+    if (!String::IsNullOrEmpty(refCmd))
     {
-        this->refCommande =refCommande ;
+        this->refCmd = refCmd;
     }
 }
 
-void Mappage::Commande::setDateLivreson(DateTime dateLivreson)
+void Mappage::Commande::setDateEmission(DateTime dateEmission)
 {
     
-        this->dateLivraison = dateLivraison;
+    this->dateEmission = dateEmission;
     
 }
 
-void Mappage::Commande::setDateEmmission(DateTime dateEmmission)
+void Mappage::Commande::setDateLivraison(DateTime dateLivraison)
 {
-    
-        this->dateEmmission = dateEmmission;
-    
-}
-void Mappage::Commande::setDatePaiement(DateTime DatePaiement)
-{
-    
-        this->datePaiement = DatePaiement;
-    
-}
-void Mappage::Commande::setMoyenPaiment(String^ MoyenPaiment)
-{
-    
-        this->moyenPaiment = MoyenPaiment;
-    
+    this->dateLivraison = dateLivraison;
 }
 
-void Mappage::Commande::setTotalArticls(int totalArticls)
+void Mappage::Commande::setDatePaiement(DateTime datePaiement)
 {
-    
-        this->totalArticles = totalArticls;
-    
+    this->datePaiement = datePaiement;
 }
 
-void Mappage::Commande::setMontantHT(int montantHT)
+void Mappage::Commande::setMoyenPaiement(String^ moyenPaiement)
 {
-    if (montantHT > 0)
-    {
-        this->montantHT = montantHT;
-    }
+    this->moyenPaiement = moyenPaiement;
 }
 
-void Mappage::Commande::setMontantTVA(int montantTVA)
+void Mappage::Commande::setTotalArticles(int totalArticles)
 {
-    if (montantTVA > 0)
-    {
-        this->montantTVA = montantTVA;
-    }
-}
-void Mappage::Commande::setMontantTTC(int MontantTTC)
-{
-    if (MontantTTC > 0)
-    {
-        this->montantTTC = MontantTTC;
-    }
+    this->totalArticles = totalArticles;
 }
 
+void Mappage::Commande::setNumClient(int numClient)
+{
+    this->numClient = numClient;
+}
 
 // GETTERS
 
-int Mappage::Commande::getIdCommande()
+int Mappage::Commande::getId()
 {
     return this->idCommande;
 }
 
-
-String^ Mappage::Commande::getRefCommande()
+String^ Mappage::Commande::getRef()
 {
-    return this->refCommande;
+    return this->refCmd;
+}
+
+DateTime Mappage::Commande::getDateEmission()
+{
+    return this->dateEmission;
 }
 
 DateTime Mappage::Commande::getDateLivraison()
@@ -113,40 +109,22 @@ DateTime Mappage::Commande::getDateLivraison()
     return this->dateLivraison;
 }
 
-DateTime Mappage::Commande::getDateEmmission()
-{
-    return this->dateEmmission;
-}
-
-
 DateTime Mappage::Commande::getDatePaiement()
 {
     return this->datePaiement;
 }
 
-String^ Mappage::Commande::getMoyenPaiment()
+String^ Mappage::Commande::getMoyenPaiement()
 {
-    return this->moyenPaiment;
+    return this->moyenPaiement;
 }
-
 int Mappage::Commande::getTotalArticles()
 {
     return this->totalArticles;
 }
 
-
-int Mappage::Commande::getMontantHT()
+int Mappage::Commande::getNumClient()
 {
-    return this->montantHT;
+    return this->numClient;
 }
 
-
-int Mappage::Commande::getMontantTVA()
-{
-    return this->montantTVA;
-}
-
-int Mappage::Commande::getMontantTTC()
-{
-    return this->montantTTC;
-}

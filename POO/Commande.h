@@ -4,61 +4,50 @@
 
 namespace Mappage
 {
-    // Cette classe permet de transiter les informations contenues dans la bdd dans une classe de donnée
     ref class Commande
     {
     public:
         // Constructeur par defaut
         Commande();
 
-        // retourne le commande pour selectionner une personne dans la bdd
         String^ SELECT();
 
-        // retourne le commande pour ajouter une personne dans la bdd
-        //String^ INSERT();
+        String^ INSERT();
 
-        // retourne le commande pour mettre à jour une personne dans la bdd
-        //String^ UPDATE();
+        String^ UPDATE();
 
-        // retourne le commande pour suppprimer une personne dans la bdd
-        //String^ DELETE();
+        String^ DELETE();
 
-        // Accesseurs et setters classique de donnees
-        void setIdCommande(int IdCommande);
-        void setRefCommande(String^ refCommande);
-        void setDateEmmission(DateTime dateEmmission);
-        void setDateLivreson(DateTime dateLivreson);
+        // Accesseurs et setters de donnees
+        void setId(int idCommande);
+        void setRef(String^ refCmd);
+        void setDateEmission(DateTime dateEmission);
+        void setDateLivraison(DateTime dateLivraison);
         void setDatePaiement(DateTime datePaiement);
-        void setMoyenPaiment(String^ moyenPaiment);
-        void setTotalArticls(int totalArticls);
-        void setMontantHT(int montantHT);
-        void setMontantTVA(int montantTVA);
-        void setMontantTTC(int montantTTC);
+        void setMoyenPaiement(String^ moyenPaiement);
+        void setTotalArticles(int totalArticles);
+        void setNumClient(int numClient);
 
-
-        int getIdCommande();
-        String^ getRefCommande();
-        DateTime getDateEmmission();
+        int getId();
+        String^ getRef();
+        DateTime getDateEmission();
         DateTime getDateLivraison();
         DateTime getDatePaiement();
-        String^ getMoyenPaiment();
+        String^ getMoyenPaiement();
         int getTotalArticles();
-        int getMontantHT();
-        int getMontantTVA();
-        int getMontantTTC();
-        
+        int getNumClient();
+
 
     private:
+        String^ sqlrequest;
+
         int idCommande;
-        String^ refCommande;
-        DateTime dateEmmission;
+        String^ refCmd;
+        DateTime dateEmission;
         DateTime dateLivraison;
         DateTime datePaiement;
-        String^ moyenPaiment;
-        float totalArticles;
-        int montantHT;
-        int montantTVA;
-        int montantTTC;
-
+        String^ moyenPaiement;
+        int totalArticles;
+        int numClient;
     };
 }

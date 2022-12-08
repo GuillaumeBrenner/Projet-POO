@@ -1,10 +1,10 @@
 #include "Statistique.h"
 
-int Mappage::Statistique::PanierMoyen()
+String^ Mappage::Statistique::PanierMoyen()
 {
-    
+     return select AVG(totalArticles)  from Commande;
 
-    return 0;
+   
 }
 
 String^ Mappage::Statistique::ChiffreAff()
@@ -27,21 +27,7 @@ int Mappage::Statistique::MontantTotal()
     return 0;
 }
 
-String^ Mappage::Statistique::PlusVendus()
-{
-   return select idproduit, count(*) as nombre  from produit group by idproduit order by nombre desc limit 10;
-}
-
-String^ Mappage::Statistique::MoinsVendus()
-{
-    select idproduit, count(*) as nombre from produit group by idproduit  order by nombre asc limit 10;
-        
-        
-       
-       
-}
-
-float Mappage::Statistique::ValCom()
+Mappage::Statistique::Statistique()
 {
     return 0.0f;
 }
@@ -51,7 +37,8 @@ float Mappage::Statistique::ValAchat()
     return 0.0f;
 }
 
-float Mappage::Statistique::Simulation()
+String^ Mappage::Statistique::ChiffreAff()
 {
-    return 0.0f;
+    return "SELECT ((sum(Composer.montantHT) + (sum(Composer.montanttva)) * sum(Composer.qteProduit))) AS 'LE CHIFFRE AFFAIRE' " +
+        "from Composer, Commande WHERE Commande.idCommande = Composer.idCommande and Commande.dateEmission between '2022-12-01' and '2022-12-30'; ";
 }
