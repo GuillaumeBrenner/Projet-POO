@@ -361,6 +361,14 @@ private: System::Windows::Forms::Label^ label25;
 private: System::Windows::Forms::ComboBox^ ville_combox;
 private: System::Windows::Forms::BindingSource^ bindingSource1;
 private: System::Windows::Forms::ComboBox^ moyenPai_box;
+private: System::Windows::Forms::TextBox^ textBox4;
+private: System::Windows::Forms::TextBox^ textBox3;
+private: System::Windows::Forms::TextBox^ textBox2;
+private: System::Windows::Forms::TextBox^ textBox1;
+private: System::Windows::Forms::Label^ label36;
+private: System::Windows::Forms::Label^ label35;
+private: System::Windows::Forms::Label^ label34;
+private: System::Windows::Forms::Label^ label26;
 private: System::ComponentModel::IContainer^ components;
 
 
@@ -439,6 +447,10 @@ private: System::ComponentModel::IContainer^ components;
 			this->messageTxt = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->statsForm = (gcnew System::Windows::Forms::Panel());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->btnSimul = (gcnew System::Windows::Forms::Button());
 			this->btnValAchat = (gcnew System::Windows::Forms::Button());
 			this->btnValCom = (gcnew System::Windows::Forms::Button());
@@ -523,6 +535,10 @@ private: System::ComponentModel::IContainer^ components;
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->label34 = (gcnew System::Windows::Forms::Label());
+			this->label35 = (gcnew System::Windows::Forms::Label());
+			this->label36 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -752,6 +768,14 @@ private: System::ComponentModel::IContainer^ components;
 			// statsForm
 			// 
 			this->statsForm->BackColor = System::Drawing::SystemColors::WindowFrame;
+			this->statsForm->Controls->Add(this->label36);
+			this->statsForm->Controls->Add(this->label35);
+			this->statsForm->Controls->Add(this->label34);
+			this->statsForm->Controls->Add(this->label26);
+			this->statsForm->Controls->Add(this->textBox4);
+			this->statsForm->Controls->Add(this->textBox3);
+			this->statsForm->Controls->Add(this->textBox2);
+			this->statsForm->Controls->Add(this->textBox1);
 			this->statsForm->Controls->Add(this->btnSimul);
 			this->statsForm->Controls->Add(this->btnValAchat);
 			this->statsForm->Controls->Add(this->btnValCom);
@@ -765,6 +789,42 @@ private: System::ComponentModel::IContainer^ components;
 			this->statsForm->TabIndex = 40;
 			this->statsForm->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Main::statsForm_Paint);
 			// 
+			// textBox4
+			// 
+			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox4->Location = System::Drawing::Point(300, 600);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(100, 27);
+			this->textBox4->TabIndex = 12;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox3->Location = System::Drawing::Point(8, 605);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(100, 27);
+			this->textBox3->TabIndex = 11;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox2->Location = System::Drawing::Point(301, 535);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(100, 27);
+			this->textBox2->TabIndex = 10;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->Location = System::Drawing::Point(6, 535);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(100, 27);
+			this->textBox1->TabIndex = 9;
+			// 
 			// btnSimul
 			// 
 			this->btnSimul->BackColor = System::Drawing::Color::White;
@@ -777,6 +837,7 @@ private: System::ComponentModel::IContainer^ components;
 			this->btnSimul->TabIndex = 8;
 			this->btnSimul->Text = L"Simulation";
 			this->btnSimul->UseVisualStyleBackColor = false;
+			this->btnSimul->Click += gcnew System::EventHandler(this, &Main::btnSimul_Click);
 			// 
 			// btnValAchat
 			// 
@@ -1766,6 +1827,51 @@ private: System::ComponentModel::IContainer^ components;
 			this->label29->TabIndex = 51;
 			this->label29->Text = L"ID";
 			// 
+			// label26
+			// 
+			this->label26->AutoSize = true;
+			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label26->Location = System::Drawing::Point(6, 502);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(70, 20);
+			this->label26->TabIndex = 9;
+			this->label26->Text = L"MARGE";
+			// 
+			// label34
+			// 
+			this->label34->AutoSize = true;
+			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label34->Location = System::Drawing::Point(296, 502);
+			this->label34->Name = L"label34";
+			this->label34->Size = System::Drawing::Size(72, 20);
+			this->label34->TabIndex = 13;
+			this->label34->Text = L"REMISE";
+			// 
+			// label35
+			// 
+			this->label35->AutoSize = true;
+			this->label35->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label35->Location = System::Drawing::Point(5, 575);
+			this->label35->Name = L"label35";
+			this->label35->Size = System::Drawing::Size(99, 20);
+			this->label35->TabIndex = 14;
+			this->label35->Text = L"DEMARGE ";
+			this->label35->Click += gcnew System::EventHandler(this, &Main::label35_Click);
+			// 
+			// label36
+			// 
+			this->label36->AutoSize = true;
+			this->label36->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label36->Location = System::Drawing::Point(296, 575);
+			this->label36->Name = L"label36";
+			this->label36->Size = System::Drawing::Size(41, 20);
+			this->label36->TabIndex = 15;
+			this->label36->Text = L"TVA";
+			// 
 			// Main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1782,6 +1888,7 @@ private: System::ComponentModel::IContainer^ components;
 			this->panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->statsForm->ResumeLayout(false);
+			this->statsForm->PerformLayout();
 			this->clientForm->ResumeLayout(false);
 			this->clientForm->PerformLayout();
 			this->personnelForm->ResumeLayout(false);
@@ -1865,7 +1972,6 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	this->refreshData->Visible = true;
 	this->nextClient_btn->Visible = true;
 	this->previousClient_btn->Visible = true;
-
 }
 
 private: void FillCombo()
@@ -2631,5 +2737,38 @@ private: System::Void btnMoinsVendus_Click(System::Object^ sender, System::Event
 	this->dataGridView1->DataMember = "moins";
 }
 
+	   private: void sim(int a, int b, int c, int d)
+	   {
+		   String^ strConnection = "Data Source=HK;Initial Catalog=poo;User ID=HK;Password=azerty";
+
+		   SqlConnection^ con = gcnew SqlConnection(strConnection);
+		  
+			   con->Open();
+
+			   SqlCommand^ sqlCmd = gcnew SqlCommand();
+
+			   sqlCmd->Connection = con;
+			   sqlCmd->CommandType = CommandType::Text;
+			   sqlCmd->CommandText = "SELECT SUM((prixHt * '" + a + "'/ 100 - prixHt * '" + b + "' / 100 + prixHt * '" + c + "'/ 100 - prixHt * '" + d + "' / 100)* (quantite)) AS 'VALEUR COMMERCIALE DU STOCK' " +
+				   "FROM Produit";
+
+			   SqlDataAdapter^ sqlDataAdap = gcnew SqlDataAdapter(sqlCmd);
+
+			   DataTable^ dtRecord = gcnew DataTable();
+			   sqlDataAdap->Fill(dtRecord);
+			   this->dataGridView1->DataSource = dtRecord;
+			 
+		
+			   con->Close();
+		   
+	   }
+
+private: System::Void btnSimul_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	sim(Convert::ToInt32(this->textBox1->Text), Convert::ToInt32(this->textBox2->Text), Convert::ToInt32(this->textBox3->Text), Convert::ToInt32(this->textBox1->Text));
+
+}
+private: System::Void label35_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

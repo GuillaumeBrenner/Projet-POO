@@ -43,3 +43,5 @@ String^ Mappage::Statistique::MoinsVendus()
         "INNER JOIN (SELECT idProduit, designation FROM Produit) AS [prod] " +
         "ON desi.idProduit = prod.idProduit ORDER BY [qteTotal] DESC; ";
 }
+
+

@@ -16,7 +16,7 @@ namespace Mappage {
 		String^ MoinsVendus();
 
 	private:
-		float ca;
+
 	};
 }
 
