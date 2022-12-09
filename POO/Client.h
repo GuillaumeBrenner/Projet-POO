@@ -28,6 +28,7 @@ namespace Mappage
         void setDatePreAchat(DateTime datePreAchat);
         void setAdresseFacturation(String^ adresseFacturation);
         void setAdresseLivraison(String^ adresseLivraison);
+        void setVille(String^ ville);
 
         int getId();
         String^ getNom();
@@ -36,6 +37,7 @@ namespace Mappage
         DateTime getDatePreAchat();
         String^ getAdresseFacturation();
         String^ getAdresseLivraison();
+        String^ getVille();
 
 
     private:
@@ -48,5 +50,6 @@ namespace Mappage
         DateTime datePreAchat;
         String^ adresseFacturation;
         String^ adresseLivraison;
+        String^ ville;
     };
 }

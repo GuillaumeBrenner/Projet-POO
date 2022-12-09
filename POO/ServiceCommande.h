@@ -13,9 +13,9 @@ namespace Services
 
         DataSet^ listeCommandes(String^ dataTableName);
 
-        void addCommande(String^ refCmd, DateTime dateEmission, DateTime dateLivraison, DateTime datePaiement, String^ moyenPaiement, int totalArticles, int numClient);
+        void addCommande(String^ refCmd, DateTime dateEmission, DateTime dateLivraison, DateTime datePaiement, String^ moyenPaiement, int totalArticles, String^ numClient);
 
-        void updateCommande(int idCommande, String^ refCmd, DateTime dateEmission, DateTime dateLivraison, DateTime datePaiement, String^ moyenPaiement, int totalArticles, int numClient);
+        void updateCommande(int idCommande, String^ refCmd, DateTime dateEmission, DateTime dateLivraison, DateTime datePaiement, String^ moyenPaiement, int totalArticles, String^ numClient);
 
         void deleteCommande(int idCommande);
 

@@ -14,7 +14,8 @@ DataSet^ Services::ServiceCommande::listeCommandes(String^ dataTableName)
     return this->cad->getRows(sql, dataTableName);
 }
 
-void Services::ServiceCommande::addCommande(String^ refCmd, DateTime dateEmission, DateTime dateLivraison, DateTime datePaiement, String^ moyenPaiement, int totalArticles, int numClient)
+
+void Services::ServiceCommande::addCommande(String^ refCmd, DateTime dateEmission, DateTime dateLivraison, DateTime datePaiement, String^ moyenPaiement, int totalArticles, String^ numClient)
 {
     String^ sql;
 
@@ -30,7 +31,7 @@ void Services::ServiceCommande::addCommande(String^ refCmd, DateTime dateEmissio
     this->cad->actionRows(sql);
 }
 
-void Services::ServiceCommande::updateCommande(int idCommande, String^ refCmd, DateTime dateEmission, DateTime dateLivraison, DateTime datePaiement, String^ moyenPaiement, int totalArticles, int numClient)
+void Services::ServiceCommande::updateCommande(int idCommande, String^ refCmd, DateTime dateEmission, DateTime dateLivraison, DateTime datePaiement, String^ moyenPaiement, int totalArticles, String^ numClient)
 {
     String^ sql;
 

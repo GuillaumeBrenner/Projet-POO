@@ -12,7 +12,7 @@ Mappage::Client::Client()
 
 String^ Mappage::Client::SELECT()
 {
-    return "SELECT [numClient] AS ID, [nom] AS NOM , [prenom] AS PRENOM, [dateNaissance] AS 'DATE DE NAISSANCE', [datePreAchat] AS 'DATE PREMIER ACHAT', [adresseFacturation] AS 'ADR FACTURATION', [adresseLivraison] AS 'ADR LIVRAISON' FROM [poo].[dbo].[Client]";
+    return "SELECT [numClient] AS ID, [nom] AS NOM , [prenom] AS PRENOM, [dateNaissance] AS 'DATE DE NAISSANCE', [datePreAchat] AS 'DATE PREMIER ACHAT', [adresseFacturation] AS 'ADR FACTURATION', [adresseLivraison] AS 'ADR LIVRAISON', [ville] AS VILLE FROM [poo].[dbo].[Client]";
 }
 
 String^ Mappage::Client::SELECTBYID()
@@ -22,13 +22,13 @@ String^ Mappage::Client::SELECTBYID()
 
 String^ Mappage::Client::INSERT()
 {
-    return "INSERT INTO Client(nom, prenom, dateNaissance, datePreAchat, adresseFacturation, adresseLivraison) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateNaissance + "', '" + this->datePreAchat + "', '" + this->adresseFacturation + "', '" + this->adresseLivraison + "');";
+    return "INSERT INTO Client(nom, prenom, dateNaissance, datePreAchat, adresseFacturation, adresseLivraison, ville) VALUES('" + this->nom + "','" + this->prenom + "', '" + this->dateNaissance + "', '" + this->datePreAchat + "', '" + this->adresseFacturation + "', '" + this->adresseLivraison + "', '" + this->ville + "');";
 }
 
 String^ Mappage::Client::UPDATE()
 {
     return "UPDATE Client " +
-        "SET nom = '" + this->nom + "', prenom = '" + this->prenom + "', dateNaissance = '" + this->dateNaissance + "', datePreAchat = '" + this->datePreAchat + "', adresseFacturation = '" + this->adresseFacturation + "', adresseLivraison = '" + this->adresseLivraison+ "' " +
+        "SET nom = '" + this->nom + "', prenom = '" + this->prenom + "', dateNaissance = '" + this->dateNaissance + "', datePreAchat = '" + this->datePreAchat + "', adresseFacturation = '" + this->adresseFacturation + "', adresseLivraison = '" + this->adresseLivraison+ "', ville = '" + this->ville + "' " +
         "WHERE (numClient = " + this->getId() + ");";
 }
 
@@ -89,6 +89,14 @@ void Mappage::Client::setAdresseLivraison(String^ adresseLivraison)
     }
 }
 
+void Mappage::Client::setVille(String^ ville)
+{
+    if (!String::IsNullOrEmpty(ville))
+    {
+        this->ville = ville;
+    }
+}
+
 // GETTERS
 
 int Mappage::Client::getId()
@@ -124,4 +132,9 @@ String^ Mappage::Client::getAdresseFacturation()
 String^ Mappage::Client::getAdresseLivraison()
 {
     return this->adresseFacturation;
+}
+
+String^ Mappage::Client::getVille()
+{
+    return this->ville;
 }

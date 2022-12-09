@@ -15,7 +15,7 @@ DataSet^ Services::ServiceClient::listeClients(String^ dataTableName)
     return this->cad->getRows(sql, dataTableName);
 }
 
-void Services::ServiceClient::addClient(String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat, String^ adresseFacturation, String^ adresseLivraison)
+void Services::ServiceClient::addClient(String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat, String^ adresseFacturation, String^ adresseLivraison, String^ ville)
 {
     String^ sql;
 
@@ -25,12 +25,13 @@ void Services::ServiceClient::addClient(String^ nom, String^ prenom, DateTime da
     this->client->setDatePreAchat(datePreAchat);
     this->client->setAdresseFacturation(adresseFacturation);
     this->client->setAdresseLivraison(adresseLivraison);
+    this->client->setVille(ville);
 
     sql = this->client->INSERT();
     this->cad->actionRows(sql);
 }
 
-void Services::ServiceClient::updateClient(int numClient, String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat, String^ adresseFacturation, String^ adresseLivraison)
+void Services::ServiceClient::updateClient(int numClient, String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat, String^ adresseFacturation, String^ adresseLivraison, String^ ville)
 {
     String^ sql;
 
@@ -41,6 +42,7 @@ void Services::ServiceClient::updateClient(int numClient, String^ nom, String^ p
     this->client->setDatePreAchat(datePreAchat);
     this->client->setAdresseFacturation(adresseFacturation);
     this->client->setAdresseLivraison(adresseLivraison);
+    this->client->setVille(ville);
 
     sql = this->client->UPDATE();
     this->cad->actionRows(sql);

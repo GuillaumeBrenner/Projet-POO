@@ -9,7 +9,7 @@ Mappage::Commande::Commande()
     this->datePaiement = DateTime::Now;
     this->moyenPaiement = "RIEN";
     this->totalArticles = -1;
-    this->numClient = -1;
+    this->numClient = "RIEN";
 }
 
 String^ Mappage::Commande::SELECT()
@@ -22,13 +22,14 @@ String^ Mappage::Commande::SELECT()
 String^ Mappage::Commande::INSERT()
 {
     return "INSERT INTO Commande (refCmd, dateEmission, dateLivraison, datePaiement, moyenPaiement, totalArticles, numClient)" +
-        "VALUES('" + this->refCmd + "', '" + this->dateEmission + "', '" + this->dateLivraison + "', '" + this->datePaiement + "', '" + this->moyenPaiement + "', '" + this->totalArticles + "', '" + this->numClient + "');";
+        "VALUES('" + this->refCmd + "', '" + this->dateEmission + "', '" + this->dateLivraison + "', '" + this->datePaiement + "', '" + this->moyenPaiement + "', '" + this->totalArticles + "', " +
+        "(SELECT numClient from Client WHERE nom = '" + this->numClient + "') )";
 }
 
 String^ Mappage::Commande::UPDATE()
 {
     return "UPDATE Commande " +
-        "SET refCmd = '" + this->refCmd + "', dateEmission = '" + this->dateEmission + "', dateLivraison = '" + this->dateLivraison + "', datePaiement = '" + this->datePaiement + "', moyenPaiement = '" + this->moyenPaiement + "', totalArticles = '" + this->totalArticles + "', numClient = '" + this->numClient + "' " +
+        "SET refCmd = '" + this->refCmd + "', dateEmission = '" + this->dateEmission + "', dateLivraison = '" + this->dateLivraison + "', datePaiement = '" + this->datePaiement + "', moyenPaiement = '" + this->moyenPaiement + "', totalArticles = '" + this->totalArticles + "', SELECT numClient from Client WHERE nom  = '" + this->numClient + "' " +
         "WHERE (idCommande = " + this->getId() + ");";
 }
 
@@ -82,7 +83,7 @@ void Mappage::Commande::setTotalArticles(int totalArticles)
     this->totalArticles = totalArticles;
 }
 
-void Mappage::Commande::setNumClient(int numClient)
+void Mappage::Commande::setNumClient(String^ numClient)
 {
     this->numClient = numClient;
 }
@@ -123,7 +124,7 @@ int Mappage::Commande::getTotalArticles()
     return this->totalArticles;
 }
 
-int Mappage::Commande::getNumClient()
+String^ Mappage::Commande::getNumClient()
 {
     return this->numClient;
 }

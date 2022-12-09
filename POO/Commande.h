@@ -26,7 +26,7 @@ namespace Mappage
         void setDatePaiement(DateTime datePaiement);
         void setMoyenPaiement(String^ moyenPaiement);
         void setTotalArticles(int totalArticles);
-        void setNumClient(int numClient);
+        void setNumClient(String^ numClient);
 
         int getId();
         String^ getRef();
@@ -35,7 +35,7 @@ namespace Mappage
         DateTime getDatePaiement();
         String^ getMoyenPaiement();
         int getTotalArticles();
-        int getNumClient();
+        String^ getNumClient();
 
 
     private:
@@ -48,6 +48,6 @@ namespace Mappage
         DateTime datePaiement;
         String^ moyenPaiement;
         int totalArticles;
-        int numClient;
+        String^ numClient;
     };
 }

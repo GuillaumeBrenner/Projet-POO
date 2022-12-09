@@ -15,9 +15,9 @@ namespace Services
 
         DataSet^ clientById(int numClient, String^ dataTableName);
 
-        void addClient(String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat, String^ adresseFacturation, String^ adresseLivraison);
+        void addClient(String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat, String^ adresseFacturation, String^ adresseLivraison, String^ ville);
 
-        void updateClient(int numClient,String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat, String^ adresseFacturation, String^ adresseLivraison);
+        void updateClient(int numClient,String^ nom, String^ prenom, DateTime dateNaissance, DateTime datePreAchat, String^ adresseFacturation, String^ adresseLivraison, String^ ville);
 
         void deleteClient(int numClient);
 
