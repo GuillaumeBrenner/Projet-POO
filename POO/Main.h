@@ -447,6 +447,10 @@ private: System::ComponentModel::IContainer^ components;
 			this->messageTxt = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->statsForm = (gcnew System::Windows::Forms::Panel());
+			this->label36 = (gcnew System::Windows::Forms::Label());
+			this->label35 = (gcnew System::Windows::Forms::Label());
+			this->label34 = (gcnew System::Windows::Forms::Label());
+			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
@@ -535,10 +539,6 @@ private: System::ComponentModel::IContainer^ components;
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
-			this->label26 = (gcnew System::Windows::Forms::Label());
-			this->label34 = (gcnew System::Windows::Forms::Label());
-			this->label35 = (gcnew System::Windows::Forms::Label());
-			this->label36 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -783,46 +783,91 @@ private: System::ComponentModel::IContainer^ components;
 			this->statsForm->Controls->Add(this->btnPlusVendus);
 			this->statsForm->Controls->Add(this->btnSouseuil);
 			this->statsForm->Controls->Add(this->btnCa);
-			this->statsForm->Location = System::Drawing::Point(12, 24);
+			this->statsForm->Location = System::Drawing::Point(12, 20);
 			this->statsForm->Name = L"statsForm";
-			this->statsForm->Size = System::Drawing::Size(413, 669);
+			this->statsForm->Size = System::Drawing::Size(413, 702);
 			this->statsForm->TabIndex = 40;
 			this->statsForm->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Main::statsForm_Paint);
 			// 
+			// label36
+			// 
+			this->label36->AutoSize = true;
+			this->label36->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label36->Location = System::Drawing::Point(327, 633);
+			this->label36->Name = L"label36";
+			this->label36->Size = System::Drawing::Size(41, 20);
+			this->label36->TabIndex = 15;
+			this->label36->Text = L"TVA";
+			// 
+			// label35
+			// 
+			this->label35->AutoSize = true;
+			this->label35->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label35->Location = System::Drawing::Point(11, 633);
+			this->label35->Name = L"label35";
+			this->label35->Size = System::Drawing::Size(99, 20);
+			this->label35->TabIndex = 14;
+			this->label35->Text = L"DEMARGE ";
+			this->label35->Click += gcnew System::EventHandler(this, &Main::label35_Click);
+			// 
+			// label34
+			// 
+			this->label34->AutoSize = true;
+			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label34->Location = System::Drawing::Point(318, 512);
+			this->label34->Name = L"label34";
+			this->label34->Size = System::Drawing::Size(72, 20);
+			this->label34->TabIndex = 13;
+			this->label34->Text = L"REMISE";
+			// 
+			// label26
+			// 
+			this->label26->AutoSize = true;
+			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label26->Location = System::Drawing::Point(19, 512);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(70, 20);
+			this->label26->TabIndex = 9;
+			this->label26->Text = L"MARGE";
+			// 
 			// textBox4
 			// 
-			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(300, 600);
+			this->textBox4->Location = System::Drawing::Point(300, 660);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(100, 27);
+			this->textBox4->Size = System::Drawing::Size(100, 38);
 			this->textBox4->TabIndex = 12;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(8, 605);
+			this->textBox3->Location = System::Drawing::Point(10, 660);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(100, 27);
+			this->textBox3->Size = System::Drawing::Size(100, 38);
 			this->textBox3->TabIndex = 11;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox2->Location = System::Drawing::Point(301, 535);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 27);
+			this->textBox2->Size = System::Drawing::Size(100, 38);
 			this->textBox2->TabIndex = 10;
 			// 
 			// textBox1
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(6, 535);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 27);
+			this->textBox1->Size = System::Drawing::Size(100, 38);
 			this->textBox1->TabIndex = 9;
 			// 
 			// btnSimul
@@ -1020,7 +1065,7 @@ private: System::ComponentModel::IContainer^ components;
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->datePreAchat_box->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->datePreAchat_box->Location = System::Drawing::Point(220, 242);
-			this->datePreAchat_box->MaxDate = System::DateTime(2022, 12, 5, 0, 0, 0, 0);
+			this->datePreAchat_box->MaxDate = System::DateTime(2022, 12, 9, 0, 0, 0, 0);
 			this->datePreAchat_box->MinDate = System::DateTime(2017, 1, 1, 0, 0, 0, 0);
 			this->datePreAchat_box->Name = L"datePreAchat_box";
 			this->datePreAchat_box->Size = System::Drawing::Size(184, 34);
@@ -1220,7 +1265,7 @@ private: System::ComponentModel::IContainer^ components;
 				static_cast<System::Byte>(0)));
 			this->dateEmbauche->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateEmbauche->Location = System::Drawing::Point(15, 262);
-			this->dateEmbauche->MaxDate = System::DateTime(2022, 12, 3, 0, 0, 0, 0);
+			this->dateEmbauche->MaxDate = System::DateTime(2022, 12, 9, 0, 0, 0, 0);
 			this->dateEmbauche->MinDate = System::DateTime(1990, 1, 1, 0, 0, 0, 0);
 			this->dateEmbauche->Name = L"dateEmbauche";
 			this->dateEmbauche->Size = System::Drawing::Size(375, 34);
@@ -1613,9 +1658,9 @@ private: System::ComponentModel::IContainer^ components;
 			this->commandeForm->Controls->Add(this->refCommande);
 			this->commandeForm->Controls->Add(this->label6);
 			this->commandeForm->Controls->Add(this->label29);
-			this->commandeForm->Location = System::Drawing::Point(15, 20);
+			this->commandeForm->Location = System::Drawing::Point(15, 21);
 			this->commandeForm->Name = L"commandeForm";
-			this->commandeForm->Size = System::Drawing::Size(410, 669);
+			this->commandeForm->Size = System::Drawing::Size(410, 668);
 			this->commandeForm->TabIndex = 42;
 			// 
 			// moyenPai_box
@@ -1646,9 +1691,12 @@ private: System::ComponentModel::IContainer^ components;
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->datePaiement_box->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->datePaiement_box->Location = System::Drawing::Point(11, 258);
+			this->datePaiement_box->MaxDate = System::DateTime(2022, 12, 9, 0, 0, 0, 0);
+			this->datePaiement_box->MinDate = System::DateTime(2000, 1, 1, 0, 0, 0, 0);
 			this->datePaiement_box->Name = L"datePaiement_box";
 			this->datePaiement_box->Size = System::Drawing::Size(198, 34);
 			this->datePaiement_box->TabIndex = 54;
+			this->datePaiement_box->Value = System::DateTime(2022, 12, 9, 0, 0, 0, 0);
 			// 
 			// dateLivr_box
 			// 
@@ -1656,9 +1704,12 @@ private: System::ComponentModel::IContainer^ components;
 				static_cast<System::Byte>(0)));
 			this->dateLivr_box->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateLivr_box->Location = System::Drawing::Point(222, 191);
+			this->dateLivr_box->MaxDate = System::DateTime(2022, 12, 9, 0, 0, 0, 0);
+			this->dateLivr_box->MinDate = System::DateTime(2000, 1, 1, 0, 0, 0, 0);
 			this->dateLivr_box->Name = L"dateLivr_box";
 			this->dateLivr_box->Size = System::Drawing::Size(173, 34);
 			this->dateLivr_box->TabIndex = 53;
+			this->dateLivr_box->Value = System::DateTime(2022, 12, 9, 0, 0, 0, 0);
 			// 
 			// dateEmission_box
 			// 
@@ -1666,9 +1717,12 @@ private: System::ComponentModel::IContainer^ components;
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->dateEmission_box->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateEmission_box->Location = System::Drawing::Point(13, 192);
+			this->dateEmission_box->MaxDate = System::DateTime(2022, 12, 9, 0, 0, 0, 0);
+			this->dateEmission_box->MinDate = System::DateTime(2000, 1, 1, 0, 0, 0, 0);
 			this->dateEmission_box->Name = L"dateEmission_box";
 			this->dateEmission_box->Size = System::Drawing::Size(198, 34);
 			this->dateEmission_box->TabIndex = 52;
+			this->dateEmission_box->Value = System::DateTime(2022, 12, 9, 0, 0, 0, 0);
 			// 
 			// idCommande_textbox
 			// 
@@ -1826,51 +1880,6 @@ private: System::ComponentModel::IContainer^ components;
 			this->label29->Size = System::Drawing::Size(38, 29);
 			this->label29->TabIndex = 51;
 			this->label29->Text = L"ID";
-			// 
-			// label26
-			// 
-			this->label26->AutoSize = true;
-			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label26->Location = System::Drawing::Point(6, 502);
-			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(70, 20);
-			this->label26->TabIndex = 9;
-			this->label26->Text = L"MARGE";
-			// 
-			// label34
-			// 
-			this->label34->AutoSize = true;
-			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label34->Location = System::Drawing::Point(296, 502);
-			this->label34->Name = L"label34";
-			this->label34->Size = System::Drawing::Size(72, 20);
-			this->label34->TabIndex = 13;
-			this->label34->Text = L"REMISE";
-			// 
-			// label35
-			// 
-			this->label35->AutoSize = true;
-			this->label35->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label35->Location = System::Drawing::Point(5, 575);
-			this->label35->Name = L"label35";
-			this->label35->Size = System::Drawing::Size(99, 20);
-			this->label35->TabIndex = 14;
-			this->label35->Text = L"DEMARGE ";
-			this->label35->Click += gcnew System::EventHandler(this, &Main::label35_Click);
-			// 
-			// label36
-			// 
-			this->label36->AutoSize = true;
-			this->label36->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label36->Location = System::Drawing::Point(296, 575);
-			this->label36->Name = L"label36";
-			this->label36->Size = System::Drawing::Size(41, 20);
-			this->label36->TabIndex = 15;
-			this->label36->Text = L"TVA";
 			// 
 			// Main
 			// 
@@ -2050,7 +2059,7 @@ private: System::Void btnProduit_Click(System::Object^ sender, System::EventArgs
 	this->dataGridView1->DataSource = this->dataset;
 	this->dataGridView1->DataMember = "Rsl";
 
-	this->messageTxt->Text = "Produit";
+	this->messageTxt->Text = "Pour modifier ou supprimer un produit, cliquer sur afficher -> Defiler la liste en appuyant sur Précédent ou Suivant et Choisir l'action (Modifier | Supprimer)";
 
 	this->updateProduit_btn->Visible = false;
 	this->deleteProduit_btn->Visible = false;
@@ -2080,7 +2089,7 @@ private: System::Void btnStats_Click(System::Object^ sender, System::EventArgs^ 
 	this->produitForm->Visible = false;
 
 
-	this->messageTxt->Text = "Page acceuil";
+	this->messageTxt->Text = "Page acceuil et de statistiques, Cliquer sur l'action à exécuter";
 
 		this->showData->Visible = false;
 		this->refreshData->Visible = false;
@@ -2107,7 +2116,7 @@ private: System::Void btnCommande_Click(System::Object^ sender, System::EventArg
 	this->dataGridView1->DataSource = this->dataset;
 	this->dataGridView1->DataMember = "Rsl";
 
-	this->messageTxt->Text = "Référence Commande : Deux premières lettres du nom du client, de l’année de la commande, de trois premières lettres de la ville de livraison et d’un numéro incrémentiel";
+	this->messageTxt->Text = "Pour la Référence du Commande, veuillez respecter la syntaxe suivante : Deux premières lettres du nom du client, de l’année de la commande, de trois premières lettres de la ville de livraison";
 
 	this->updateCommande_btn->Visible = false;
 	this->deleteCommande_btn->Visible = false;
@@ -2295,14 +2304,23 @@ private: void loadData(int index) {
 			this->updateCommande_btn->Visible = true;
 			this->deleteCommande_btn->Visible = true;
 			// On remplit l'interface avec les informations de la personne index de la bdd
-			this->idCommande_textbox->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[0]);
-			this->refCommande->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[1]);
-			this->dateEmission_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[2]);
-			this->dateLivr_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[3]);
-			this->datePaiement_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[4]);
-			this->moyenPai_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[5]);
-			this->totalArticles->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[6]);
-			this->clientCmd_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[7]);
+			try
+			{
+				this->idCommande_textbox->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[0]);
+				this->refCommande->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[1]);
+				this->dateEmission_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[2]);
+				this->dateLivr_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[3]);
+				this->datePaiement_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[4]);
+				this->moyenPai_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[5]);
+				this->totalArticles->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[6]);
+				this->clientCmd_box->Text = Convert::ToString(this->dataset->Tables["Commande"]->Rows[this->index]->ItemArray[7]);
+
+			}
+
+			catch (Exception^ ex)
+			{
+				MessageBox::Show("Date non conforme");
+			}
 		}
 		else {
 			this->addCommande_btn->Enabled = true;
@@ -2604,13 +2622,21 @@ private: System::Void deleteCommande_btn_Click(System::Object^ sender, System::E
 	// Confirmation
 	if (MessageBox::Show("Voulez-vous vraiment supprimer la commande?", "Notification", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 	{
-		this->gestionCommandes->deleteCommande(Convert::ToInt32(this->idCommande_textbox->Text));
-		this->idProduit_textbox->Clear();
-		this->dataGridView1->Refresh();
-		this->dataset = this->gestionCommandes->listeCommandes("Rsl");
-		this->dataGridView1->DataSource = this->dataset;
-		this->dataGridView1->DataMember = "Rsl";
-		MessageBox::Show("Opération réussie : la commande est supprimée", "Notification");
+		try
+		{
+			this->gestionCommandes->deleteCommande(Convert::ToInt32(this->idCommande_textbox->Text));
+			this->idProduit_textbox->Clear();
+			this->dataGridView1->Refresh();
+			this->dataset = this->gestionCommandes->listeCommandes("Rsl");
+			this->dataGridView1->DataSource = this->dataset;
+			this->dataGridView1->DataMember = "Rsl";
+			MessageBox::Show("Opération réussie : la commande est supprimée", "Notification");
+		}
+
+		catch (Exception^ ex)
+		{
+			MessageBox::Show("Action non exécutée");
+		}
 
 		// Reset des champs graphiques de l'interface
 		this->refCommande->Clear();
@@ -2636,13 +2662,21 @@ private: System::Void updateCommande_btn_Click(System::Object^ sender, System::E
 		   // Confirmation
 	if (MessageBox::Show("Voulez-vous vraiment modifier cette Commande?", "Notification", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
 		{
-		this->gestionCommandes->updateCommande(Convert::ToInt32(this->idCommande_textbox->Text), this->refCommande->Text, this->dateEmission_box->Value, this->dateLivr_box->Value, this->datePaiement_box->Value, this->moyenPai_box->Text, int::Parse(this->totalArticles->Text), this->clientCmd_box->Text);
-		this->idCommande_textbox->Clear();
-		this->dataGridView1->Refresh();
-		this->dataset = this->gestionCommandes->listeCommandes("Rsl");
-		this->dataGridView1->DataSource = this->dataset;
-		this->dataGridView1->DataMember = "Rsl";
-		MessageBox::Show("Opération réussie : la commande a été modifiée","Notification");
+		try
+		{
+			this->gestionCommandes->updateCommande(Convert::ToInt32(this->idCommande_textbox->Text), this->refCommande->Text, this->dateEmission_box->Value, this->dateLivr_box->Value, this->datePaiement_box->Value, this->moyenPai_box->Text, int::Parse(this->totalArticles->Text), this->clientCmd_box->Text);
+			this->idCommande_textbox->Clear();
+			this->dataGridView1->Refresh();
+			this->dataset = this->gestionCommandes->listeCommandes("Rsl");
+			this->dataGridView1->DataSource = this->dataset;
+			this->dataGridView1->DataMember = "Rsl";
+			MessageBox::Show("Opération réussie : la commande a été modifiée", "Notification");
+		}
+
+		catch (Exception^ ex)
+		{
+			MessageBox::Show("Données non conforme");
+		}
 
 			   // Reset des champs graphiques de l'interface
 		this->refCommande->Clear();
@@ -2765,7 +2799,14 @@ private: System::Void btnMoinsVendus_Click(System::Object^ sender, System::Event
 
 private: System::Void btnSimul_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	sim(Convert::ToInt32(this->textBox1->Text), Convert::ToInt32(this->textBox2->Text), Convert::ToInt32(this->textBox3->Text), Convert::ToInt32(this->textBox1->Text));
+	try
+	{
+		sim(Convert::ToInt32(this->textBox1->Text), Convert::ToInt32(this->textBox2->Text), Convert::ToInt32(this->textBox3->Text), Convert::ToInt32(this->textBox1->Text));
+	}
+	catch (Exception^ ex)
+	{
+		MessageBox::Show("Renseigner les champs");
+	}
 
 }
 private: System::Void label35_Click(System::Object^ sender, System::EventArgs^ e) {

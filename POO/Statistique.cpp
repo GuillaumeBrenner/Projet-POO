@@ -9,7 +9,7 @@ Mappage::Statistique::Statistique()
 String^ Mappage::Statistique::ChiffreAff()
 {
     return "SELECT ((SUM(Composer.montantHT) + (SUM(Composer.montanttva)) * SUM(Composer.qteProduit))) AS 'LE CHIFFRE AFFAIRE' " +
-        "FROM Composer, Commande WHERE Commande.idCommande = Composer.idCommande AND Commande.dateEmission BETWEEN '2022-12-01' and '2022-12-30'; ";
+        "FROM Composer, Commande WHERE Commande.idCommande = Composer.idCommande AND Commande.dateEmission BETWEEN '2000-12-01' and '2022-12-30'; ";
 }
 
 String^ Mappage::Statistique::ValeurCommerciale()
